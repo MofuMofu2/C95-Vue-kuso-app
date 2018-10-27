@@ -1,9 +1,20 @@
 PREDEF:
-
+  # はじめに
 CHAPS:
+  # これをつくるぞい！
+  # Vue.js・Vuexとは
+  # Vue.jsの考え方
+  # Vue.jsでWebアプリケーションを作成する
+  # プロジェクトをVue CLI形式に作り変える
+  # Vuexの概念を知る
+  # データの状態をVuexで管理する
+  # テストを書く（CI・CD）
+  # アプリケーションをデプロイする（公開方法）
+  # ここでハマったVue.js
   - hiyoko-Vuex-master.re
 
 APPENDIX:
+  # 参考文献
 
 POSTDEF:
 
