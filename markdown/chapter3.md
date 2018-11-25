@@ -24,6 +24,8 @@ https://github.com/MofuMofu2/portfolio-vue/issues/1
 
 ### CSSで見た目を整える
 
+normalize.cssの利用をかく
+
 最終的な見た目はこうなりました。ヘッダーを作るという目的は達成したので、ブランチをpushしてmergeしました。
 
 https://github.com/MofuMofu2/portfolio-vue/pull/11
@@ -97,9 +99,143 @@ GitHubは[GitHub Logos and Usage](https://github.com/logos)（``https://github.c
 となっています。つまり、GitHubへページ遷移する・GitHubに関する記事の投稿時にアイコンを利用する分にはいいけれど、それ以外の用途で利用するのは禁止ということです。
 
 GitHubのアイコンをダウンロードすると、PNG画像とaiファイル・epsファイルが圧縮された物を手に入れることができます。今回はSVGを利用したいと思ったので、aiファイルからIllustratorを利用してSVGファイルを作成しました。寸法の変更は禁止されているため、aiファイルを開いた後、そのままSVG画像を書き出しました。
-Vue.jsアプリケーションでアイコンを利用したいので、``src/assets``フォルダの下にアイコンを配置します。
+Vue.jsアプリケーションでアイコンを利用したいので、``src/assets``ディレクトリの下にアイコンを配置します。
 
 Twitterのアイコンは[Twitterのブランドリソース](https://about.twitter.com/ja/company/brand-resources.html)（``https://about.twitter.com/ja/company/brand-resources.html``）からダウンロードします。TwitterはSVGファイルが直接配布されているため、これを直接利用します。Twitterの場合、アイコンをダウンロードするとガイドラインを記載したPDFもダウンロードできます。もちろんTwitterのサイト内に記載があります。こちらはわざわざ絵で解説が書いてあります。利用前によく確認します。と言っても、ルールはほとんどGitHubと一緒です。唯一違う点は、Twitterの古いアイコンを利用してはいけないという点です。利用する気にはなりませんが…。
-こちらもサイズの変更などはせず、ダウンロードしたものをそのまま``src/assets``フォルダに配置します。
+こちらもサイズの変更などはせず、ダウンロードしたものをそのまま``src/assets``ディレクトリに配置します。
+
+### アイコン画像をVue.jsで読み込む
+
+Vue.jsでローカルの画像を表示する場合、``a``タグ内に``img``タグを配置し、画像URLをv-bindで割り当てます。v-bindに割り当てる情報は変化する予定がないため、#1のヘッダー作成時と同じく``data``を利用することにしました。
+今までの知識を総合すると、次のように記載すれば動くはずです。
+
+```JavaScript
+<template>
+  <div class="page-footer">
+    <div class="icons">
+      <a href="https://twitter.com/froakie0021" target="blank"><img :src="twitter_src" alt="twitter"></a>
+      <a href="https://github.com/MofuMofu2/portfolio-vue" target="blank"><img :src="github_src" alt="github"></a>
+    </div>
+    <div class="copyright">
+      <p>©︎ 2018 りまりま団</p>
+    </div>
+  </div>
+  
+</template>
+
+<script>
+export default {
+  name: 'pageFooter',
+  data() {
+    return {
+      twitter_src: "../assets/footer/Twitter_Social_Icon_Rounded_Square_Color.svg",
+      github_src: "../assets/footer/GitHub-Mark.svg"
+    }
+  }
+}
+</script>
+```
+
+しかし、これはうまくいきません。画像のURLが見つからず、画像が存在しないような表示となってしまいます。回避方法を先に言ってしまうと、``src``のバインドをするときに``require``を利用すれば良いです。実際に試してみましょう。
+GitHubアイコンのパスには``require``をつけ、Twitterのアイコンのパスはそのまま``data``に記載します。
+
+```JavaScript
+<script>
+export default {
+  name: 'pageFooter',
+  data() {
+    return {
+      twitter_src: "../assets/footer/Twitter_Social_Icon_Rounded_Square_Color.svg",
+      github_src: require("../assets/footer/GitHub-Mark.svg")
+    }
+  }
+}
+</script>
+```
+
+Chromeのデバッグツールを使って、どんなデータがバインドされているか確認します。変だなと思ったらすぐデバッグツール。これはテストに出ます。
+まず、正しく表示されるはずの``github_src``にどんなデータが割り当たっているか確認しました。
+
+```json
+github_src:"/img/GitHub-Mark.4336b50b.svg"
+```
+
+VueアプリケーションをVue CLIで構築する際、アプリケーションの構成ディレクトリ内のファイルを再構成して``dist``ディレクトリに配置し直します。このとき、``assets``ディレクトリ内の画像も一緒に```dist``ディレクトリに再配置されます。``require``を利用することで、再配置後の画像ファイルパスを割り当てることができるため、しっかりと画像が表示できるようです。
+では、Twitter画像のファイルパスはどうなっているのでしょうか？
+
+```json
+twitter_src:"../assets/Twitter_Social_Icon_Rounded_Square_Color.svg"
+```
+
+こちらはファイルパスがそのまま割り当てされてしまっています。Vueアプリケーションが参照するのは``dist``ディレクトリの中ですから、これでは画像フォルダを参照することはできません。その結果、画面は正しく描画されているけれど画像がない状態になってしまうのです。
+``require``を利用することで、画像ファイルのパスを正しく描画することができる、というわけですね。初めてだとかなり詰まるポイントだと思います。
+
+### CSSを追加する
+
+画像ファイルパスの記載方法がわかったので、CSSも追加した最終形を作成しました。
+
+```JavaScript
+<template>
+  <div class="page-footer">
+    <div class="icons">
+      <a href="https://twitter.com/froakie0021" target="blank"><img :src="twitter_src" alt="twitter"></a>
+      <a href="https://github.com/MofuMofu2/portfolio-vue" target="blank"><img :src="github_src" alt="github"></a>
+    </div>
+    <div class="copyright">
+      <p>©︎ 2018 りまりま団</p>
+    </div>
+  </div>
+  
+</template>
+
+<script>
+export default {
+  name: 'pageFooter',
+  data () {
+    return {
+      twitter_src: require("../assets/Twitter_Social_Icon_Rounded_Square_Color.svg"),
+      github_src: require("../assets/GitHub-Mark.svg")
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .page-footer {
+    background-color: #E5E400;
+    height: 100px;
+  }
+  .icons {
+    margin-right: 30px;
+    text-align: right;
+  }
+  .icons img {
+    height: 30px;
+    margin: 10px;
+    width: 30px;
+  }
+  .page-footer p {
+    color: #32BDED;
+    text-align: center;
+  }
+
+</style>
+```
+
+ブラウザで確認すると、このようになっています。
+
+![フッター作成後](./images/chapter3/#2_finish.png)
+
+まだ見た目はしょぼいのですが、目的は達成できたのでmasterブランチにMergeしました。
 
 https://github.com/MofuMofu2/portfolio-vue/pull/12
+
+## 参考URL
+
+### Vue.jsでimgタグのsrcを利用する
+
+- Vue.jsでimgタグのsrcをバインドさせる際の注意点 
+  - http://tk2000ex.blogspot.com/2017/11/vue.html
+- img src data binding?
+  - コメントの前半は内容が古くなっているため注意が必要です。``require``が出てきている箇所あたりを参考にしましょう。
+  - https://github.com/vuejs/Discussion/issues/202#issuecomment-330567354
