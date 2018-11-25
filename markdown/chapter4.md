@@ -394,3 +394,8 @@ export default {
 ![KUSO POINTコンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#6_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/16
+
+## #7 基礎情報コンポーネントを作成する
+
+本の発刊年月や宣伝したブログポストなどを表示するコンポーネントを作成します。
+
