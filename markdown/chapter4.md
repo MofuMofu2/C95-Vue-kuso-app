@@ -153,3 +153,135 @@ import pageFooter from './components/Footer.vue'
 特段変わったことはありませんね。
 
 ### 同人誌の表紙を表示するコンポーネントを作成する
+
+こちらは#2のフッターと同じように、requireを使って仮のデータを割り当てます。画面が全部できたあとで、画像の切り替えを行いたいためです。
+
+```JavaScript
+<template>
+  <div class="book-image">
+    <img :src="image_src" alt="bookImage">
+  </div>
+</template>
+ <script>
+export default {
+  name: "bookImage",
+  data() {
+    return {
+      image_src: require("../assets/bookImage/1.png")
+    }
+  }
+}
+</script>
+ <style scoped>
+  .book-image {
+    height: 400px;
+    margin-top: 30px;
+    width: 570px;
+  }
+  img {
+    height: 100%;
+    width: 285px;
+  }
+</style>
+```
+
+このとき、``v-bind``を使ってHTMLにデータを割り当てる方法が間違っていたことに気づきました。コンポーネントをタグとして利用できるのは、コンポーネントをインポートしたファイルだけです。これを忘れていたので、まぐれで描画できてしまっていました。これはよくない、ということで``BookTite.vue``の表記を修正しました。
+
+```JavaScript
+<template>
+  <div class="book-title">
+    <div class="fanbook-title">
+      <fan-book v-bind:title="item">{{ item }}</fan-book>
+      <div class="fan-book" v-bind:title="item">{{ item }}</div>
+    </div>
+  </div>
+</template>
+```
+
+最終的にこのような表示になりました。画像が一枚入るとWebサイト感があります。
+
+![表紙を表示するコンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#3_finish.png)
+
+https://github.com/MofuMofu2/portfolio-vue/pull/14
+
+## #5 同人誌のコメント（本文）表示コンポーネントを作成する
+
+今度は同人誌の内容を説明するコンポーネントを作成します。
+
+### App.vueにコメント表示コンポーネントを読み込む
+
+何回も繰り返していると、何も見ずにコンポーネントのimportができるようになります。地味に成長を感じますね。コンポーネントのimport文はコンポーネントがアルファベット順に並ぶようにしました。VS Codeと並び順が一緒になって確認しやすいためです。
+
+```JavaScript
+   <div id="app">
+     <title-header></title-header>
+    <div class="main">
+      <book-title></book-title>
+      <book-image></book-image>
+      <book-description></book-description>←これを追加
+    </div>
+    <page-footer></page-footer>
+  </div>
+ </template>
+ 
+<script>
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'←これを追加
+import bookImage from './components/BookImage.vue'
+import bookTitle from './components/BookTitle.vue'
+import pageFooter from './components/Footer.vue'
+ 
+ export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,←これを追加
+    'book-image': bookImage,
+    'book-title': bookTitle,
+    'page-footer': pageFooter
+   }
+ }
+ </script>
+```
+
+### コメント表示コンポーネントを作成する
+
+こちらも仮のデータを``v-bind``で割り当てました。ここまでの作業を終えるのに7日かかりました。まあ平日は（これでも）働いていて、サボった日もあると考えると結構速いペースで物が作れるなあという感想を持ちました。複雑なことをしなければ、簡単に作れるっていいですよね〜。
+
+ここから文字が登場するので、フォントサイズや行の高さをどのように設定するか迷いました。そこで、通販サイトのCSS設定などをいくつか比較し、好みの見た目がどのような設定になっているのかを調べました。今回はpixivさんのBoothを参考にしました。
+
+```JavaScript
+<template>
+  <div class="book-description">
+    <div class="description" v-bind:description="text">{{ text }}</div>
+  </div>
+</template>
+ <script>
+export default {
+  name: 'bookDescription',
+  data() {
+    return {
+      text: 'Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。インプレスR＆Dさんから商業化もされています。'
+      }
+  }
+}
+</script>
+ <style scoped>
+  .book-description {
+    height: 250px;
+    margin-top: 20px;
+    width: 570px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+</style>
+```
+
+これで左側が埋まりました。今度は右側部分を作ります。
+
+![コメント表示コンポーネント実装後](C95-vue-and-nuxt/images/chapter4/#5_finish.png)
+
+https://github.com/MofuMofu2/portfolio-vue/pull/15
