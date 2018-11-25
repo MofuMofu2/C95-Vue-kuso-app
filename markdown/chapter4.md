@@ -285,3 +285,112 @@ export default {
 ![コメント表示コンポーネント実装後](C95-vue-and-nuxt/images/chapter4/#5_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/15
+
+## #6 同人誌のクソポイント（≒簡単解説）コンポーネントを作成する
+
+クソアプリカレンダー要素の登場です。このコンポーネントはリスト表記を使っていることが今までのコンポーネントと違う点です。
+
+### App.vueに簡単解説コンポーネントを追加する
+
+最初は画面右側に表示しようと思ったのですが、なんとなく収まりが悪かったので説明コンポーネント（BookDescription.vue）と表示位置を入れ替えることにしました。
+
+```JavaScript
+<template>
+  <div id="app">
+    <title-header></title-header>
+    <div class="main">
+    <div class="header">
+      <title-header></title-header>
+      <book-title></book-title>
+      <book-image></book-image>
+      <book-description></book-description>
+    </div>
+    <div class="main">
+      <div class="left-contents">
+        <book-image></book-image>
+        <description-list></description-list>←ここに追加
+      </div>
+      <div class="right-contents">
+        <book-description></book-description>←場所を移動
+      </div>
+    </div>
+    <page-footer></page-footer>
+  </div>
+</template>
+
+<script>
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookTitle from './components/BookTitle.vue'
+import descriptionList from './components/DescriptionList.vue'←ここに追加
+import pageFooter from './components/Footer.vue'
+export default {
+   name: 'app',
+   components: {
+     'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-title': bookTitle,
+    'description-list': descriptionList,←ここに追加
+    'page-footer': pageFooter
+  }
+}
+ </script>
+```
+
+### 簡単解説コンポーネントを作成する
+
+ここで、新しい記法が登場します。``v-for``という記法です。同じHTMLタグを繰り返し利用しつつ、表示する内容だけを変更したい場合に利用します。公式ドキュメントの例でもHTMLタグの``li``表記を実装するときに利用されています。これが一番わかりやすいと思います。
+
+同じデータを繰り返し表示することを防ぐため、``v-for``を利用するときは``v-bind:key``で一意の番号を割り当てることが推奨されています。推奨されています、と言いましたが、ほぼ必須です。Lintツールを利用している場合、警告が出ます。CIを利用している場合はここで弾かれてしまいますね。内部的にデータには一意のIDが割り当てられているようなので、今回は``item``の``id``を割り当てることにしました。
+
+```JavaScript
+<template>
+  <div class="description-list">
+    <div class="overview">
+      <h3>KUSO POINT</h3>
+      <ul>
+        <li v-for="(item, key) in overviews" v-bind:key="item.id">
+          {{ item.promotion }}
+        </li>
+      </ul>
+    </div>
+    </div>
+</template>
+<script>
+export default {
+  name: 'descriptionList',
+  data() {
+    return {
+      overviews: [
+        { promotion: 'ふざけたタイトル' },
+        { promotion: 'なにも伝わってこない表紙' },
+        { promotion: '布教本のはずなのにまさかの省略記法を使っている' }
+      ]
+    }
+  }
+}
+</script>
+ <style scoped>
+  .descriptiion-list {
+    height: 250px;
+    margin-top: 20px;
+    width: 570px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+</style>
+```
+
+これが実装終了後の画面です。
+
+![KUSO POINTコンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#6_finish.png)
+
+https://github.com/MofuMofu2/portfolio-vue/pull/16
