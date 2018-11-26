@@ -399,3 +399,130 @@ https://github.com/MofuMofu2/portfolio-vue/pull/16
 
 本の発刊年月や宣伝したブログポストなどを表示するコンポーネントを作成します。
 
+### App.vueに基礎情報コンポーネントを追加する
+
+特に変わった処理はありません。他のコンポーネントと同じように追加するだけです。
+
+```javaScript
+<template>
+  <div id="app">
+    <div class="header">
+      <title-header></title-header>
+      <book-title></book-title>
+    </div>
+    <div class="main">
+      <div class="left-contents">
+        <book-image></book-image>
+        <description-list></description-list>
+    </div>
+    <div class="right-contents">
+      <book-description></book-description>
+      <book-info></book-info>←ここに追加
+    </div>
+  </div>
+  <page-footer></page-footer>
+  </div>
+</template>
+
+<script>
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'←ここに追加
+import bookTitle from './components/BookTitle.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+  'title-header': titleHeader,
+  'book-description':bookDescription,
+  'book-image': bookImage,
+  'book-info': bookInfo,←ここに追加
+  'book-title': bookTitle,
+  'description-list': descriptionList,
+  'page-footer': pageFooter
+  }
+}
+</script>
+```
+
+### 基礎情報コンポーネントの作成
+
+このコンポーネントもリスト表記を利用するため、``v-for``で繰り返しリストを描画します。関連URLの部分ですが、ブログのタイトルをクリックするとURLがクリックされた状態になる、というようにしたかったので、1つの塊に2個データが紐づくようにしました。``v-for``の処理を記載するときはデータ全体を示す``posts``の部分を``v-for``で利用するデータに割り当て、実際にデータを利用する際は``v-forで定義したデータが入っている変数``.``欲しい情報が入ったカラム名``と記載してデータを取り出しました。
+また、``a``タグにへどのように``v-for``の実装をつけるかに迷いました。HTMLタグにマスケード記法は使うことはできないためです。調べてみると、1つHTML要素を追加して、そこに繰り返し処理をかけるらしいことがわかりました。今回は``a``タグの外側に``li``タグを追加し、``li``タグへ繰り返し処理を記述しました。``a``タグはただのデータの表示部分としました。
+
+```JavaScript
+<template>
+  <div class="book-info">
+    <div class="basic-info">
+      <div class="published-year">
+        <h4>発刊年月・イベント名</h4>
+        <ul>
+          <li v-for="(info, key) in infoTexts" v-bind:key="info.id">
+            {{ info.caption }}
+          </li>
+        </ul>
+      </div>
+      <div class="posts-info">
+        <h4>関連URL</h4>
+        <ul>
+          <li v-for="(list, key) in posts" v-bind:key="list.id"><a href="list.url">{{ list.title }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'bookInfo',
+  data() {
+    return {
+      infoTexts: [
+        { caption: '2017年' },
+        { caption: '4月'},
+        { caption: '技術書典2' }
+      ],
+      posts: [
+        { title: '技術書典2 もふもふちゃんの戦い履歴',
+          url: 'http://rimarimadan.hatenablog.com/entry/2017/04/12/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B82_%E3%82%82%E3%81%B5%E3%82%82%E3%81%B5%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E6%88%A6%E3%81%84%E5%B1%A5%E6%AD%B4'
+          },
+        { title: '商業本',
+          url: 'http://amzn.asia/d/be7bGtk'
+          }
+      ]
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .book-info {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .published-info {
+    margin-right: 5px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+</style>
+```
+
+![基礎情報コンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#6_finish.png)
+
+後少しで見た目が完成しそうです。
+
+## #8 購入URLコンポーネントを作成する
+
+https://github.com/MofuMofu2/portfolio-vue/issues/8
+
+
+
+### liタグの繰り返し
+
+- https://tonari-it.com/gas-vue-js-for-directive/
