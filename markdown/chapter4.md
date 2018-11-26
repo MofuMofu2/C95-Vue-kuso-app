@@ -600,8 +600,142 @@ export default {
 </script>
 ```
 
+### 購入URLコンポーネントを追加する
 
+ここはかなり詰まってしまいました。なんとなくで実装できたURLの表示方法が理解できていなかったためです。先ほどの実装はまぐれだったということですね。
 
+``電子版をポチる``と書いた文字に通販サイトのURLを紐付けたいと思い、はじめはこのように記載しました。``aaa``はコンポーネントがインポートできたかを確認するために利用していたものの名残です。
+
+```JavaScript
+<template>
+  <div class="booth-button">aaa</div>
+  <div class="booth-button">
+    <a href="booth.url">電子版をポチる</a>
+  </div>
+</template>
+ <script>
+export default {
+  name: 'boothButton'
+  name: 'boothButton',
+  data() {
+    return {
+      booth: [
+        {
+          url: 'https://booth.pm/ja/items/490460'
+        }
+      ]
+    }
+  }
+}
+</script>
+
+![実装後](C95-vue-and-nuxt/images/chapter4/#8_first_program.png)
+
+一見、リンクになっているように見えます。しかし、``電子版をポチる``の部分をクリックしても正しい遷移にはならず、Vueアプリケーションがリロードされるだけです。考えてもわからなかったため、先に見た目を作ってしまうことにしました。
+
+```JavaScript
+<template>
+  <div class="booth-button">
+    <a href="booth.url">電子版をポチる</a>
+    <div class="button">
+      <a href="booth.url"><p>電子版をポチる</p></a>
+    </div>
+  </div>
+</template>
+  <script>
+ export default {
+   name: 'boothButton',
+   data() {
+     return {
+       booth: [
+         {
+           url: 'https://booth.pm/ja/items/490460'
+         }
+       ]
+     }
+   }
+ }
+</script>
+ <style scoped>
+   .booth-button {
+    margin-top: 60px;
+    height: 200px;
+  }
+  .button {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  a {
+    background-color: #32BDED;
+    color: #E40067;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+  }
+</style>
+```
+
+![CSS実装後](C95-vue-and-nuxt/images/chapter4/#8_second_program.png)
+
+配色はかなりこだわってKUSO感を出してみました。昔のホームページとかにありそうな配色です。
+しかし、この時点ではURLが機能していません。Chrome DevToolsでHTMLを確認すると、``booth.url``という文字列へのリンクが描画されています。``<a href="booth.url"><p>電子版をポチる</p></a>``がそのまま描画されているようです。
+
+![Chrome DevToolsでURLがどうなっているか確認しているところ](C95-vue-and-nuxt/images/chapter4/#8_second_program.png)
+
+よく考えてみると、``a``タグと``data``は紐づいていません。``data``の情報を使ってHTMLを描画するためには、``v-bind``や``v-model``を利用する必要がありますが、今の状態では存在していません。さらにいうと、``a``タグの遷移先を決めるのは``href``の部分です。ここに``data``の``url``を当てはめないといけないはずです。これらを踏まえて、次のように書き直しました。
+
+```JavaScript
+<template>
+  <div class="booth-button">
+    <div class="button">
+      <a v-bind:href="url"><p>電子版をポチる</p></a>←変更
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'boothButton',
+  data() {
+    return {
+        url: 'https://booth.pm/ja/items/490460' ←データの持ち方も単純にした
+    }
+  }
+}
+</script>
+</script>
+ <style scoped>
+   .booth-button {
+    margin-top: 60px;
+    height: 200px;
+  }
+  .button {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  a {
+    background-color: #32BDED;
+    color: #E40067;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+  }
+</style>
+```
+
+これでボタンを押すと通販サイトのURLに遷移するようになりました。別タブで開くようにするか迷いましたが、離脱率を下げましょう！といった目標は特に掲げていないため別タブの実装は行いませんでした。後々改善すれば良いことなので、まずは完成することを目標にしました。
+
+![購入URLコンポーネント実装後](C95-vue-and-nuxt/images/chapter4/#8_finish.png)
+
+https://github.com/MofuMofu2/portfolio-vue/pull/18
 
 ### liタグの繰り返し
 
