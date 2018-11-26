@@ -521,8 +521,92 @@ export default {
 
 https://github.com/MofuMofu2/portfolio-vue/issues/8
 
+これが最後のコンポーネントです。通販サイトのリンクを追加します。issue#5から#8までは一気に実装しました。乗り気なときにまとめて作業するといいのかもしれません。
+
+### App.vueに購入URLコンポーネントを追加する
+
+これが最後のコンポーネント追加です。実装後に知ったのですが、Vue.jsのコンポーネントは先頭に決まった表現（プレフィックス）をつけることが推奨されています。コンポーネントの役割によって名前の先頭に何をつけるかは変わりますが、表記を統一する点は共通していると感じました。
+コンポーネントを作成する前に、公式ドキュメントの[スタイルガイド](https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8)（``https://jp.vuejs.org/v2/style-guide/index.html#基底コンポーネントの名前-強く推奨``）を確認すると良いと思います。
+
+
+```markdown
+# 悪い例
+
+Header.vue
+Description.vue
+Image.vue
+Info.vue
+```
+
+```markdown
+# 推奨される例
+
+<!-- ページごとに１回しか登場しないときはTheをつける -->
+TheHeader.vue
+<!-- これらのコンポーネントがBookコンポーネントと親子関係の場合、子コンポーネントにはBookをプレフィックスとしてつける -->
+BookDescription.vue
+BookImage.vue
+BookInfo.vue
+```
+
+一度作成してしまったあとで名前を変更するのはかなり面倒ですし、修正漏れがあると不具合につながります。コンポーネントを作る前に命名方法を確認しておくべきでした。失敗したなあと思います。
+
+```JavaScript
+<template>
+  <div id="app">
+    <div class="header">
+      <title-header></title-header>
+      <book-title></book-title>
+    </div>
+    <div class="main">
+      <div class="left-contents">
+        <book-image></book-image>
+        <description-list></description-list>
+      </div>
+      <div class="right-contents">
+        <book-description></book-description>
+        <book-info></book-info>
+        <booth-button></booth-button>
+      </div>
+    </div>
+    <page-footer></page-footer>
+  </div>
+</template>
+
+<script>
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'
+import bookTitle from './components/BookTitle.vue'
+import boothButton from './components/BoothButton.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-info': bookInfo,
+    'book-title': bookTitle,
+    'booth-button': boothButton,
+    'description-list': descriptionList,
+    'page-footer': pageFooter
+  }
+}
+</script>
+```
+
+
 
 
 ### liタグの繰り返し
 
 - https://tonari-it.com/gas-vue-js-for-directive/
+
+### コンポーネントの名前
+
+- https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8
