@@ -22,7 +22,7 @@
 次にGoogle SpreadSheetですが、今回の情報の形式だと横に長いSpreadSheetができそうだと思いました。関連URLには複数のURLとタイトルがひも付きますし、KUSO Pointも同様です。これは記載することが面倒そうなのでやめました。また、Google Sheets APIは利用したことがないので、この利用方法をあれこれ模索できるだけの時間はないなと判断しました。
 というわけで、消去法でJSONに本の情報を記載し、``assets``ディレクトリから読み込む方式としました。書影は``assets``ディレクトリに全て配置し、本ごとにディレクトリを分けることにしました。ファイル名を全て同じ名前で保存しておけば、``v-bind``でパスを割り当てるときにディレクトリ名を切り替えるだけで良いからです。
 
-## データを作成する
+## #23 JSONデータを作成する
 
 データの持ち方は決まりました。次はいよいよデータを作成します。
 
@@ -327,6 +327,130 @@
 
 https://github.com/MofuMofu2/portfolio-vue/pull/26
 
+## #19 JSONからデータを取得して表示できるようにする
+
+今回のアプリケーションで一番難しかった部分です。動作するまでに6日もかかりました。何が難しかったのかというと、
+
+- ローカルの配列をどうやって読み込めば良いのか？
+- JSONから特定のカラムの情報を抜くにはどうすればいいのか？
+- JSONに1：Nのデータがあるときはどうすればいいのか？
+
+この実装方法がわからずに詰まってしまいました。
+
+### JSONからデータを取得する方法を探す
+
+はじめに考えたことは、親コンポーネントの``App.vue``で独自のidを持ち、それの値に応じて子コンポーネントがJSONからデータを取得する、というものでした。
+
+<!-- 図をかく -->
+
+このようにすれば、「今どの同人誌の情報を表示すれば良いか？」を算出するためのロジックを``App.vue``へ１回書くだけですみます。同じようなロジックを6回近く記載するのは大変面倒ですし、データの不整合が起きてしまうかもしれません。一括で管理しておきたいなと思いました。Vue.jsには``prop``という仕組みがあります。これを利用して親コンポーネントから子コンポーネントへデータを渡すことができます。子コンポーネントから親コンポーネントへデータを渡す場合、``emit``という仕組みを利用します。今回は``prop``を利用すれば目的が達成できそうだ、と思いました。
+
+<!-- 図を書く -->
+
+いきなり``prop``の処理を実装するのは無謀だと思いました。Vue.jsでJSONからデータを取得するサンプルコードは公式ドキュメントに載っていませんし、他の実装例ではアプリケーション外部のサーバーからJSONをHTTPの通信（GET）で取得する方法が多かったためです。具体的には``axios``というライブラリを用いてHTTP通信を行う実装が多く、ローカルからJSONを取得する事例はあまりありませんでした。こうなると自分で考える必要があります。一度に1個のことしか考えることができない、とわかっていたので「はじめはJSONから1つのデータを取得」「idの切り替えでデータを切り替えるのはその後」としました。今思うと正解だったと思います。
+
+実装のヒントはないか、とGitHubのissueやVue.jsのフォーラム、Stack Overflowなどの記事を読んでみました。すると、大きく分けて2つの事象で詰まってしまう人が多い、ということがわかりました。
+
+1. assetsフォルダにあるデータはimportで取得する。このときにパスの指定がうまくいかずにハマる人が多い。
+2. ローカル以外（外部URL・APIサーバーから…など）はaxiosを利用する。ローカルのデータをaxiosで取ろうとしてうまくいかない！という内容の質問箱には「いやローカルならimportで取れますけど」と言われていることが多かった。
+
+``1.``は画像のインポート時に利用した``require``を利用すれば回避できそうだ、と考えました。問題は``2.``です。``axios``を利用する必要がないことはわかりました。では、一体どうやってローカルのJSONを取得すれば良いのでしょう？じゃあ方法を書いてくれ〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜っ！！！！！という憤りを感じてブラウザバックする、これの繰り返しでした。
+
+調べに調べた結果、一番参考になった実装はサークル``べころもち工房``の```べこ``さんの実装でした。技術書典3で「このもちみたいなキャラクターがかわゆすな〜」と思って購入した同人誌だったのですが、こんなところで役に立つとは…！！！技術書典の出会いと自分の目利き力に感謝しました。本の名前は『Vue.jsでポートフォリオサイト制作記』です。
+
+べこさんのポートフォリオでは、自分の情報を[JSONで保持](https://github.com/becolomochi/shirokuma/blob/master/static/data.json)（``https://github.com/becolomochi/shirokuma/blob/master/static/data.json``）していました。同人誌の内容を参考にしつつ、このような実装を書いてみました。
+
+``import``でJSONデータをインポートし、``data``部分でデータを割り当てれば良いのでは？と考えたからです。
+
+```JavaScript
+ <template>
+   <div class="description-list">
+     <div class="overview">
+       <h3>KUSO POINT</h3>
+       <ul>
+         <li v-for="(item, key) in overviews" v-bind:key="item.id">
+           {{ item.promotion }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+import promotionData from '../assets/book-data.json'
+export default {
+  name: 'descriptionList',
+  data() {
+    return {
+      promotionData: promotionData,
+      overviews: [
+        { promotion: '' },
+        { promotion: '' },
+        { promotion: '' }
+      ]
+    }
+  }
+}
+</script>
+``` 
+
+しかし、これではHTMLタグへデータが割り当たっていません。``v-bind``で``promotionData``を利用していないので当たり前なのですが、このときは全く気付きませんでした。そこで、importしたJSONの割り当てがどこまでできているのかデバッグすることにしました。
+まず、何かしらの処理を行って算出したデータを割り当てる場合は``computed``を利用するらしい、という情報を目にしました。そこでとりあえず``computed``を使ってみることにしました。次に、``console.log()``を使ってChromeの``Console``タブに文字の出力をするようにしました。こうすればどこまでデータがきているわかると思ったからです。出力する情報は、JSONの情報が全てが入っているはずの``bookData``と、``bookData``の１番目に入っている``overviews``内の``overviews_promotion``としました。JSONの情報は配列になっているのでは？と推測したためです。
+
+```JavaScript
+    <div class="overview">
+      <h3>KUSO POINT</h3>
+      <ul>
+-        <li v-for="(item, key) in overviews" v-bind:key="item.id">
+-          {{ item.promotion }}
++        <li v-for="(item, keys) in promotionData " v-bind:key="item.id">
++          {{ item.overviews_promotion }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+ <script>
+- import promotionData from '../assets/book-data.json'
++ import bookData from '../assets/book-data.json'
+export default {
+  name: 'descriptionList',
+  data() {
+    return {
+-       promotionData: promotionData,
+-       overviews: [
+-         { promotion: '' },
+-        { promotion: '' },
+-         { promotion: '' }
+-       ]
++       bookData: bookData,
++     }
++   },
++   computed: {
++     promotionData: function() {
++       console.log(bookData);
++       console.log(bookData[0].overviews.overviews_promotion);
++       return bookData[0].overviews.overviews_promotion;
+     }
+  }
+}
+```
+
+![Chromeのデバッグ結果](C95-vue-and-nuxt/images/chapter5/#19_finish.png)
+
+デバッグ画面で確認してみると、予想通り``bookData``＝JSONの情報は配列として取得されています。配列の中に1つの本に対して１つのオブジェクトが入っているようです。結果が出力されているということは、ここまでは意図した動作になっているのだ、と推測できます。問題は次です。
+2つ目の出力が``undefined``となっています。直訳すると``未定義``という意味ですが、何も定義がない状態ではありません。``undefined``という値は``undefined``という初期の値がセットされており、上書きもできない固定の値です。
+FireFoxを開発しているMozillaのWeb技術解説サイト[MDN web docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined)（``https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined``）では
+
+> - 配列や変数の値が代入されていない
+> - まだ値が代入されていない
+> - 値を``return``しない関数
+
+このような場合は``undefined``が返却される、と解説されています。
+
+この情報から、``bookData[0].overviews.overviews_promotion``というデータの取得方法は正しくないという推理をすることができます。配列に``bookData[0].overviews.overviews_promotion``が示すデータは存在しないから``undefined``になっていると考えられるためです。2つの``console.log``で``undefined``が返却されているのであれば、JSONのデータが取得できていないと考えられるのですが、今回はそうではありません。
+
+
 ### りまりま団の同人誌リスト
 
 - https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing
@@ -334,3 +458,39 @@ https://github.com/MofuMofu2/portfolio-vue/pull/26
 ### SQLIFY（CSVをJSONに変換する）
 
 - https://sqlify.io/convert
+
+### JSONからデータを取得する
+
+#### Why i can't filter local json file in this case (vuejs2)
+
+- https://stackoverflow.com/questions/52239094/why-i-cant-filter-local-json-file-in-this-case-vuejs2
+
+#### VueJS - Reading data from local json file into vis.js timeline
+
+- https://stackoverflow.com/questions/45425448/vuejs-reading-data-from-local-json-file-into-vis-js-timeline
+
+#### Vue.jsでポートフォリオサイト制作記
+
+参考にしたページはp28と29です。
+
+- https://booth.pm/ja/items/667217
+
+#### べころもち工房のべこさんのリポジトリ（JSONからデータを取得する部分）
+
+- https://github.com/becolomochi/shirokuma/blob/master/static/data.json
+
+### JavaScriptで配列やオブジェクトの操作方法を調べる
+
+#### js-primer オブジェクト
+
+MDNと一緒にいつも参考にさせていただいてます。
+
+- https://jsprimer.net/basic/object/
+
+#### js-primer 配列
+
+- https://jsprimer.net/basic/array/
+
+#### undefined
+
+- https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined
