@@ -449,7 +449,48 @@ FireFoxを開発しているMozillaのWeb技術解説サイト[MDN web docs](htt
 このような場合は``undefined``が返却される、と解説されています。
 
 この情報から、``bookData[0].overviews.overviews_promotion``というデータの取得方法は正しくないという推理をすることができます。配列に``bookData[0].overviews.overviews_promotion``が示すデータは存在しないから``undefined``になっていると考えられるためです。2つの``console.log``で``undefined``が返却されているのであれば、JSONのデータが取得できていないと考えられるのですが、今回はそうではありません。
+よって、配列からデータを取得する部分がおかしいのだと推理しました。そこで、いくつか思いついた方法を試して結果を比較してみることにしました。
 
+```JavaScript
+  computed: {
+    console.log(bookData);
+    const dataList = bookData;
+    console.log(dataList[0]);
++     console.log(dataList[0].overviews);
+    console.log(bookData[0].overviews.overviews_promotion);
+    return bookData[0].overviews.overviews_promotion;
+  }
+```
+
+この方法だと、overviews内に入っているデータの配列を全て取得することができました。しかし、今回は``overviews_promotion``に紐づく情報を1つずつ取得したいのです。
+
+ここで、配列の値の取得方法を再度確認することにしました。配列から値を取得する場合、
+
+```JavaScript
+配列[インデックス番号]
+```
+
+と記載します。これは``dataList[0]``で同人誌の情報が入った配列の1番目の値が取得できています。配列の値にまた配列が入っている場合、そこにアクセスするためにも配列のインデックスを指定する必要があるのでは？と考えました。
+
+<!-- これは図を書く -->
+
+今の実装では配列Aのデータにアクセスするときはインデックスを指定していますが、配列Aの中の配列Bにアクセスするときはインデックスを指定していません。結果、配列Bのどのインデックスの情報を取得すれば良いのか判断できず、``undefined``になっているのでは？と考えました。
+
+そこで、配列Bに当たる``overviews``にもインデックスを明示的に指定するような実装を書いてみました。
+
+```JavaScript
+  computed: {
+    console.log(bookData);
+    const dataList = bookData;
+    console.log(dataList[0]);
+    console.log(dataList[0].overviews);
+    console.log(bookData[0].overviews.overviews_promotion);
++   console.log(bookData[0].overviews[0].overviews_promotion);
+    return bookData[0].overviews.overviews_promotion;
+  }
+```
+
+結果として、コンソールに配列内にある``overviews``の値を出力することができました。
 
 ### りまりま団の同人誌リスト
 
