@@ -492,6 +492,54 @@ FireFoxを開発しているMozillaのWeb技術解説サイト[MDN web docs](htt
 
 結果として、コンソールに配列内にある``overviews``の値を出力することができました。
 
+### JSONからデータを繰り返し取得する
+
+配列のインデックスを繰り返し処理で変化させることができれば、JSONの子項目を1回ずつ``v-bind``したリストを作成できるはずです。そこで、``ForEach``文を利用して処理を作ってみることにしました。``for...of文``や``for文``でも同じような処理が作れると思います。利用用途に合わせて選べるようになりたいですね。
+
+```JavaScript
+  computed: {
+    promotionData: function() {
+-       console.log(bookData);
+-       const dataList = bookData[0].overviews;
+-       console.log(bookData[0].overviews[0].overviews_promotion);
+-       return bookData[0].overviews.overviews_promotion;
++       // 繰り返し処理でoverviews_promotionの値だけ抜いてreturnする
++       const dataList = bookData[0].overviews.forEach((array_element, index, array) => {
++         console.log(array_element);
++       });
+    }
+  }
+}
+```
+
+配列を繰り返し取得することができたので、今度は取得した配列の値だけを代入した配列を新規に作成する必要があります。``promotionData``関数で返却する値として利用するためです。今回は``push``メソッドを利用して、配列から取得した値を変数に入れ、その変数を返却する値である配列に追加する処理を記載しました。最初は配列から値を取得する部分とは``push``の処理を一緒に実施しようと考えていたのですが、``undefined``になってしまったので修正しました。また、forEachを書ける自信がなかったので``for文``で記載することにしました。
+
+```JavaScript
+  computed: {
+    promotionData: function() {
+-       // 繰り返し処理でoverviews_promotionの値だけ抜いてreturnする
+-       const dataList = bookData[0].overviews.forEach((array_element, index, array) => {
+-         console.log(array_element);
+-       });
+      // ここから下を追記
+      // 繰り返し処理でoverviews_promotionの値を全部抜いて新しい配列を作り、returnする
+      const arrayLength = bookData[0].overviews.length;
+      const arrayData = bookData[0].overviews
+      console.log(arrayLength);
+      console.log(arrayData);
+      console.log(arrayData[0].overviews_promotion);
+      const promotions = []
+      for (let count = 0; count < arrayLength; count++) {
+        const data = arrayData[count].overviews_promotion;
+        promotions.push(data);
+      }
+      console.log(promotions);
+      return promotions;
+    }
+  }
+}
+```
+
 ### りまりま団の同人誌リスト
 
 - https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing
