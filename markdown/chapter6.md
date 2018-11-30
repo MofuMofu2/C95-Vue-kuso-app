@@ -672,10 +672,10 @@ export default {
 
 この状態で画面を表示し、ボタン操作をしてみます。すると、画面の情報が切り替わっているようです。
 
-![ボタンを押すと文字の情報が切り替わっている](../images/chapter6/#25_finish.png)
+![ボタンを押すと文字の情報が切り替わっている](C95-vue-and-nuxt/images/chapter6/#25_finish.png)
 
 しかし、配列の最後のデータ（6番目のデータ）を表示した後に右側の矢印を押すと、エラーとなってボタン操作が一切効かなくなってしまいます。これは別のissueとして修正することにしました。
 
-![最後のデータを表示するとエラーが出ている](../images/chapter6/#25_bug.png)
+![最後のデータを表示するとエラーが出ている](C95-vue-and-nuxt/images/chapter6/#25_bug.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/32
