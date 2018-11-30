@@ -679,3 +679,102 @@ export default {
 ![最後のデータを表示するとエラーが出ている](C95-vue-and-nuxt/images/chapter6/#25_bug.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/32
+
+## #33 同人誌の表紙・裏表紙画像を準備する
+
+https://github.com/MofuMofu2/portfolio-vue/issues/33
+
+文字列の切り替えができるようになったため、同じ要領で画像の切り替えをできるようにします。画像をどうやって表示するかに悩みましたが、次の方針で進めることにしました。
+
+1. 配列のインデックス番号と同じ名前のディレクトリをassetsに作成する
+2. 表紙の画像は``front.png``、背景の画像は``back.png``に統一して各ディレクトリに保存する
+3. App.vueでインデックス番号をpropし、``BookImage.vue``でpropされた情報を元に画像のパスを切り替える
+4. ボタン操作に応じて画像が切り替わる
+
+prop地獄を避けたいということと、項目数がそこまで多くないことの2点から、この実装方針としました。``prop``や``$emit``は大変便利ですが、項目数が多くなってくると「これはどこの誰にpropしたんだっけ…」となってしまい管理が大変です。それに加えて今回はボタンを押したときに、同人誌の情報が一括で変化してもらわないと困ってしまいます。そこで、文字列の項目を表示しているものと同じデータを利用して画像のパスを決定するようにしました。早速実装してみます。
+
+まず、App.vueへ``prop``の処理を追加します。
+
+```JavaScript
+      <div class="left-contents">
+-         <book-image></book-image>
++         <book-image v-bind:id="currentBookId"></book-image>
+        <description-list v-bind:id="currentBookId"></description-list>
+      </div>
+```
+
+次に、BookImage.vueへ``prop``された値を取得する処理を記載します。
+
+```JavaScript
+<script>
+export default {
+  name: "bookImage",
++   props: '[id]',
+  data() {
+    return {
+      image_src: require("../assets/bookImage/1.png")
+```
+
+このままでは``ログと情報をレッツ・ラ・まぜまぜ！``のデータが割り当たったままです。そこでデータの割り当てをする処理も記載します。
+
+```JavaScript
+<template>
+  <div class="book-image">
+-     <img :src="image_src" alt="bookImage">
++     <img :src="frontImage" alt="bookImage">
++     <img :src="backImage" alt="bookImage">
+  </div>
+</template>
+
+<script>
+export default {
+  name: "bookImage",
+-   props: '[id]',
+-   data() {
+-     return {
+-       image_src: require("../assets/bookImage/1.png")
++   props: ['id'],
++   computed: {
++     frontImage: function() {
++       return require('../assets/bookImage/' + this.id + '/front.png')
++     },
++     backImage: function() {
++       return require('../assets/bookImage/' + this.id + '/back.png')
++     }
+  }
+}
+```
+
+合わせて、画像をディレクトリに追加しました。``assets``ディレクトリ構成は下記のようになりました。
+
+```bash
+/
+|____assets
+| |____footer
+| |____Twitter_Social_Icon_Rounded_Square_Color.svg
+| |____GitHub-Mark.svg
+| |____arrow
+| |____baseline-keyboard_arrow_left-24px.svg
+| |____baseline-keyboard_arrow_right-24px.svg
+| |____bookImage
+| |____0
+| | |____back.png
+| | |____front.png
+| |____1
+| | |____back.png
+| | |____front.png
+| |____4
+| | |____back.png
+| | |____front.png
+| |____3
+| | |____back.png
+| | |____front.png
+| |____2
+| | |____back.png
+| | |____front.png
+| |____5
+| | |____back.png
+| | |____front.png
+| |____book-data.json
+```
+
