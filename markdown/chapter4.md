@@ -97,7 +97,7 @@ HTMLタグにデータを割り当てる方法は2種類あります。使い分
 このように使い分けるのが良さそうだ、と思いました。利用比率的には圧倒的に``v-bind``の方が多いな、という印象です。双方向描画は処理が重たくなりそうなのでできる限り使わないようにしているのかな、と思いました。
 実装後はこのようになりました。タイトルからもKUSO感が溢れ出ていて絶好調です。
 
-![KUSOタイトル表示コンポーネント実装後](C95-vue-and-nuxt/images/chapter4/#4_finish.png)
+![KUSOタイトル表示コンポーネント実装後](../images/chapter4/#4_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/13
 
@@ -200,7 +200,7 @@ export default {
 
 最終的にこのような表示になりました。画像が一枚入るとWebサイト感があります。
 
-![表紙を表示するコンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#3_finish.png)
+![表紙を表示するコンポーネント作成後](../images/chapter4/#3_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/14
 
@@ -282,7 +282,7 @@ export default {
 
 これで左側が埋まりました。今度は右側部分を作ります。
 
-![コメント表示コンポーネント実装後](C95-vue-and-nuxt/images/chapter4/#5_finish.png)
+![コメント表示コンポーネント実装後](../images/chapter4/#5_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/15
 
@@ -391,7 +391,7 @@ export default {
 
 これが実装終了後の画面です。
 
-![KUSO POINTコンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#6_finish.png)
+![KUSO POINTコンポーネント作成後](../images/chapter4/#6_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/16
 
@@ -513,7 +513,7 @@ export default {
 </style>
 ```
 
-![基礎情報コンポーネント作成後](C95-vue-and-nuxt/images/chapter4/#6_finish.png)
+![基礎情報コンポーネント作成後](../images/chapter4/#6_finish.png)
 
 後少しで見た目が完成しそうです。
 
@@ -629,7 +629,7 @@ export default {
 }
 </script>
 
-![実装後](C95-vue-and-nuxt/images/chapter4/#8_first_program.png)
+![実装後](../images/chapter4/#8_first_program.png)
 
 一見、リンクになっているように見えます。しかし、``電子版をポチる``の部分をクリックしても正しい遷移にはならず、Vueアプリケーションがリロードされるだけです。考えてもわからなかったため、先に見た目を作ってしまうことにしました。
 
@@ -679,12 +679,12 @@ export default {
 </style>
 ```
 
-![CSS実装後](C95-vue-and-nuxt/images/chapter4/#8_second_program.png)
+![CSS実装後](../images/chapter4/#8_second_program.png)
 
 配色はかなりこだわってKUSO感を出してみました。昔のホームページとかにありそうな配色です。
 しかし、この時点ではURLが機能していません。Chrome DevToolsでHTMLを確認すると、``booth.url``という文字列へのリンクが描画されています。``<a href="booth.url"><p>電子版をポチる</p></a>``がそのまま描画されているようです。
 
-![Chrome DevToolsでURLがどうなっているか確認しているところ](C95-vue-and-nuxt/images/chapter4/#8_second_program.png)
+![Chrome DevToolsでURLがどうなっているか確認しているところ](../images/chapter4/#8_second_program.png)
 
 よく考えてみると、``a``タグと``data``は紐づいていません。``data``の情報を使ってHTMLを描画するためには、``v-bind``や``v-model``を利用する必要がありますが、今の状態では存在していません。さらにいうと、``a``タグの遷移先を決めるのは``href``の部分です。ここに``data``の``url``を当てはめないといけないはずです。これらを踏まえて、次のように書き直しました。
 
@@ -733,7 +733,7 @@ export default {
 
 これでボタンを押すと通販サイトのURLに遷移するようになりました。別タブで開くようにするか迷いましたが、離脱率を下げましょう！といった目標は特に掲げていないため別タブの実装は行いませんでした。後々改善すれば良いことなので、まずは完成することを目標にしました。
 
-![購入URLコンポーネント実装後](C95-vue-and-nuxt/images/chapter4/#8_finish.png)
+![購入URLコンポーネント実装後](../images/chapter4/#8_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/18
 

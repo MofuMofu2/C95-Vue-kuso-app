@@ -672,11 +672,11 @@ export default {
 
 この状態で画面を表示し、ボタン操作をしてみます。すると、画面の情報が切り替わっているようです。
 
-![ボタンを押すと文字の情報が切り替わっている](C95-vue-and-nuxt/images/chapter6/#25_finish.png)
+![ボタンを押すと文字の情報が切り替わっている](../images/chapter6/#25_finish.png)
 
 しかし、配列の最後のデータ（6番目のデータ）を表示した後に右側の矢印を押すと、エラーとなってボタン操作が一切効かなくなってしまいます。これは別のissueとして修正することにしました。
 
-![最後のデータを表示するとエラーが出ている](C95-vue-and-nuxt/images/chapter6/#25_bug.png)
+![最後のデータを表示するとエラーが出ている](../images/chapter6/#25_bug.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/32
 
@@ -780,7 +780,7 @@ export default {
 
 結果、ボタンを押すと画像も切り替えができるようになりました。ここまでくれば完成は目前です。
 
-![#33実装後](C95-vue-and-nuxt/images/chapter6/#33_finish.png)
+![#33実装後](../images/chapter6/#33_finish.png)
 
 https://github.com/MofuMofu2/portfolio-vue/pull/35
 
@@ -1211,7 +1211,7 @@ export default {
 
 画面右下にエラーが出力されていないのが見えるでしょうか。これで最後の画像になってもボタンが効く状態を維持することができました。
 
-![不具合修正後の画面](C95-vue-and-nuxt/images/chapter6/#34_finish.png)
+![不具合修正後の画面](../images/chapter6/#34_finish.png)
 
 ## 見た目や誤字を修正する
 
@@ -1227,7 +1227,7 @@ export default {
 
 これが完成系のサイトです。はじめにも出てきましたね。
 
-![最終的なWebサイト](C95-vue-and-nuxt/images/finish.png)
+![最終的なWebサイト](../images/finish.png)
 
 最終的なコードを全て記載します。
 

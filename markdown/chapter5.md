@@ -33,17 +33,17 @@
 
 そこで、まずはCSVを作ることにしました。[Google SpreadSheet](https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing)（``https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing``）に必要な項目を記載します。JSONへどのように加工されるかがわからなかったため、1項目に複数の子項目が紐づいている場合はIDを降ることにしました。
 
-![作成したスプレッドシート](C95-vue-and-nuxt/images/chapter5)
+![作成したスプレッドシート](../images/chapter5)
 
 ### CSVをJSONに変換する
 
 重要な情報が入ったCSVではないので、Webサービスを利用して手軽に変換したいという観点でWebサービスを探しました。その中でも[SQLIFY](https://sqlify.io/)というWebサービスの画面がわかりやすそうだったため、早速変換してみることにしました。CSVまたはJSONをアップロードすると、SQL・JSON・CSVのどれかに変換することができるサービスです。
 
-![SQLIFYのWebサービスにアクセスしたところ](C95-vue-and-nuxt/images/chapter5/sqlify_top.png)
+![SQLIFYのWebサービスにアクセスしたところ](../images/chapter5/sqlify_top.png)
 
 今回はSpreadSheetをCSV形式でダウンロードした後、SQLIFYへアップロードしました。アップロード後にCSVの行とJSONのカラム名の対応を修正し、データ型を決めることができます。手作業で数値と文字列の変換をする必要がないため、これはかなり便利だと思いました。
 
-![CSVをアップロードしたあと](C95-vue-and-nuxt/images/chapter5/sqlify_convert.png)
+![CSVをアップロードしたあと](../images/chapter5/sqlify_convert.png)
 
 変換後のJSONですが、次のようなテキストがブラウザに表示されます。
 
@@ -436,7 +436,7 @@ export default {
 }
 ```
 
-![Chromeのデバッグ結果](C95-vue-and-nuxt/images/chapter5/get_json_data_second.png)
+![Chromeのデバッグ結果](../images/chapter5/get_json_data_second.png)
 
 デバッグ画面で確認してみると、予想通り``bookData``＝JSONの情報は配列として取得されています。配列の中に1つの本に対して１つのオブジェクトが入っているようです。結果が出力されているということは、ここまでは意図した動作になっているのだ、と推測できます。問題は次です。
 2つ目の出力が``undefined``となっています。直訳すると``未定義``という意味ですが、何も定義がない状態ではありません。``undefined``という値は``undefined``という初期の値がセットされており、上書きもできない固定の値です。
@@ -492,7 +492,7 @@ FireFoxを開発しているMozillaのWeb技術解説サイト[MDN web docs](htt
 
 結果として、コンソールに配列内にある``overviews``の値を出力することができました。
 
-![Chromeのデバッグ結果](C95-vue-and-nuxt/images/chapter5/get_overviews_data.png)
+![Chromeのデバッグ結果](../images/chapter5/get_overviews_data.png)
 
 ### JSONからデータを繰り返し取得する
 
@@ -558,7 +558,7 @@ FireFoxを開発しているMozillaのWeb技術解説サイト[MDN web docs](htt
   </div>
 ```
 
-![画面でもoverviewsないのデータを描画できるようにしたところ](C95-vue-and-nuxt/images/chapter5/get_overviews_data.png)
+![画面でもoverviewsないのデータを描画できるようにしたところ](../images/chapter5/get_overviews_data.png)
 
 ### 他のコンポーネントも同じようにJSONデータを取得する
 
@@ -1098,7 +1098,7 @@ export default {
 
 これをブラウザ上で確認すると、次のように表示されます。
 
-![最終的なWebアプリケーションの画面](C95-vue-and-nuxt/images/chapter5/#19_finish.png)
+![最終的なWebアプリケーションの画面](../images/chapter5/#19_finish.png)
 
 ### りまりま団の同人誌リスト
 
