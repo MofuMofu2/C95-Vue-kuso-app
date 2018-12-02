@@ -674,7 +674,7 @@ export default {
 配色はかなりこだわってKUSO感を出してみました。昔のホームページとかにありそうな配色です。
 しかし、この時点ではURLが機能していません。Chrome DevToolsでHTMLを確認すると、``booth.url``という文字列へのリンクが描画されています。``<a href="booth.url"><p>電子版をポチる</p></a>``がそのまま描画されているようです。
 
-![Chrome DevToolsでURLがどうなっているか確認しているところ](../images/chapter4/#8_second_program.png)
+![Chrome DevToolsでURLがどうなっているか確認しているところ](../images/chapter4/8_second_program.png)
 
 よく考えてみると、``a``タグと``data``は紐づいていません。``data``の情報を使ってHTMLを描画するためには、``v-bind``や``v-model``を利用する必要がありますが、今の状態では存在していません。さらにいうと、``a``タグの遷移先を決めるのは``href``の部分です。ここに``data``の``url``を当てはめないといけないはずです。これらを踏まえて、次のように書き直しました。
 
