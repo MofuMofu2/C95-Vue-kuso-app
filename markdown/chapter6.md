@@ -67,7 +67,7 @@
 </script>
 ```
 
-![ボタンを追加した](/Users/mofumofu/git/../images/chapter6/add_button.png)
+![ボタンを追加した](../images/chapter6/add_button.png)
 
 見た目は見なかったことにします。
 

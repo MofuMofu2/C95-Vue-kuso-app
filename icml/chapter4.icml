@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?aid style="50" type="snippet" readerVersion="6.0" featureSet="513" product="8.0(370)" ?>
+<?aid SnippetType="InCopyInterchange"?>
+<Document DOMVersion="8.0" Self="pandoc_doc">
+    <RootCharacterStyleGroup Self="pandoc_character_styles">
+      <CharacterStyle Self="$ID/NormalCharacterStyle" Name="Default" />
+      <CharacterStyle Self="CharacterStyle/" Name="">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+        </Properties>
+      </CharacterStyle>
+      <CharacterStyle Self="CharacterStyle/Code" Name="Code">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+          <AppliedFont type="string">Courier New</AppliedFont>
+        </Properties>
+      </CharacterStyle>
+      <CharacterStyle Self="CharacterStyle/Link" Name="Link">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+        </Properties>
+      </CharacterStyle> 
+    </RootCharacterStyleGroup>
+    <RootParagraphStyleGroup Self="pandoc_paragraph_styles">
+      <ParagraphStyle Self="$ID/NormalParagraphStyle" Name="$ID/NormalParagraphStyle"
+          SpaceBefore="6" SpaceAfter="6"> <!-- paragraph spacing -->
+        <Properties>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string"></Leader>
+              <Position type="unit">10</Position> <!-- first tab stop -->
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/BulList" Name="BulList" BulletsAndNumberingListType="BulletList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string" />
+              <Position type="unit">10</Position>
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/BulList &gt; first" Name="BulList &gt; first" BulletsAndNumberingListType="BulletList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string" />
+              <Position type="unit">10</Position>
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Caption" Name="Caption" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/CodeBlock" Name="CodeBlock" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <AppliedFont type="string">Courier New</AppliedFont>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Figure" Name="Figure" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header1" Name="Header1" LeftIndent="0" PointSize="36">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header2" Name="Header2" LeftIndent="0" PointSize="30">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header3" Name="Header3" LeftIndent="0" PointSize="24">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header4" Name="Header4" LeftIndent="0" PointSize="18">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/NumList" Name="NumList" NumberingExpression="^#.^t" NumberingLevel="1" BulletsAndNumberingListType="NumberedList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/NumList &gt; first" Name="NumList &gt; first" NumberingExpression="^#.^t" NumberingLevel="1" BulletsAndNumberingListType="NumberedList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Paragraph" Name="Paragraph" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle> 
+    </RootParagraphStyleGroup>
+    <RootTableStyleGroup Self="pandoc_table_styles">
+      <TableStyle Self="TableStyle/Table" Name="Table" />
+    </RootTableStyleGroup>
+    <RootCellStyleGroup Self="pandoc_cell_styles">
+      <CellStyle Self="CellStyle/Cell" AppliedParagraphStyle="ParagraphStyle/$ID/[No paragraph style]" Name="Cell" />
+    </RootCellStyleGroup>
+  <Story Self="pandoc_story"
+      TrackChanges="false"
+      StoryTitle=""
+      AppliedTOCStyle="n"
+      AppliedNamedGrid="n" >
+    <StoryPreference OpticalMarginAlignment="true" OpticalMarginSize="12" />
+
+<!-- body needs to be non-indented, otherwise code blocks are indented too far -->
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header1">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#4〜#8 v-bindで同人誌の情報を表示するコンポーネント群を作成</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今までは固定の情報をv-bindに割り当てて表示するコンポーネントを作成しました。しかし、このポートフォリオの目標は今まで発刊した同人誌の情報を一つのサイトにまとめることです。つまり、将来的にはv-bindのデータを動的に切り替える必要があります。 いきなり実装するのは難しそうなので、まずはHTML・CSS・基本的なv-bindの処理だけを先に記載することにしました。実装後に感じたことなのですが、見た目を作る作業と処理を書く作業は別々に行った方がいいなと思います。不具合が起きてしまったときに、見た目と処理、どちらの実装が悪いのか判断するのが難しいためです。個人的には見た目を先に作り、処理を書いた方が進めやすいなと感じました。最終形が早く見える方がモチベーションを高く保つことができるためです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#4 KUSOタイトル表示コンポーネントの作成</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まず、コンポーネント用のファイルを作成し、App.vueへimportします。アプリケーションのmainコンテンツもKUSO感を出したいと思ったので、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>&lt;style&gt;</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグに背景色（すごい色の黄色）を追加しました。また、ヘッダー・フッターとの距離が詰まって見えたので</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>main</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグには</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>margin</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を設定しました。これで上下左右の間隔を空けることができます。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueにKUSOタイトル表示コンポーネントを読み込む</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;title-header&gt;&lt;/title-header&gt;←ここを追加
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookTitle from './components/BookTitle.vue'←ここを追加
+import pageFooter from './components/Footer.vue'
+ export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-title': bookTitle,←ここを追加
+    'page-footer': pageFooter
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+   #app {
+    background-color: #E5E400;
+  }
+  .main {
+    margin: 20px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>同人誌を表示するためのコンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今度は同人誌を表示するためのコンポーネントを作成します。実際に開発するときは、</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ファイル作成</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList">
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>&lt;style&gt;</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>などのテンプレートを記載</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueにインポートする処理を記載</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>コンポーネントの中身を記載</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>という順番で進めています。こうすればブラウザでコンポーネントの内容を確認しながら進めることができますし、インポートし忘れを防ぐことができます。 コンポーネントの開発内容はヘッダー・フッターと特に代わりなく、特定の文字列を特定のHTMLタグにv-bindで割り当てるだけです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-title&quot;&gt;
+    &lt;div class=&quot;fanbook-title&quot;&gt;
+      &lt;fan-book v-bind:title=&quot;item&quot;&gt;{{ item }}&lt;/fan-book&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+ &lt;script&gt;
+export default {
+  name: 'bookTitle',
+  data() {
+    return {
+      item: &quot;ログと情報をレッツ・ラ・まぜまぜ！～ELK Stack で作るBI環境～&quot;
+    }
+  }
+}
+&lt;/script&gt;
+ &lt;style scoped&gt;
+  .book-title {
+    background-color: #E5E400;
+    color: #32BDED;
+    font-size: 30px;
+  }
+  .fanbook-title {
+    width: 520px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>HTMLタグにデータを割り当てる方法は2種類あります。使い分けに迷ったので公式ドキュメントや実装例を見たところ、</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>特定の決まったデータを割り当てるのであれば</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>テキストボックスに入力した値を画面でもすぐ表示したい、といったように双方向の描画が必要なときは</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-model</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>このように使い分けるのが良さそうだ、と思いました。利用比率的には圧倒的に</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の方が多いな、という印象です。双方向描画は処理が重たくなりそうなのでできる限り使わないようにしているのかな、と思いました。 実装後はこのようになりました。タイトルからもKUSO感が溢れ出ていて絶好調です。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 1280 -690">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-1280 -690" LeftDirection="-1280 -690" RightDirection="-1280 -690" />
+              <PathPointType Anchor="-1280 690" LeftDirection="-1280 690" RightDirection="-1280 690" />
+              <PathPointType Anchor="1280 690" LeftDirection="1280 690" RightDirection="1280 690" />
+              <PathPointType Anchor="1280 -690" LeftDirection="1280 -690" RightDirection="1280 -690" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -1280 -690">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/4_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>KUSOタイトル表示コンポーネント実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#3 表紙を表示するコンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今度は表紙を表示するコンポーネントを作成します。注意点はフッター作成時と同じく、画像フォルダのパスを</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>require</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を使って割り当てする部分です。同じような処理は一気にまとめて作ってしまった方が忘れなくて良い気がします。これはまとめて作っていないのですが…。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueに表紙を表示するコンポーネントを読み込む</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>#4</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の実装と同じく、コンポーネント用のファイルを作成してApp.vueにimport処理を記載します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;title-header&gt;&lt;/title-header&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+      &lt;book-image&gt;&lt;/book-image&gt;←ここを追加
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookImage from './components/BookImage.vue'←ここを追加
+import bookTitle from './components/BookTitle.vue'
+import pageFooter from './components/Footer.vue'
+ export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-image': bookImage,←ここを追加
+    'book-title': bookTitle,
+    'page-footer': pageFooter
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+   #app {
+    background-color: #E5E400;
+  }
+  .main {
+    margin: 20px;
+  }
+&lt;/style&gt;
+    </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>特段変わったことはありませんね。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>同人誌の表紙を表示するコンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>こちらは#2のフッターと同じように、requireを使って仮のデータを割り当てます。画面が全部できたあとで、画像の切り替えを行いたいためです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-image&quot;&gt;
+    &lt;img :src=&quot;image_src&quot; alt=&quot;bookImage&quot;&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+ &lt;script&gt;
+export default {
+  name: &quot;bookImage&quot;,
+  data() {
+    return {
+      image_src: require(&quot;../assets/bookImage/1.png&quot;)
+    }
+  }
+}
+&lt;/script&gt;
+ &lt;style scoped&gt;
+  .book-image {
+    height: 400px;
+    margin-top: 30px;
+    width: 570px;
+  }
+  img {
+    height: 100%;
+    width: 285px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>このとき、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を使ってHTMLにデータを割り当てる方法が間違っていたことに気づきました。コンポーネントをタグとして利用できるのは、コンポーネントをインポートしたファイルだけです。これを忘れていたので、まぐれで描画できてしまっていました。これはよくない、ということで</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>BookTite.vue</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の表記を修正しました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-title&quot;&gt;
+    &lt;div class=&quot;fanbook-title&quot;&gt;
+      &lt;fan-book v-bind:title=&quot;item&quot;&gt;{{ item }}&lt;/fan-book&gt;
+      &lt;div class=&quot;fan-book&quot; v-bind:title=&quot;item&quot;&gt;{{ item }}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最終的にこのような表示になりました。画像が一枚入るとWebサイト感が出てきます。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 635 -485">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-635 -485" LeftDirection="-635 -485" RightDirection="-635 -485" />
+              <PathPointType Anchor="-635 485" LeftDirection="-635 485" RightDirection="-635 485" />
+              <PathPointType Anchor="635 485" LeftDirection="635 485" RightDirection="635 485" />
+              <PathPointType Anchor="635 -485" LeftDirection="635 -485" RightDirection="635 -485" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -635 -485">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/3_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>表紙を表示するコンポーネント作成後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#5 同人誌のコメント（本文）表示コンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今度は同人誌の内容を説明するコンポーネントを作成します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueにコメント表示コンポーネントを読み込む</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>何回も繰り返していると、何も見ずにコンポーネントのimportができるようになります。地味に成長を感じますね。コンポーネントのimport文はコンポーネントがアルファベット順に並ぶようにしました。VS Codeのワークスペースの並び順と一緒になって確認しやすいためです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>   &lt;div id=&quot;app&quot;&gt;
+     &lt;title-header&gt;&lt;/title-header&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+      &lt;book-image&gt;&lt;/book-image&gt;
+      &lt;book-description&gt;&lt;/book-description&gt;←これを追加
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+ &lt;/template&gt;
+ 
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'←これを追加
+import bookImage from './components/BookImage.vue'
+import bookTitle from './components/BookTitle.vue'
+import pageFooter from './components/Footer.vue'
+ 
+ export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,←これを追加
+    'book-image': bookImage,
+    'book-title': bookTitle,
+    'page-footer': pageFooter
+   }
+ }
+ &lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>コメント表示コンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>こちらも仮のデータを</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で割り当てました。ここまでの作業を終えるのに7日かかりました。まあ平日は（これでも）働いていて、サボった日もあると考えると結構速いペースで物が作れるなあという感想を持ちました。複雑なことをしなければ、簡単に作れるっていいですよね。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>文字のフォントサイズや行の高さを、どのように設定するか迷いました。そこで、通販サイトのCSS設定などをいくつか取り上げ、好みの見た目がどのような設定になっているのかを調べました。今回はpixivさんのBoothを参考にしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-description&quot;&gt;
+    &lt;div class=&quot;description&quot; v-bind:description=&quot;text&quot;&gt;{{ text }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+ &lt;script&gt;
+export default {
+  name: 'bookDescription',
+  data() {
+    return {
+      text: 'Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。インプレスR＆Dさんから商業化もされています。'
+      }
+  }
+}
+&lt;/script&gt;
+ &lt;style scoped&gt;
+  .book-description {
+    height: 250px;
+    margin-top: 20px;
+    width: 570px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これで左側が埋まりました。今度は右側部分を作ります。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/5_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>コメント表示コンポーネント実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#6 同人誌のクソポイント（≒簡単解説）コンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>クソアプリカレンダー要素の登場です。このコンポーネントはリスト表記を使っている点が今までのコンポーネントと違う点です。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueに簡単解説コンポーネントを追加する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最初は画面右側に表示しようと思っていたのですが、なんとなく収まりが悪かったので説明コンポーネント（BookDescription.vue）と表示位置を入れ替えることにしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;title-header&gt;&lt;/title-header&gt;
+    &lt;div class=&quot;main&quot;&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+      &lt;book-image&gt;&lt;/book-image&gt;
+      &lt;book-description&gt;&lt;/book-description&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image&gt;&lt;/book-image&gt;
+        &lt;description-list&gt;&lt;/description-list&gt;←ここに追加
+      &lt;/div&gt;
+      &lt;div class=&quot;right-contents&quot;&gt;
+        &lt;book-description&gt;&lt;/book-description&gt;←場所を移動
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookTitle from './components/BookTitle.vue'
+import descriptionList from './components/DescriptionList.vue'←ここに追加
+import pageFooter from './components/Footer.vue'
+export default {
+   name: 'app',
+   components: {
+     'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-title': bookTitle,
+    'description-list': descriptionList,←ここに追加
+    'page-footer': pageFooter
+  }
+}
+ &lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>簡単解説コンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ここで、新しい記法が登場します。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-for</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>という記法です。同じHTMLタグを繰り返し利用しつつ、表示する内容だけを変更したい場合に利用します。公式ドキュメントの例でもHTMLタグの</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>li</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>表記を実装するときに利用されています。これが一番わかりやすいと思います。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>同じデータを繰り返し表示することを防ぐため、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-for</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を利用するときは</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind:key</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で一意の番号を割り当てることが推奨されています。推奨されています、と記載しましたが、これはほぼ必須です。Lintツールを利用している場合、警告が出ます。内部的にデータには一意のIDが割り当てられているようなので、今回は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>item</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>id</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を割り当てることにしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;description-list&quot;&gt;
+    &lt;div class=&quot;overview&quot;&gt;
+      &lt;h3&gt;KUSO POINT&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li v-for=&quot;(item, key) in overviews&quot; v-bind:key=&quot;item.id&quot;&gt;
+          {{ item.promotion }}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  name: 'descriptionList',
+  data() {
+    return {
+      overviews: [
+        { promotion: 'ふざけたタイトル' },
+        { promotion: 'なにも伝わってこない表紙' },
+        { promotion: '布教本のはずなのにまさかの省略記法を使っている' }
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+ &lt;style scoped&gt;
+  .descriptiion-list {
+    height: 250px;
+    margin-top: 20px;
+    width: 570px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これが実装終了後の画面です。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/6_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>KUSO POINTコンポーネント作成後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#7 基礎情報コンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>本の発刊年月や宣伝したブログポストなどを表示するコンポーネントを作成します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueに基礎情報コンポーネントを追加する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>特に変わった処理はありません。他のコンポーネントと同じようにApp.vueへコンポーネントを追加するだけです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image&gt;&lt;/book-image&gt;
+        &lt;description-list&gt;&lt;/description-list&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;right-contents&quot;&gt;
+      &lt;book-description&gt;&lt;/book-description&gt;
+      &lt;book-info&gt;&lt;/book-info&gt;←ここに追加
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'←ここに追加
+import bookTitle from './components/BookTitle.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+  'title-header': titleHeader,
+  'book-description':bookDescription,
+  'book-image': bookImage,
+  'book-info': bookInfo,←ここに追加
+  'book-title': bookTitle,
+  'description-list': descriptionList,
+  'page-footer': pageFooter
+  }
+}
+&lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 1280 -857">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-1280 -857" LeftDirection="-1280 -857" RightDirection="-1280 -857" />
+              <PathPointType Anchor="-1280 857" LeftDirection="-1280 857" RightDirection="-1280 857" />
+              <PathPointType Anchor="1280 857" LeftDirection="1280 857" RightDirection="1280 857" />
+              <PathPointType Anchor="1280 -857" LeftDirection="1280 -857" RightDirection="1280 -857" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -1280 -857">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/7_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#7実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>基礎情報コンポーネントの作成</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>このコンポーネントもリスト表記を利用するため、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-for</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で繰り返しリストを描画します。関連URLの部分ですが、ブログのタイトルをクリックするとURLがクリックされた状態になる、というようにしたかったので、1つの塊に2個データが紐づくようにしました。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-for</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の処理を記載するときはデータ全体を示す</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>posts</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の部分を</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-for</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で利用するデータに割り当て、実際にデータを利用する際は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-forで定義したデータが入っている変数</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>.</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>欲しい情報が入ったカラム名</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>と記載してデータを取り出しました。 また、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>a</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグにへどのように</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-for</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の実装をつけるかに迷いました。HTMLタグにマスケード記法は使うことはできないためです。調べてみると、1つHTML要素を追加して、そこに繰り返し処理をかけるらしいことがわかりました。今回は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>a</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグの外側に</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>li</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグを追加し、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>li</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグへ繰り返し処理を記述しました。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>a</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグはただのデータの表示部分としました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-info&quot;&gt;
+    &lt;div class=&quot;basic-info&quot;&gt;
+      &lt;div class=&quot;published-year&quot;&gt;
+        &lt;h4&gt;発刊年月・イベント名&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li v-for=&quot;(info, key) in infoTexts&quot; v-bind:key=&quot;info.id&quot;&gt;
+            {{ info.caption }}
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;posts-info&quot;&gt;
+        &lt;h4&gt;関連URL&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li v-for=&quot;(list, key) in posts&quot; v-bind:key=&quot;list.id&quot;&gt;\r
+          &lt;a href=&quot;list.url&quot;&gt;{{ list.title }}&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'bookInfo',
+  data() {
+    return {
+      infoTexts: [
+        { caption: '2017年' },
+        { caption: '4月'},
+        { caption: '技術書典2' }
+      ],
+      posts: [
+        { title: '技術書典2 もふもふちゃんの戦い履歴',
+          url: 'http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2 もふもふちゃんの戦い履歴'
+          },
+        { title: '商業本',
+          url: 'http://amzn.asia/d/be7bGtk'
+          }
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-info {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .published-info {
+    margin-right: 5px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/6_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>基礎情報コンポーネント作成後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>後少しで見た目が完成しそうです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#8 購入URLコンポーネントを作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これが最後のコンポーネントです。通販サイトのリンクを追加します。issue#5から#8までは一気に実装しました。乗り気なときにまとめて作業するといいのかもしれません。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueに購入URLコンポーネントを追加する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これが最後のコンポーネント追加です。実装後に知ったのですが、Vue.jsのコンポーネントは先頭に決まった表現（プレフィックス）をつけることが推奨されています。コンポーネントの役割によって名前の先頭に何をつけるかは変わりますが、表記を統一する点は共通していると感じました。 コンポーネントを作成する前に、公式ドキュメントの</Content>
+  </CharacterStyleRange>
+  <HyperlinkTextSource Self="htss-1" Name="" Hidden="false">
+    <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Link">
+      <Content>スタイルガイド</Content>
+    </CharacterStyleRange>
+  </HyperlinkTextSource>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>（</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>https://jp.vuejs.org/v2/style-guide/index.html#基底コンポーネントの名前-強く推奨</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>）を確認すると良いと思います。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content># 悪い例
+
+Header.vue
+Description.vue
+Image.vue
+Info.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content># 推奨される例
+
+&lt;!-- ページごとに１回しか登場しないときはTheをつける --&gt;
+TheHeader.vue
+&lt;!-- これらのコンポーネントがBookコンポーネントと親子関係の場合、子コンポーネントにはBookをプレフィックスとしてつける --&gt;
+BookDescription.vue
+BookImage.vue
+BookInfo.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>一度作成してしまったあとで名前を変更するのはかなり面倒ですし、修正漏れがあると不具合につながります。コンポーネントを作る前に命名方法を確認しておくべきでした。失敗したなあと思います。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image&gt;&lt;/book-image&gt;
+        &lt;description-list&gt;&lt;/description-list&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;right-contents&quot;&gt;
+        &lt;book-description&gt;&lt;/book-description&gt;
+        &lt;book-info&gt;&lt;/book-info&gt;
+        &lt;booth-button&gt;&lt;/booth-button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'
+import bookTitle from './components/BookTitle.vue'
+import boothButton from './components/BoothButton.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-info': bookInfo,
+    'book-title': bookTitle,
+    'booth-button': boothButton,
+    'description-list': descriptionList,
+    'page-footer': pageFooter
+  }
+}
+&lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>購入URLコンポーネントを追加する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ここはかなり詰まってしまいました。なんとなくで実装できたURLの表示方法が理解できていなかったためです。先ほどの実装はまぐれだったということですね。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>電子版をポチる</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>と書いた文字に通販サイトのURLを紐付けたいと思い、はじめはこのように記載しました。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>aaa</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>はコンポーネントがインポートできたかを確認するために利用していたものの名残です。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;booth-button&quot;&gt;aaa&lt;/div&gt;
+  &lt;div class=&quot;booth-button&quot;&gt;
+    &lt;a href=&quot;booth.url&quot;&gt;電子版をポチる&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+ &lt;script&gt;
+export default {
+  name: 'boothButton'
+  name: 'boothButton',
+  data() {
+    return {
+      booth: [
+        {
+          url: 'https://booth.pm/ja/items/490460'
+        }
+      ]
+    }
+  }
+}
+&lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/8_first_program.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#8の実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>一見、リンクになっているように見えます。しかし、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>電子版をポチる</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の部分をクリックしても正しい遷移にはならず、Vueアプリケーションがリロードされるだけです。考えてもわからなかったため、先に見た目を作ってしまうことにしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;booth-button&quot;&gt;
+    &lt;a href=&quot;booth.url&quot;&gt;電子版をポチる&lt;/a&gt;
+    &lt;div class=&quot;button&quot;&gt;
+      &lt;a href=&quot;booth.url&quot;&gt;&lt;p&gt;電子版をポチる&lt;/p&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+  &lt;script&gt;
+ export default {
+   name: 'boothButton',
+   data() {
+     return {
+       booth: [
+         {
+           url: 'https://booth.pm/ja/items/490460'
+         }
+       ]
+     }
+   }
+ }
+&lt;/script&gt;
+ &lt;style scoped&gt;
+   .booth-button {
+    margin-top: 60px;
+    height: 200px;
+  }
+  .button {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  a {
+    background-color: #32BDED;
+    color: #E40067;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/8_second_program.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>CSS実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>配色はかなりこだわってKUSO感を出してみました。昔のホームページとかにありそうな配色です。 しかし、この時点ではURLが機能していません。Chrome DevToolsでHTMLを確認すると、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>booth.url</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>という文字列へのリンクが描画されています。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>&lt;a href=&quot;booth.url&quot;&gt;&lt;p&gt;電子版をポチる&lt;/p&gt;&lt;/a&gt;</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>がそのまま描画されているようです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/8_second_program.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Chrome DevToolsでURLがどうなっているか確認しているところ</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>よく考えてみると、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>a</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグと</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>data</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>は紐づいていません。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>data</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の情報を使ってHTMLを描画するためには、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>や</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-model</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を利用する必要がありますが、今の状態では存在していません。さらにいうと、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>a</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>タグの遷移先を決めるのは</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>href</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の部分です。ここに</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>data</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>url</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を当てはめないといけないはずです。これらを踏まえて、次のように書き直しました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;booth-button&quot;&gt;
+    &lt;div class=&quot;button&quot;&gt;
+      &lt;a v-bind:href=&quot;url&quot;&gt;&lt;p&gt;電子版をポチる&lt;/p&gt;&lt;/a&gt;←変更
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'boothButton',
+  data() {
+    return {
+        url: 'https://booth.pm/ja/items/490460' ←データの持ち方も単純にした
+    }
+  }
+}
+&lt;/script&gt;
+&lt;/script&gt;
+ &lt;style scoped&gt;
+   .booth-button {
+    margin-top: 60px;
+    height: 200px;
+  }
+  .button {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  a {
+    background-color: #32BDED;
+    color: #E40067;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これでボタンを押すと通販サイトのURLに遷移するようになりました。別タブで開くようにするか迷いましたが、離脱率を下げましょう！といった目標は特に掲げていないため別タブの実装は行いませんでした。後々改善すれば良いことなので、まずは完成することを目標にしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 639.44056 -543.77622">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-639.44056 -543.77622" LeftDirection="-639.44056 -543.77622" RightDirection="-639.44056 -543.77622" />
+              <PathPointType Anchor="-639.44056 543.77622" LeftDirection="-639.44056 543.77622" RightDirection="-639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 543.77622" LeftDirection="639.44056 543.77622" RightDirection="639.44056 543.77622" />
+              <PathPointType Anchor="639.44056 -543.77622" LeftDirection="639.44056 -543.77622" RightDirection="639.44056 -543.77622" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -639.44056 -543.77622">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter4/8_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>購入URLコンポーネント実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>外観ができた</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これでコンポーネントの実装が一通り完了しました。ワイヤーフレームを見ながら実装するのはここまでです。本の情報を取得して切り替えるようにする実装を追加するためです。Vue.jsは見た目を作るのは簡単にできるのですが、少し複雑なことをしようとすると実装例がグッと少なくなります。まだ新しい技術ならではという感じです。Webアプリケーションを作ったことがあまりない私は、お手本がないと処理の書き方・考え方がわからないのでかなり大変でした。最後はちゃんと自分で考えて実装する羽目になりました。いいことなんですけどね。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>参考URL</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Issues</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/4</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/3</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/5</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/6</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/8</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Pull Requests</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/13</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/14</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/15</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/16</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/18</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>フォントサイズ</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header4">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Booth</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://booth.pm/ja/items/490460</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>liタグの繰り返し</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header4">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>GASとVue.jsによるWebアプリでv-forディレクティブを使って繰り返し要素を描画する方法</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://tonari-it.com/gas-vue-js-for-directive/</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>コンポーネントの名前</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header4">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>基底コンポーネントの名前</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+
+  </Story>
+  <HyperlinkURLDestination Self="HyperlinkURLDestination/https%3a//jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8" Name="link" DestinationURL="https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8" DestinationUniqueKey="1" />
+  <Hyperlink Self="uf-1" Name="https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8" Source="htss-1" Visible="true" DestinationUniqueKey="1">
+    <Properties>
+      <BorderColor type="enumeration">Black</BorderColor>
+      <Destination type="object">HyperlinkURLDestination/https%3a//jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8</Destination>
+    </Properties>
+  </Hyperlink>
+</Document>

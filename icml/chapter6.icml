@@ -1,0 +1,2947 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?aid style="50" type="snippet" readerVersion="6.0" featureSet="513" product="8.0(370)" ?>
+<?aid SnippetType="InCopyInterchange"?>
+<Document DOMVersion="8.0" Self="pandoc_doc">
+    <RootCharacterStyleGroup Self="pandoc_character_styles">
+      <CharacterStyle Self="$ID/NormalCharacterStyle" Name="Default" />
+      <CharacterStyle Self="CharacterStyle/" Name="">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+        </Properties>
+      </CharacterStyle>
+      <CharacterStyle Self="CharacterStyle/Bold" Name="Bold" FontStyle="Bold">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+        </Properties>
+      </CharacterStyle>
+      <CharacterStyle Self="CharacterStyle/Code" Name="Code">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+          <AppliedFont type="string">Courier New</AppliedFont>
+        </Properties>
+      </CharacterStyle>
+      <CharacterStyle Self="CharacterStyle/Link" Name="Link">
+        <Properties>
+          <BasedOn type="object">$ID/NormalCharacterStyle</BasedOn>
+        </Properties>
+      </CharacterStyle> 
+    </RootCharacterStyleGroup>
+    <RootParagraphStyleGroup Self="pandoc_paragraph_styles">
+      <ParagraphStyle Self="$ID/NormalParagraphStyle" Name="$ID/NormalParagraphStyle"
+          SpaceBefore="6" SpaceAfter="6"> <!-- paragraph spacing -->
+        <Properties>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string"></Leader>
+              <Position type="unit">10</Position> <!-- first tab stop -->
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/" Name="" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Blockquote &gt; Paragraph" Name="Blockquote &gt; Paragraph" LeftIndent="10">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/BulList" Name="BulList" BulletsAndNumberingListType="BulletList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string" />
+              <Position type="unit">10</Position>
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/BulList &gt; CodeBlock" Name="BulList &gt; CodeBlock" BulletsAndNumberingListType="BulletList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <AppliedFont type="string">Courier New</AppliedFont>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string" />
+              <Position type="unit">10</Position>
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/BulList &gt; first" Name="BulList &gt; first" BulletsAndNumberingListType="BulletList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string" />
+              <Position type="unit">10</Position>
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/BulList &gt; first &gt; CodeBlock" Name="BulList &gt; first &gt; CodeBlock" BulletsAndNumberingListType="BulletList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <AppliedFont type="string">Courier New</AppliedFont>
+          <TabList type="list">
+            <ListItem type="record">
+              <Alignment type="enumeration">LeftAlign</Alignment>
+              <AlignmentCharacter type="string">.</AlignmentCharacter>
+              <Leader type="string" />
+              <Position type="unit">10</Position>
+            </ListItem>
+          </TabList>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Caption" Name="Caption" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/CodeBlock" Name="CodeBlock" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+          <AppliedFont type="string">Courier New</AppliedFont>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Figure" Name="Figure" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Footnote &gt; Paragraph" Name="Footnote &gt; Paragraph" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header1" Name="Header1" LeftIndent="0" PointSize="36">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header2" Name="Header2" LeftIndent="0" PointSize="30">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header3" Name="Header3" LeftIndent="0" PointSize="24">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Header4" Name="Header4" LeftIndent="0" PointSize="18">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/NumList" Name="NumList" NumberingExpression="^#.^t" NumberingLevel="1" BulletsAndNumberingListType="NumberedList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/NumList &gt; first" Name="NumList &gt; first" NumberingExpression="^#.^t" NumberingLevel="1" BulletsAndNumberingListType="NumberedList" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle>
+      <ParagraphStyle Self="ParagraphStyle/Paragraph" Name="Paragraph" LeftIndent="0">
+        <Properties>
+          <BasedOn type="object">$ID/NormalParagraphStyle</BasedOn>
+        </Properties>
+      </ParagraphStyle> 
+    </RootParagraphStyleGroup>
+    <RootTableStyleGroup Self="pandoc_table_styles">
+      <TableStyle Self="TableStyle/Table" Name="Table" />
+    </RootTableStyleGroup>
+    <RootCellStyleGroup Self="pandoc_cell_styles">
+      <CellStyle Self="CellStyle/Cell" AppliedParagraphStyle="ParagraphStyle/$ID/[No paragraph style]" Name="Cell" />
+    </RootCellStyleGroup>
+  <Story Self="pandoc_story"
+      TrackChanges="false"
+      StoryTitle=""
+      AppliedTOCStyle="n"
+      AppliedNamedGrid="n" >
+    <StoryPreference OpticalMarginAlignment="true" OpticalMarginSize="12" />
+
+<!-- body needs to be non-indented, otherwise code blocks are indented too far -->
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header1">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>完成形に近づける</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>やっとJSONからデータを取得することができました。しかし、これでは他の同人誌は一生いなかったことにされてしまいます。それは許せません。カルーセルの処理を入れる/前後に進むボタンを追加するなどしてデータを切り替えできるようにします。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#25 情報を切り替える実装を追加</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まずはじめに、前後に切り替えるためのボタンを実装します。Googleが提供している</Content>
+  </CharacterStyleRange>
+  <HyperlinkTextSource Self="htss-1" Name="" Hidden="false">
+    <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Link">
+      <Content>Material Design-Icons</Content>
+    </CharacterStyleRange>
+  </HyperlinkTextSource>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>（</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>https://material.io/tools/icons/?style=baseline</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>）から、切り替えボタン用の画像アイコンを取得しました。ライセンスはApache Licenceなので、Material Designのアイコンを利用したという情報をアプリケーションのどこかに入れればライセンス違反にはなりません。 最終的にはemojiに置き換えたため、今回は記述しませんでした。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+   &lt;div id=&quot;app&quot;&gt;
+     &lt;div class=&quot;header&quot;&gt;
+       &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
++       &lt;button class=&quot;back_button&quot; type=&quot;button&quot;&gt;
++         &lt;img v-bind:src=&quot;left_arrow&quot; alt=&quot;back&quot;&gt;
++       &lt;/button&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image&gt;&lt;/book-image&gt;
+        &lt;description-list&gt;&lt;/description-list&gt;
+       &lt;/div&gt;
+       &lt;div class=&quot;right-contents&quot;&gt;
+         &lt;book-description&gt;&lt;/book-description&gt;
+        &lt;book-info&gt;&lt;/book-info&gt;
+        &lt;booth-button&gt;&lt;/booth-button&gt;
+      &lt;/div&gt;
++       &lt;button class=&quot;next_button&quot;&gt;
++         &lt;img v-bind:src=&quot;right_arrow&quot; alt=&quot;next&quot;&gt;
++       &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+ 
+ &lt;script&gt;
+ import 'normalize.css'
+ import titleHeader from './components/Header.vue'
+ import bookDescription from './components/BookDescription.vue'
+ import bookImage from './components/BookImage.vue'
+ import bookInfo from './components/BookInfo.vue'
+ import bookTitle from './components/BookTitle.vue'
+ import boothButton from './components/BoothButton.vue'
+ import descriptionList from './components/DescriptionList.vue'
+ import pageFooter from './components/Footer.vue'
+ 
+ export default {
+   name: 'app',
+   components: {
+     'title-header': titleHeader,
+     'book-description':bookDescription,
+     'book-image': bookImage,
+     'book-info': bookInfo,
+     'book-title': bookTitle,
+    'booth-button': boothButton,
+    'description-list': descriptionList,
+    'page-footer': pageFooter
++   },
++   data() {
++     return {
++       left_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_left-24px.svg&quot;),
++       right_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_right-24px.svg&quot;),
++     }
++   }
+}
+&lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 781 -537.5">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-781 -537.5" LeftDirection="-781 -537.5" RightDirection="-781 -537.5" />
+              <PathPointType Anchor="-781 537.5" LeftDirection="-781 537.5" RightDirection="-781 537.5" />
+              <PathPointType Anchor="781 537.5" LeftDirection="781 537.5" RightDirection="781 537.5" />
+              <PathPointType Anchor="781 -537.5" LeftDirection="781 -537.5" RightDirection="781 -537.5" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -781 -537.5">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter6/add_button.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ボタンを追加した</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>見た目は見なかったことにします。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>どの同人誌の情報を表示するか判断できるようにする</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今、JSONから本のタイトル・参考URLの情報を取得するときは次のような実装となっています。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>// JSONの配列の1番目のインデックスからbook_titleの情報を取得する
+bookData[0].book_title</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>JSONのデータ配列の1番目のインデックスからbook_titleの情報を取得する、というのが具体的な実装です。ということは、JSONのデータ配列の2番目、3番目…というように配列のインデックス名を変更できれば、本の情報を切り替えることができるはずです。どうやって切り替えればいいのでしょう？</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今回はボタンを押したときに画面内全てのデータを切り替える必要があります。ということは、配列のインデックスの値を一度に切り替えなくてはいけません。そこで</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の利用を検討しました。これは第5章の</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>JSONからデータを取得する方法を探す</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で述べたとおりです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まずはじめに、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>App.vue</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で配列のインデックスの値を定義する必要があります。その実装を行いました。ボタンがおされたときに値が変わるようにしたいため、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-on</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を利用してクリックされたときにイベントを検知し、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>addCount</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>または</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>removeCount</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>メソッドを呼び出してインデックスの値を変化させる処理を呼び出します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>```JavaScript </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content> &lt;div class=&quot;header&quot;&gt;
+   &lt;title-header&gt;&lt;/title-header&gt;
+  &lt;book-title&gt;&lt;/book-title&gt;
+&lt;/div&gt;
+&lt;div class=&quot;main&quot;&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first &gt; CodeBlock" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;button class=&quot;back_button&quot; type=&quot;button&quot;&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;button class=&quot;back_button&quot; type=&quot;button&quot; v-on:click=&quot;removeCount&quot;&gt;
+  &lt;img v-bind:src=&quot;left_arrow&quot; alt=&quot;back&quot;&gt;
+&lt;/button&gt;
+&lt;div class=&quot;left-contents&quot;&gt;
+   &lt;book-image&gt;&lt;/book-image&gt;
+   &lt;description-list&gt;&lt;/description-list&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;right-contents&quot;&gt;
+   &lt;book-description&gt;&lt;/book-description&gt;
+  &lt;book-info&gt;&lt;/book-info&gt;
+  &lt;booth-button&gt;&lt;/booth-button&gt;
+&lt;/div&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;button class=&quot;next_button&quot;&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;button class=&quot;next_button&quot; v-on:click=&quot;addCount&quot;&gt;
+  &lt;img v-bind:src=&quot;right_arrow&quot; alt=&quot;next&quot;&gt;
+&lt;/button&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>よく見ると、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の使い方が間違っています。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop:[変数名]</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>は子コンポーネントに記載するべきですが、ここでは親コンポーネントに記載されてしまっています。親コンポーネントでするべきことは、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で子コンポーネントにデータを紐付けることです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>// 絵を入れる</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>そこで、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>BookTitle</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>コンポーネントに</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>currentBookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>という関数を紐付け、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>currentBookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>addCount</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>・</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>removeCount</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>メソッドで計算した</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の値を返却するようにしました。子コンポーネントでは</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>で親コンポーネントからデータを取得・それを元にJSONデータの配列から値を取得します。 </Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>addCount</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の処理は、配列の長さと違っていたら値を1加算するようにすれば意図した動作になるだろう、と考えて実装しました。あとでわかりますが、これは間違った実装でした。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>removeCount</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の処理は、今持っている</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>（インデックスの値）が0以外であれば、1を減算するような実装を行いました。配列のインデックスの値は0から始まるので、こうすれば0以下のインデックスを指定することが無くなります。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header4">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vue（propしたい値を定義）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>```JavaScript</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;div class=&quot;header&quot;&gt;
+  &lt;title-header&gt;&lt;/title-header&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first &gt; CodeBlock" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;book-title&gt;&lt;/book-title&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;book-title v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-title&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;button class=&quot;back_button&quot; type=&quot;button&quot; v-on:click=&quot;removeCount&quot;&gt;
+   &lt;img v-bind:src=&quot;left_arrow&quot; alt=&quot;back&quot;&gt;
+ &lt;/button&gt;
+ &lt;div class=&quot;left-contents&quot;&gt;
+   &lt;book-image&gt;&lt;/book-image&gt;
+   &lt;description-list&gt;&lt;/description-list&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;right-contents&quot;&gt;
+   &lt;book-description&gt;&lt;/book-description&gt;
+   &lt;book-info&gt;&lt;/book-info&gt;
+   &lt;booth-button&gt;&lt;/booth-button&gt;
+ &lt;/div&gt;
+ &lt;button class=&quot;next_button&quot; v-on:click=&quot;addCount&quot;&gt;
+   &lt;img v-bind:src=&quot;right_arrow&quot; alt=&quot;next&quot;&gt;
+ &lt;/button&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookTitle.vue（propした値を取得してJSONを表示）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-title&quot;&gt;
+    &lt;div class=&quot;fanbook-title&quot;&gt;
+      &lt;div class=&quot;fan-book&quot; v-bind:title=&quot;bookTitle&quot;&gt;{{ bookTitle }}&lt;/div&gt;
+      &lt;div class=&quot;fan-book&quot; v-bind:title=&quot;bookTitle&quot; v-bind:id=&quot;currentBookId&quot;&gt;{{ bookTitle }}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+ 
+ &lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'bookTitle',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+     }
+   },
+  computed: {
+    bookTitle: function() {
+      //JSONから本のタイトルを取得する
+-       return bookData[0].book_title;
++       return bookData[this.id].book_title;
+    }
+  }
+}
+ &lt;/script&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>やっほー！できたー！と思ったのですが、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>BookTitle.vue</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>&lt;div class=&quot;fan-book&quot; v-bind:title=&quot;bookTitle&quot; v-bind:id=&quot;currentBookId&quot;&gt;{{ bookTitle }}&lt;/div&gt;</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の部分に不具合があります。というのも、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>v-bind:id=&quot;currentBookId&quot;</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の部分の</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>currentBookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>はundefinedになってしまうためです。 理由は、基本的に子コンポーネントが親コンポーネントの値を参照することはできないためです。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>currentBookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>という変数は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>App.vue</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の中にしか存在しません。子コンポーネントの</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>BookTitle.vue</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>からすると、「</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>currentBookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>さんなんてしりませんわ」というように見えるのです。 そこで、該当部分を削除する変更を加えました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookTitle.vue（undefinedになってしまうので修正する）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>```JavaScript </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;div class=&quot;fanbook-title&quot;&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first &gt; CodeBlock" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;div class=&quot;fan-book&quot; v-bind:title=&quot;bookTitle&quot; v-bind:id=&quot;currentBookId&quot;&gt;{{ bookTitle }}&lt;/div&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  &lt;div class=&quot;fan-book&quot; v-bind:title=&quot;bookTitle&quot;&gt;{{ bookTitle }}&lt;/div&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これで、ボタンを押すとタイトルだけ切り替わるようになりました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>画像以外の部分はボタン操作で切り替えできるようにする</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>この要領で、他の子コンポーネントにも配列のインデックスの値を親コンポーネントで決めてpropする処理を記載しました。これはissue #25の最終的な実装です。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vue（#25終了時）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>
+&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;button class=&quot;back_button&quot; type=&quot;button&quot; v-on:click=&quot;removeCount&quot;&gt;
+        &lt;img v-bind:src=&quot;left_arrow&quot; alt=&quot;back&quot;&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image&gt;&lt;/book-image&gt;
+        &lt;description-list v-bind:id=&quot;currentBookId&quot;&gt;&lt;/description-list&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;right-contents&quot;&gt;
+        &lt;book-description v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-description&gt;
+        &lt;book-info v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-info&gt;
+        &lt;booth-button v-bind:id=&quot;currentBookId&quot;&gt;&lt;/booth-button&gt;
+      &lt;/div&gt;
+      &lt;button class=&quot;next_button&quot; v-on:click=&quot;addCount&quot;&gt;
+        &lt;img v-bind:src=&quot;right_arrow&quot; alt=&quot;next&quot;&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookData from './assets/book-data.json'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'
+import bookTitle from './components/BookTitle.vue'
+import boothButton from './components/BoothButton.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-info': bookInfo,
+    'book-title': bookTitle,
+    'booth-button': boothButton,
+    'description-list': descriptionList,
+    'page-footer': pageFooter
+  },
+  data() {
+    return {
+      bookData: bookData,
+      bookId: 0,
+      left_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_left-24px.svg&quot;),
+      right_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_right-24px.svg&quot;)
+    }
+  },
+  computed: {
+    currentBookId: function() {
+      return this.bookId;
+    }
+  },
+  methods: {
+    addCount() {
+      if (this.bookId !== bookData.length ) {
+        return this.bookId++;
+      } else {
+        return;
+      }
+    },
+    removeCount() {
+      if (this.bookId !== 0) {
+        return this.bookId--;
+      } else {
+        return 0;
+      }
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+  #app {
+    background-color: #E5E400;
+  }
+  .main {
+    display: flex;
+    margin: 20px;
+  }
+
+  .left-contents {
+    width: 50%;
+  }
+
+  .right-contents {
+    width: 50%;
+  }
+&lt;/style&gt;
+    </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookDescription.vue（#25終了時）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>
+&lt;template&gt;
+  &lt;div class=&quot;book-description&quot;&gt;
+    &lt;div class=&quot;description&quot; v-bind:description=&quot;descText&quot;&gt;{{ descText }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'bookDescription',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+      }
+  },
+  computed: {
+    descText : function() {
+      return bookData[this.id].book_description
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-description {
+    margin-top: 20px;
+    width: 570px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+&lt;/style&gt;
+
+    </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookInfo.vue（#25終了時）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>コメントにもありますが、配列のインデックスを指定するときはpropで取得した値を利用し、配列内に入っている配列の値（発刊イベント・年月）は配列の1番目に入っていることが明示的なので</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>arrayData[0]</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>でデータを取得するようにしています。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>
+&lt;template&gt;
+  &lt;div class=&quot;book-info&quot;&gt;
+    &lt;div class=&quot;basic-info&quot;&gt;
+      &lt;div class=&quot;published-year&quot;&gt;
+        &lt;h4&gt;発刊年月・イベント名&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li v-for=&quot;info in infoTexts&quot; v-bind:key=&quot;info.id&quot;&gt;
+            {{ info }}
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;posts-info&quot;&gt;
+        &lt;h4&gt;関連URL&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li v-for=&quot;list in posts&quot; v-bind:key=&quot;list.id&quot;&gt;&lt;a v-bind:href=&quot;list&quot;&gt;{{ list }}&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'bookInfo',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+    }
+  },
+  computed: {
+    infoTexts: function() {
+      const info = [];
+      // JSONからinfoTextsに必要なデータを抜く。データは1冊の本に1つしかないのがわかっているので、配列の一番目の値を取得する。
+      const arrayData = bookData[this.id].book_info;
+      const year = arrayData[0].year;
+      const month = arrayData[0].month;
+      const eventName = arrayData[0].event_name;
+      // 定数から配列を作成する。
+      info.push(year);
+      info.push(month);
+      info.push(eventName);
+      return info;
+    },
+    posts: function() {
+      // 最終的に返却したい配列を定義
+      const url = [];
+      // JSON内のbook＿urlの配列の長さ・配列のデータを取得し、本のURLの値だけを持っている配列を作成する。
+      const arrayLength = bookData[this.id].book_url.length;
+      const arrayData = bookData[this.id].book_url;
+      for(let count = 0; count &lt; arrayLength; count++){
+        const data = arrayData[count].book_url_url;
+        url.push(data);
+      }
+      return url;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-info {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .published-info {
+    margin-right: 5px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+&lt;/style&gt;
+
+    </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BoothButton.vue（#25終了時）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>
+&lt;template&gt;
+  &lt;div class=&quot;booth-button&quot;&gt;
+    &lt;div class=&quot;button&quot;&gt;
+      &lt;a v-bind:href=&quot;boothUrl&quot;&gt;&lt;p&gt;電子版をポチる&lt;/p&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'boothButton',
+  props: ['id'],
+  data() {
+    return {
+        bookData: bookData
+    }
+  },
+  computed: {
+    boothUrl: function() {
+      // JSONからBOOTHのURLを取得して返却する
+      return bookData[this.id].booth_url;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .booth-button {
+    margin-top: 60px;
+    height: 200px;
+  }
+  .button {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  a {
+    background-color: #32BDED;
+    color: #E40067;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+    
+  }
+&lt;/style&gt;
+
+    </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>DescriptionList.vue（#25終了時）</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>
+&lt;template&gt;
+  &lt;div class=&quot;description-list&quot;&gt;
+    &lt;div class=&quot;overview&quot;&gt;
+      &lt;h3&gt;KUSO POINT&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li v-for=&quot;item in promotionData&quot; v-bind:key=&quot;item.id&quot;&gt;
+          {{ item }}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'descriptionList',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+    }
+  },
+  computed: {
+    promotionData: function() {
+      // 繰り返し処理でoverviews_promotionの値を全部抜いて新しい配列を作り、returnする
+      const arrayLength = bookData[this.id].overviews.length;
+      const arrayData = bookData[this.id].overviews;
+      const promotions = [];
+      for (let count = 0; count &lt; arrayLength; count++) {
+        const data = arrayData[count].overviews_promotion;
+        promotions.push(data);
+      }
+      return promotions;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .descriptiion-list {
+    height: 250px;
+    margin-top: 20px;
+    width: 570px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+&lt;/style&gt;
+    </Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>この状態で画面を表示し、ボタン操作をしてみます。すると、画面の情報が切り替わっているようです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 778.5 -531">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-778.5 -531" LeftDirection="-778.5 -531" RightDirection="-778.5 -531" />
+              <PathPointType Anchor="-778.5 531" LeftDirection="-778.5 531" RightDirection="-778.5 531" />
+              <PathPointType Anchor="778.5 531" LeftDirection="778.5 531" RightDirection="778.5 531" />
+              <PathPointType Anchor="778.5 -531" LeftDirection="778.5 -531" RightDirection="778.5 -531" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -778.5 -531">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter6/25_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ボタンを押すと文字の情報が切り替わっている</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>しかし、配列の最後のデータ（6番目のデータ）を表示した後に右側の矢印を押すと、エラーとなってボタン操作が一切効かなくなってしまいます。これは別のissueとして修正することにしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 486 -482.5">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-486 -482.5" LeftDirection="-486 -482.5" RightDirection="-486 -482.5" />
+              <PathPointType Anchor="-486 482.5" LeftDirection="-486 482.5" RightDirection="-486 482.5" />
+              <PathPointType Anchor="486 482.5" LeftDirection="486 482.5" RightDirection="486 482.5" />
+              <PathPointType Anchor="486 -482.5" LeftDirection="486 -482.5" RightDirection="486 -482.5" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -486 -482.5">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter6/25_bug.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最後のデータを表示するとエラーが出ている</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#33 同人誌の表紙・裏表紙画像を準備する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>文字列の切り替えができるようになったため、同じ要領で画像の切り替えをできるようにします。画像をどうやって表示するかに悩みましたが、次の方針で進めることにしました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>配列のインデックス番号と同じ名前のディレクトリをassetsに作成する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>表紙の画像は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>front.png</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>、背景の画像は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>back.png</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>に統一して各ディレクトリに保存する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vueでインデックス番号をpropし、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>BookImage.vue</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>でpropされた情報を元に画像のパスを切り替える</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/NumList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ボタン操作に応じて画像が切り替わる</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>prop地獄を避けたいということと、項目数がそこまで多くないことの2点から、この実装方針としました。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>や</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>$emit</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>は大変便利ですが、項目数が多くなってくると「これはどこの誰にpropしたんだっけ…」となってしまい管理が大変です。それに加えて今回はボタンを押したときに、同人誌の情報が一括で変化してもらわないと困ってしまいます。そこで、文字列の項目を表示しているものと同じデータを利用して画像のパスを決定するようにしました。早速実装してみます。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まず、App.vueへ</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の処理を追加します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>      &lt;div class=&quot;left-contents&quot;&gt;
+-         &lt;book-image&gt;&lt;/book-image&gt;
++         &lt;book-image v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-image&gt;
+        &lt;description-list v-bind:id=&quot;currentBookId&quot;&gt;&lt;/description-list&gt;
+      &lt;/div&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>次に、BookImage.vueへ</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>prop</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>された値を取得する処理を記載します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;script&gt;
+export default {
+  name: &quot;bookImage&quot;,
++   props: '[id]',
+  data() {
+    return {
+      image_src: require(&quot;../assets/bookImage/1.png&quot;)</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>このままでは</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>ログと情報をレッツ・ラ・まぜまぜ！</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>のデータが割り当たったままです。そこでデータの割り当てをする処理も記載します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-image&quot;&gt;
+-     &lt;img :src=&quot;image_src&quot; alt=&quot;bookImage&quot;&gt;
++     &lt;img :src=&quot;frontImage&quot; alt=&quot;bookImage&quot;&gt;
++     &lt;img :src=&quot;backImage&quot; alt=&quot;bookImage&quot;&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &quot;bookImage&quot;,
+-   props: '[id]',
+-   data() {
+-     return {
+-       image_src: require(&quot;../assets/bookImage/1.png&quot;)
++   props: ['id'],
++   computed: {
++     frontImage: function() {
++       return require('../assets/bookImage/' + this.id + '/front.png')
++     },
++     backImage: function() {
++       return require('../assets/bookImage/' + this.id + '/back.png')
++     }
+  }
+}</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>合わせて、画像をディレクトリに追加しました。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>assets</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ディレクトリ構成は下記のようになりました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>/
+|____assets
+| |____footer
+| |____Twitter_Social_Icon_Rounded_Square_Color.svg
+| |____GitHub-Mark.svg
+| |____arrow
+| |____baseline-keyboard_arrow_left-24px.svg
+| |____baseline-keyboard_arrow_right-24px.svg
+| |____bookImage
+| |____0
+| | |____back.png
+| | |____front.png
+| |____1
+| | |____back.png
+| | |____front.png
+| |____4
+| | |____back.png
+| | |____front.png
+| |____3
+| | |____back.png
+| | |____front.png
+| |____2
+| | |____back.png
+| | |____front.png
+| |____5
+| | |____back.png
+| | |____front.png
+| |____book-data.json</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>結果、ボタンを押すと画像も切り替えができるようになりました。ここまでくれば完成は目前です。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 800 -464.5">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-800 -464.5" LeftDirection="-800 -464.5" RightDirection="-800 -464.5" />
+              <PathPointType Anchor="-800 464.5" LeftDirection="-800 464.5" RightDirection="-800 464.5" />
+              <PathPointType Anchor="800 464.5" LeftDirection="800 464.5" RightDirection="800 464.5" />
+              <PathPointType Anchor="800 -464.5" LeftDirection="800 -464.5" RightDirection="800 -464.5" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -800 -464.5">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter6/33_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#33実装後</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#34 idがJSONの最後だとundefinedになる</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>日本語がかなり乏しいissueのタイトルですが、表題の通りJSONの最後の値になると</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>undefined</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>になってしまい何もできなくなってしまいます。これを修正しなければ公開することはできません。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>エラー内容の確認を行う</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まず初めに、エラー内容をよく見ることにします。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property 'book_title' of undefined&quot;
+
+found in
+
+---&gt; &lt;BookTitle&gt; at src/components/BookTitle.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+warn @ vue.runtime.esm.js?2b0e:587
+logError @ vue.runtime.esm.js?2b0e:1733
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_title' of undefined
+    at VueComponent.bookTitle (BookTitle.vue?5d46:22)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
+    at VueComponent.computedGetter [as bookTitle] (vue.runtime.esm.js?2b0e:3503)
+    at Object.get (vue.runtime.esm.js?2b0e:1916)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{&quot;cacheDirectory&quot;:&quot;node_modules/.cache/vue-loader&quot;,&quot;cacheIdentifier&quot;:&quot;dc1d07a8-vue-loader-template&quot;}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookTitle.vue?vue&amp;type=template&amp;id=1a6b496f&amp;scoped=true&amp; (app.js:973), &lt;anonymous&gt;:10:64)
+    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
+    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
+logError @ vue.runtime.esm.js?2b0e:1737
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;Error: Cannot find module './6/front.png'&quot;
+
+found in
+
+---&gt; &lt;BookImage&gt; at src/components/BookImage.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+warn @ vue.runtime.esm.js?2b0e:587
+logError @ vue.runtime.esm.js?2b0e:1733
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:1737 Error: Cannot find module './6/front.png'
+    at webpackContextResolve (eval at ./src/assets/bookImage sync recursive ^\.\/.*\/front\.png$ (app.js:2410), &lt;anonymous&gt;:18:11)
+    at webpackContext (eval at ./src/assets/bookImage sync recursive ^\.\/.*\/front\.png$ (app.js:2410), &lt;anonymous&gt;:12:11)
+    at VueComponent.frontImage (BookImage.vue?4ee6:14)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
+    at VueComponent.computedGetter [as frontImage] (vue.runtime.esm.js?2b0e:3503)
+    at Object.get (vue.runtime.esm.js?2b0e:1916)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{&quot;cacheDirectory&quot;:&quot;node_modules/.cache/vue-loader&quot;,&quot;cacheIdentifier&quot;:&quot;dc1d07a8-vue-loader-template&quot;}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookImage.vue?vue&amp;type=template&amp;id=656096f2&amp;scoped=true&amp; (app.js:949), &lt;anonymous&gt;:9:35)
+    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
+    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
+logError @ vue.runtime.esm.js?2b0e:1737
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property 'overviews' of undefined&quot;
+
+found in
+
+---&gt; &lt;DescriptionList&gt; at src/components/DescriptionList.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+warn @ vue.runtime.esm.js?2b0e:587
+logError @ vue.runtime.esm.js?2b0e:1733
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'overviews' of undefined
+    at VueComponent.promotionData (DescriptionList.vue?068c:27)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
+    at VueComponent.computedGetter [as promotionData] (vue.runtime.esm.js?2b0e:3503)
+    at Object.get (vue.runtime.esm.js?2b0e:1916)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{&quot;cacheDirectory&quot;:&quot;node_modules/.cache/vue-loader&quot;,&quot;cacheIdentifier&quot;:&quot;dc1d07a8-vue-loader-template&quot;}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/DescriptionList.vue?vue&amp;type=template&amp;id=51aab08c&amp;scoped=true&amp; (app.js:997), &lt;anonymous&gt;:13:20)
+    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
+    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
+logError @ vue.runtime.esm.js?2b0e:1737
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property 'book_description' of undefined&quot;
+
+found in
+
+---&gt; &lt;BookDescription&gt; at src/components/BookDescription.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+warn @ vue.runtime.esm.js?2b0e:587
+logError @ vue.runtime.esm.js?2b0e:1733
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_description' of undefined
+    at VueComponent.descText (BookDescription.vue?a8d0:19)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
+    at VueComponent.computedGetter [as descText] (vue.runtime.esm.js?2b0e:3503)
+    at Object.get (vue.runtime.esm.js?2b0e:1916)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{&quot;cacheDirectory&quot;:&quot;node_modules/.cache/vue-loader&quot;,&quot;cacheIdentifier&quot;:&quot;dc1d07a8-vue-loader-template&quot;}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookDescription.vue?vue&amp;type=template&amp;id=2e2a9dd3&amp;scoped=true&amp; (app.js:937), &lt;anonymous&gt;:11:63)
+    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
+    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
+logError @ vue.runtime.esm.js?2b0e:1737
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property 'book_info' of undefined&quot;
+
+found in
+
+---&gt; &lt;BookInfo&gt; at src/components/BookInfo.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+warn @ vue.runtime.esm.js?2b0e:587
+logError @ vue.runtime.esm.js?2b0e:1733
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_info' of undefined
+    at VueComponent.infoTexts (BookInfo.vue?4ab4:36)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
+    at VueComponent.computedGetter [as infoTexts] (vue.runtime.esm.js?2b0e:3503)
+    at Object.get (vue.runtime.esm.js?2b0e:1916)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{&quot;cacheDirectory&quot;:&quot;node_modules/.cache/vue-loader&quot;,&quot;cacheIdentifier&quot;:&quot;dc1d07a8-vue-loader-template&quot;}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookInfo.vue?vue&amp;type=template&amp;id=c839b832&amp;scoped=true&amp; (app.js:961), &lt;anonymous&gt;:14:22)
+    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
+    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
+logError @ vue.runtime.esm.js?2b0e:1737
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property 'booth_url' of undefined&quot;
+
+found in
+
+---&gt; &lt;BoothButton&gt; at src/components/BoothButton.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+warn @ vue.runtime.esm.js?2b0e:587
+logError @ vue.runtime.esm.js?2b0e:1733
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'booth_url' of undefined
+    at VueComponent.boothUrl (BoothButton.vue?400f:22)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
+    at VueComponent.computedGetter [as boothUrl] (vue.runtime.esm.js?2b0e:3503)
+    at Object.get (vue.runtime.esm.js?2b0e:1916)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{&quot;cacheDirectory&quot;:&quot;node_modules/.cache/vue-loader&quot;,&quot;cacheIdentifier&quot;:&quot;dc1d07a8-vue-loader-template&quot;}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BoothButton.vue?vue&amp;type=template&amp;id=37d0d088&amp;scoped=true&amp; (app.js:985), &lt;anonymous&gt;:10:36)
+    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
+    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
+    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
+    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
+logError @ vue.runtime.esm.js?2b0e:1737
+globalHandleError @ vue.runtime.esm.js?2b0e:1728
+handleError @ vue.runtime.esm.js?2b0e:1717
+Vue._render @ vue.runtime.esm.js?2b0e:4542
+updateComponent @ vue.runtime.esm.js?2b0e:2784
+get @ vue.runtime.esm.js?2b0e:3138
+run @ vue.runtime.esm.js?2b0e:3215
+flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
+(anonymous) @ vue.runtime.esm.js?2b0e:1833
+flushCallbacks @ vue.runtime.esm.js?2b0e:1754</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>原因は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property 'book_title' of undefined&quot;</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の部分が示しているようです。JSONの中の</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>book_title</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の値を特定できない、と推測することができます。 実際、同人誌は6種類しか存在しないので、7冊目を選択しようとしてもデータは存在しません。ですから</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>0以上6以下の範囲であれば</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>インデックスの加算・減算処理を行うようにするべきです。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>元の処理は、次のように記載されていました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>今までのApp.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;script&gt;
+// import処理は省略
+ 
+ export default {
+   name: 'app',
+   components: {
+     'title-header': titleHeader,
+     'book-description':bookDescription,
+     'book-image': bookImage,
+     'book-info': bookInfo,
+     'book-title': bookTitle,
+     'booth-button': boothButton,
+     'description-list': descriptionList,
+     'page-footer': pageFooter
+   },
+   data() {
+     return {
+       bookData: bookData,
+       bookId: 0,
+       left_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_left-24px.svg&quot;),
+       right_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_right-24px.svg&quot;)
+     }
+   },
+   computed: {
+     currentBookId: function() {
+       return this.bookId;
+     }
+  },
+  methods: {
+    addCount() {
+      if (this.bookId !== bookData.length ) {
+        return this.bookId++;
+      } else {
+        return;
+      }
+    },</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>この処理だと、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>が配列の長さ（＝ 6）以外のときはbookIdに1を加算する処理となります。つまり、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>bookIdが6</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>のときは加算処理がされず、それ以上の数は永遠に</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>の中に代入されない＝</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>6以上のインデックスは</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>指定されないようになります。 しかし、よく考えてください。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>配列のインデックスは0から始まります</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>。つまり、配列のデータ数が</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>6</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>であれば、インデックスの最大値は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>5</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>です。今の処理は</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold">
+    <Content>6</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>が</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>に代入されます。しかし、実際は7番目のデータを取得する処理となります。これではデータを探せるはずがありません。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>そこで、次のように処理を書き換えました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>  methods: {
+    addCount() {
+-       if (this.bookId !== bookData.length ) {
++       if (this.bookId &lt; bookData.length - 1) {
+        return this.bookId++;
+-       } else {
+-         return;
++       } else if (this.bookId &gt;= bookData.length - 1) {
++           this.bookId = bookData.length - 1;
++           return this.bookId;
++         } else {
++           return;
+      }
+    },</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まず、bookIdが</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>配列の長さ - 1</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>以下か判定します。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>配列の長さ - 1</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>以下であれば、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>に1を加算します。これにより、同人誌の次の情報を取得できますね。次に、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>else..if文</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>を使って</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>配列の長さ - 1以下ではなかった場合</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>が</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>配列の長さ - 1</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>以上（＝ 5よりも大きい）になったかを調べます。</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>if</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>分岐の処理で</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>はどうしても</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>6</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>になってしまうためです。その場合は加算処理を行わず、配列の長さと同じ値を</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>bookId</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>へ代入し返却します。こうすることで、配列の長さの最大値をインデックスとして指定できるようになります。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>#34で実装したApp.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;button class=&quot;back_button&quot; type=&quot;button&quot; v-on:click=&quot;removeCount&quot;&gt;
+        &lt;img v-bind:src=&quot;left_arrow&quot; alt=&quot;back&quot;&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-image&gt;
+        &lt;description-list v-bind:id=&quot;currentBookId&quot;&gt;&lt;/description-list&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;right-contents&quot;&gt;
+        &lt;book-description v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-description&gt;
+        &lt;book-info v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-info&gt;
+        &lt;booth-button v-bind:id=&quot;currentBookId&quot;&gt;&lt;/booth-button&gt;
+      &lt;/div&gt;
+      &lt;button class=&quot;next_button&quot; v-on:click=&quot;addCount&quot;&gt;
+        &lt;img v-bind:src=&quot;right_arrow&quot; alt=&quot;next&quot;&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookData from './assets/book-data.json'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'
+import bookTitle from './components/BookTitle.vue'
+import boothButton from './components/BoothButton.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-info': bookInfo,
+    'book-title': bookTitle,
+    'booth-button': boothButton,
+    'description-list': descriptionList,
+    'page-footer': pageFooter
+  },
+  data() {
+    return {
+      bookData: bookData,
+      bookId: 0,
+      left_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_left-24px.svg&quot;),
+      right_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_right-24px.svg&quot;)
+    }
+  },
+  computed: {
+    currentBookId: function() {
+      return this.bookId;
+    }
+  },
+  methods: {
+    addCount() {
+      if (this.bookId &lt; bookData.length -1) {
+        return this.bookId++;
+      } else if (this.bookId &gt;= bookData.length - 1) {
+          this.bookId = bookData.length - 1;
+          return this.bookId;
+        } else {
+          return;
+      }
+    },
+    removeCount() {
+      if (this.bookId !== 0) {
+        return this.bookId--;
+      } else {
+        return 0;
+      }
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+  #app {
+    background-color: #E5E400;
+  }
+  .main {
+    display: flex;
+    margin: 20px;
+  }
+
+  .left-contents {
+    width: 50%;
+  }
+
+  .right-contents {
+    width: 50%;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>画面右下にエラーが出力されていないのが見えるでしょうか。これで最後の画像になってもボタンが効く状態を維持することができました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 1280 -540">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-1280 -540" LeftDirection="-1280 -540" RightDirection="-1280 -540" />
+              <PathPointType Anchor="-1280 540" LeftDirection="-1280 540" RightDirection="-1280 540" />
+              <PathPointType Anchor="1280 540" LeftDirection="1280 540" RightDirection="1280 540" />
+              <PathPointType Anchor="1280 -540" LeftDirection="1280 -540" RightDirection="1280 -540" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -1280 -540">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/chapter6/34_finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>不具合修正後の画面</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>見た目や誤字を修正する</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ボタンの見た目が個人的に気に食わなかったので</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>＞</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>・</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>＜</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>をemojiに置き換えました。KUSO感が高まったので大満足です。また、画面下の方の背景色が切れてしまう問題があったのでCSSを調整しました。また、</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>favicon</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>も自作して</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>assets</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>ディレクトリに配置しました。 また、『魔法つかいプリキュア！』表記が『魔法使いプリキュア！』になっていたため修正しました。 </Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle" Position="Superscript">
+    <Footnote>
+      <ParagraphStyleRange>
+        <CharacterStyleRange>
+          <Content><?ACE 4?></Content>
+        </CharacterStyleRange>
+      </ParagraphStyleRange>
+      <ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Footnote &gt; Paragraph">
+        <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+          <Content>	事前にサイトを身内の人に見せたんですが「魔法つかいは</Content>
+        </CharacterStyleRange>
+        <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+          <Content>つかい</Content>
+        </CharacterStyleRange>
+        <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+          <Content>のところひらがなだから」と怒られました。漢字変換されてたのに気づけなかった…。大変申し訳ありませんでした。</Content>
+        </CharacterStyleRange>
+      </ParagraphStyleRange>
+    </Footnote>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最終的なコード</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>これが完成系のサイトです。はじめにも出てきましたね。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Figure">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Rectangle Self="uec" StrokeWeight="0" ItemTransform="1 0 0 1 632.5 -517.5">
+      <Properties>
+        <PathGeometry>
+          <GeometryPathType PathOpen="false">
+            <PathPointArray>
+              <PathPointType Anchor="-632.5 -517.5" LeftDirection="-632.5 -517.5" RightDirection="-632.5 -517.5" />
+              <PathPointType Anchor="-632.5 517.5" LeftDirection="-632.5 517.5" RightDirection="-632.5 517.5" />
+              <PathPointType Anchor="632.5 517.5" LeftDirection="632.5 517.5" RightDirection="632.5 517.5" />
+              <PathPointType Anchor="632.5 -517.5" LeftDirection="632.5 -517.5" RightDirection="632.5 -517.5" />
+            </PathPointArray>
+          </GeometryPathType>
+        </PathGeometry>
+      </Properties>
+      <Image Self="ue6" ItemTransform="1 0 0 1 -632.5 -517.5">
+        <Properties>
+          <Profile type="string">
+            $ID/Embedded
+          </Profile>
+        </Properties>
+        <Link Self="ueb" LinkResourceURI="file:../images/finish.png" />
+      </Image>
+    </Rectangle>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Caption">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最終的なWebサイト</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最終的なコードを全て記載します。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>App.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      &lt;title-header&gt;&lt;/title-header&gt;
+      &lt;book-title v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-title&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;button class=&quot;back-button&quot; type=&quot;button&quot; v-on:click=&quot;removeCount&quot;&gt;
+        👈
+      &lt;/button&gt;
+      &lt;div class=&quot;left-contents&quot;&gt;
+        &lt;book-image v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-image&gt;
+        &lt;description-list v-bind:id=&quot;currentBookId&quot;&gt;&lt;/description-list&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;right-contents&quot;&gt;
+        &lt;book-description v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-description&gt;
+        &lt;book-info v-bind:id=&quot;currentBookId&quot;&gt;&lt;/book-info&gt;
+        &lt;booth-button v-bind:id=&quot;currentBookId&quot;&gt;&lt;/booth-button&gt;
+      &lt;/div&gt;
+      &lt;button class=&quot;next-button&quot; v-on:click=&quot;addCount&quot;&gt;
+        👉
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;page-footer&gt;&lt;/page-footer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'normalize.css'
+import titleHeader from './components/Header.vue'
+import bookData from './assets/book-data.json'
+import bookDescription from './components/BookDescription.vue'
+import bookImage from './components/BookImage.vue'
+import bookInfo from './components/BookInfo.vue'
+import bookTitle from './components/BookTitle.vue'
+import boothButton from './components/BoothButton.vue'
+import descriptionList from './components/DescriptionList.vue'
+import pageFooter from './components/Footer.vue'
+
+export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader,
+    'book-description':bookDescription,
+    'book-image': bookImage,
+    'book-info': bookInfo,
+    'book-title': bookTitle,
+    'booth-button': boothButton,
+    'description-list': descriptionList,
+    'page-footer': pageFooter
+  },
+  data() {
+    return {
+      bookData: bookData,
+      bookId: 0,
+      left_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_left-24px.svg&quot;),
+      right_arrow: require(&quot;./assets/arrow/baseline-keyboard_arrow_right-24px.svg&quot;)
+    }
+  },
+  computed: {
+    currentBookId: function() {
+      return this.bookId;
+    }
+  },
+  methods: {
+    addCount() {
+      if (this.bookId &lt; bookData.length -1) {
+        return this.bookId++;
+      } else if (this.bookId &gt;= bookData.length - 1) {
+          this.bookId = bookData.length - 1;
+          return this.bookId;
+        } else {
+          return;
+      }
+    },
+    removeCount() {
+      if (this.bookId !== 0) {
+        return this.bookId--;
+      } else {
+        return 0;
+      }
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+  #app {
+    background-color: #e5e400;
+    height: 100%;
+  }
+  .main {
+    display: flex;
+    margin: 20px;
+  }
+
+  button {
+    background-color: #3ebde0;
+    border: none;
+    height: 30px;
+    width: 30px;
+  }
+
+  .book-title {
+    margin: 10px;
+  }
+
+  .back-button {
+    margin-top: 40%;
+    margin-right: 10px;
+  }
+
+  .next-button {
+    margin-top: 40%;
+    margin-left: 10px;
+  }
+
+  .left-contents {
+    width: 50%;
+  }
+
+  .book-image {
+    margin-left: 10px;
+  }
+
+  .description-list {
+    margin-left: 10px;
+  }
+
+  .right-contents {
+    width: 50%;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookDescription.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-description&quot;&gt;
+    &lt;div class=&quot;description&quot; v-bind:description=&quot;descText&quot;&gt;{{ descText }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'bookDescription',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+      }
+  },
+  computed: {
+    descText : function() {
+      return bookData[this.id].book_description
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-description {
+    color: #3a3839;
+    margin-top: 20px;
+    width: 570px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookImage.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-image&quot;&gt;
+    &lt;img :src=&quot;frontImage&quot; alt=&quot;bookImage&quot;&gt;
+    &lt;img :src=&quot;backImage&quot; alt=&quot;bookImage&quot;&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &quot;bookImage&quot;,
+  props: ['id'],
+  computed: {
+    frontImage: function() {
+      return require('../assets/bookImage/' + this.id + '/front.png')
+    },
+    backImage: function() {
+      return require('../assets/bookImage/' + this.id + '/back.png')
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-image {
+    height: 400px;
+    margin-top: 30px;
+    width: 570px;
+  }
+  img {
+    height: 100%;
+    width: 285px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookInfo.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-info&quot;&gt;
+    &lt;div class=&quot;basic-info&quot;&gt;
+      &lt;div class=&quot;published-year&quot;&gt;
+        &lt;h4&gt;発刊年月・イベント名&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li v-for=&quot;info in infoTexts&quot; v-bind:key=&quot;info.id&quot;&gt;
+            {{ info }}
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;posts-info&quot;&gt;
+        &lt;h4&gt;関連URL&lt;/h4&gt;
+        &lt;ul&gt;
+          &lt;li v-for=&quot;list in posts&quot; v-bind:key=&quot;list.id&quot;&gt;&lt;a v-bind:href=&quot;list&quot;&gt;{{ list }}&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'bookInfo',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+    }
+  },
+  computed: {
+    infoTexts: function() {
+      const info = [];
+      // JSONからinfoTextsに必要なデータを抜く。データは1冊の本に1つしかないのがわかっているので、配列の一番目の値を取得する。
+      const arrayData = bookData[this.id].book_info;
+      const year = arrayData[0].year;
+      const month = arrayData[0].month;
+      const eventName = arrayData[0].event_name;
+      // 定数から配列を作成する。
+      info.push(year);
+      info.push(month);
+      info.push(eventName);
+      return info;
+    },
+    posts: function() {
+      // 最終的に返却したい配列を定義
+      const url = [];
+      // JSON内のbook＿urlの配列の長さ・配列のデータを取得し、本のURLの値だけを持っている配列を作成する。
+      const arrayLength = bookData[this.id].book_url.length;
+      const arrayData = bookData[this.id].book_url;
+      for(let count = 0; count &lt; arrayLength; count++){
+        const data = arrayData[count].book_url_url;
+        url.push(data);
+      }
+      return url;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-info {
+    color: #3a3839;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .published-info {
+    margin-right: 5px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BookTitle.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;book-title&quot;&gt;
+    &lt;div class=&quot;fanbook-title&quot;&gt;
+      &lt;div class=&quot;fan-book&quot; v-bind:title=&quot;bookTitle&quot;&gt;{{ bookTitle }}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'bookTitle',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+    }
+  },
+  computed: {
+    bookTitle: function() {
+      //JSONから本のタイトルを取得する
+      return bookData[this.id].book_title;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .book-title {
+    background-color: #e5e400;
+    color: #3ebde0;
+    font-size: 30px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>BoothButton.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;booth-button&quot;&gt;
+    &lt;div class=&quot;button&quot;&gt;
+      &lt;a v-bind:href=&quot;boothUrl&quot;&gt;&lt;p&gt;電子版をポチる&lt;/p&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'boothButton',
+  props: ['id'],
+  data() {
+    return {
+        bookData: bookData
+    }
+  },
+  computed: {
+    boothUrl: function() {
+      // JSONからBOOTHのURLを取得して返却する
+      return bookData[this.id].booth_url;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .booth-button {
+    margin-top: 60px;
+    height: 200px;
+  }
+  .button {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+  }
+  a {
+    background-color: #3ebde0;
+    color: #e40067;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+    
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>DescriptionList.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;description-list&quot;&gt;
+    &lt;div class=&quot;overview&quot;&gt;
+      &lt;h3&gt;KUSO POINT&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li v-for=&quot;item in promotionData&quot; v-bind:key=&quot;item.id&quot;&gt;
+          {{ item }}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import bookData from '../assets/book-data.json'
+export default {
+  name: 'descriptionList',
+  props: ['id'],
+  data() {
+    return {
+      bookData: bookData
+    }
+  },
+  computed: {
+    promotionData: function() {
+      // 繰り返し処理でoverviews_promotionの値を全部抜いて新しい配列を作り、returnする
+      const arrayLength = bookData[this.id].overviews.length;
+      const arrayData = bookData[this.id].overviews;
+      const promotions = [];
+      for (let count = 0; count &lt; arrayLength; count++) {
+        const data = arrayData[count].overviews_promotion;
+        promotions.push(data);
+      }
+      return promotions;
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .descriptiion-list {
+    color: #3a3839;
+    height: 250px;
+    margin-top: 20px;
+    width: 570px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Footer.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;page-footer&quot;&gt;
+    &lt;div class=&quot;icons&quot;&gt;
+      &lt;a href=&quot;https://twitter.com/froakie0021&quot; target=&quot;blank&quot;&gt;&lt;img :src=&quot;twitter_src&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;
+      &lt;a href=&quot;https://github.com/MofuMofu2/portfolio-vue&quot; target=&quot;blank&quot;&gt;&lt;img :src=&quot;github_src&quot; alt=&quot;github&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;copyright&quot;&gt;
+      &lt;p&gt;©︎ 2018 りまりま団&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'pageFooter',
+  data() {
+    return {
+      twitter_src: require(&quot;../assets/footer/Twitter_Social_Icon_Rounded_Square_Color.svg&quot;),
+      github_src: require(&quot;../assets/footer/GitHub-Mark.svg&quot;)
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  .page-footer {
+    background-color: #e5e400;
+    height: 100px;
+  }
+  .icons {
+    margin-right: 30px;
+    text-align: right;
+  }
+  .icons img {
+    height: 30px;
+    margin: 10px;
+    width: 30px;
+  }
+  .page-footer p {
+    color: #3ebde0;
+    text-align: center;
+  }
+
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Header.vue</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>&lt;template&gt;
+  &lt;div class=&quot;tite-header&quot;&gt;
+    &lt;h1&gt;{{ title }}&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'titleHeader',
+  data() {
+    return {
+      title: '同人誌が…溢れ出す！'
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+  h1 {
+    align-items: center;
+    background-color: #3ebde0;
+    color: #e5e400;
+    display: flex;
+    font-size: 28px;
+    height: 50px;
+    margin: 0;
+  }
+&lt;/style&gt;</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>main.js</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/CodeBlock">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>import Vue from 'vue'
+import App from './App.vue'
+
+Vue.config.productionTip = false
+
+new Vue({
+  render: h =&gt; h(App),
+}).$mount('#app')</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>最後に、これらのアプリケーションをデプロイしましょう。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header2">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>参考URL</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Issues</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/33</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/issues/34</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Pull Requests</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/32</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/35</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/37</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://github.com/MofuMofu2/portfolio-vue/pull/38</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header3">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>undefinedの〇〇</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Header4">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Cannot read property </Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>‘fuga’</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content> of undefined　とは</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Blockquote &gt; Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>Cannot read property </Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>‘fuga’</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content> of undefined というエラーが出たりする。 これが出た時に、 「fugaがundefinedなんですね！」 というと 「fuck」 という顔をされてしまい、説明をいただきました。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Paragraph">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>まっっっっっっっっっっっっっっっっっっったく同じことを思いました。が、このエラーが出ているときは〇〇の処理の1つ前の処理で</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Code">
+    <Content>undefined</Content>
+  </CharacterStyleRange>
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>になってしまっていることがほとんどです。1つ前の処理が正しくできているか？を標準出力/デバッガーを使って確認しましょう。</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+<Br />
+<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/BulList &gt; first" NumberingContinue="false">
+  <CharacterStyleRange AppliedCharacterStyle="$ID/NormalCharacterStyle">
+    <Content>https://qiita.com/nakamaru/items/3e11bb5b0d586a6d5545</Content>
+  </CharacterStyleRange>
+</ParagraphStyleRange>
+
+  </Story>
+  <HyperlinkURLDestination Self="HyperlinkURLDestination/https%3a//material.io/tools/icons/?style=baseline" Name="link" DestinationURL="https://material.io/tools/icons/?style=baseline" DestinationUniqueKey="1" />
+  <Hyperlink Self="uf-1" Name="https://material.io/tools/icons/?style=baseline" Source="htss-1" Visible="true" DestinationUniqueKey="1">
+    <Properties>
+      <BorderColor type="enumeration">Black</BorderColor>
+      <Destination type="object">HyperlinkURLDestination/https%3a//material.io/tools/icons/?style=baseline</Destination>
+    </Properties>
+  </Hyperlink>
+</Document>
