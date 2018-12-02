@@ -8,7 +8,13 @@
 
 載せる情報は次の通りです。
 
-<!-- ここに入れる -->
+- 本のタイトル
+- 書影
+- 概要の説明文
+- 通販のURL
+- 紹介ブログのURL
+- 商業本のURL
+- KUSO POINT
 
 問題はこの情報をどこで管理するか？ということです。このとき思いついた手段をあげます。
 
@@ -24,16 +30,16 @@
 
 ## #23 JSONデータを作成する
 
-データの持ち方は決まりました。次はいよいよデータを作成します。
+データの持ち方は決まりました。次はデータを作成します。
 
 ### 載せたい情報をスプレッドシートにまとめる
 
-はじめは自分でJSONを書こうとしました。結論として5分であきらめました。Googleの[JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)（``https://google.github.io/styleguide/jsoncstyleguide.xml``）などを読んではみたのですが、今までの業務の中で1からJSONを設計することがなかったので、「ちょっと何言ってるかわからない」状態になってしまいました。
-個人開発ですし、迷惑がかかるのは将来の自分だけ、という言い訳と共に、はじめはCSVからJSONを作ってくれるWebサービスを利用したほうがいいだろうという判断をしました。綺麗なJSONのデータ構造よりも、クソアプリカレンダーとこのコミックマーケット95の新刊を入稿に間に合うことのほうがはるかに大事だったからです。
+はじめは自分でJSONを書こうとしましたが、結論として5分であきらめました。Googleの[JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)（``https://google.github.io/styleguide/jsoncstyleguide.xml``）などを読んではみたのですが、今までの業務の中で1からJSONを設計することがなかったので、「ちょっと何言ってるかわからない」状態になってしまいました。
+個人開発ですし、迷惑がかかるのは将来の自分だけ、という言い訳と共に、はじめはCSVからJSONを作ってくれるWebサービスを利用したほうがいいだろうという判断をしました。綺麗なJSONのデータ構造よりも、クソアプリカレンダーとこのコミックマーケット95の新刊を入稿に間に合うことのほうがはるかに大事だったのです。
 
 そこで、まずはCSVを作ることにしました。[Google SpreadSheet](https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing)（``https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing``）に必要な項目を記載します。JSONへどのように加工されるかがわからなかったため、1項目に複数の子項目が紐づいている場合はIDを降ることにしました。
 
-![作成したスプレッドシート](../images/chapter5)
+![作成したスプレッドシート](../images/chapter5/spread_sheet.png)
 
 ### CSVをJSONに変換する
 
@@ -45,7 +51,7 @@
 
 ![CSVをアップロードしたあと](../images/chapter5/sqlify_convert.png)
 
-変換後のJSONですが、次のようなテキストがブラウザに表示されます。
+変換後のJSONですが、次のようなテキストがブラウザに表示されます。横に長すぎて紙面には入りきりません。データの途中が切れてしまっているのは仕様です。紙の幅には限界があるので勘弁していただきたいです。
 
 ```json
 [
@@ -69,7 +75,7 @@
 ]
 ```
 
-このままではみづらいので、1冊目の本に絞ってデータを表示します。先ほどidを降った部分のせいで、無駄なJSONの塊ができていることがわかります。本当は1つの``overviews``に``overviews_id``と``overviews_promotion``が3つ紐づくようにしたいのです。このままでは利用することができません。仕方がないので、手作業で全て修正しました。
+このままではみづらいので、1冊目の本に絞ってデータを表示します。先ほどidを降った部分のせいで、無駄なJSONの塊ができていることがわかります。
 
 ```json
 [
@@ -78,11 +84,15 @@
     "overviews_id": 1,
     "booth_url": "https://booth.pm/ja/items/490460",
     "book_title": "ログと情報をレッツ・ラ・まぜまぜ！～ELK Stack で作るBI環境～",
-    "book_info_url": "http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2_もふもふちゃんの戦い履歴",
+    "book_info_url": \r
+    "http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2_もふもふちゃんの戦い履歴",
     "book_info_title": "技術書典2 もふもふちゃんの戦い履歴",
     "book_info_id": "1",
     "book_id": "1",
-    "book_description": "Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。インプレスR＆Dさんから商業化もされています。"
+    "book_description": \r
+    "Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。\r
+    各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。\r
+    インプレスR＆Dさんから商業化もされています。"
   },
   {
     "overviews_promotion": "なにも伝わってこない表紙",
@@ -109,12 +119,13 @@
   // これ以降省略
 ```
 
-
+本当は1つの``overviews``に``overviews_id``と``overviews_promotion``が3つ紐づくようにしたいのです。このままでは利用することができません。仕方がないので、手作業で全て修正しました。
 
 ```json
 [
     {
-        "book_description": "Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。インプレスR＆Dさんから商業化もされています。",
+        "book_description": \r
+        "Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。インプレスR＆Dさんから商業化もされています。",
         "book_id": 1,
         "book_info": [
           {
@@ -146,7 +157,11 @@
         ]
     },
     {
-        "book_description": "『ログと情報をレッツ・ラ・まぜまぜ！～ELK Stack で作るBI環境～』の続編に当たる本です。今回はデータを収集・加工する工程に重点をおいて解説しています。Logstashを使ってALBのログを取得、filterプラグインを用いてデータを扱いやすい形に加工する方法について紹介しています。加えて、LogstashとFluentdの設定を見比べつつ、結局どちらを選択すればいいんだろう？ということも考えています。こちらは『Introduction Elastic Stack6』と合わせて商業化されました。",
+        "book_description": "『ログと情報をレッツ・ラ・まぜまぜ！～ELK Stack で作るBI環境～』の続編に当たる本です。\r
+        今回はデータを収集・加工する工程に重点をおいて解説しています。Logstashを使ってALBのログを取得、\r
+        filterプラグインを用いてデータを扱いやすい形に加工する方法について紹介しています。\r
+        加えて、LogstashとFluentdの設定を見比べつつ、結局どちらを選択すればいいんだろう？ということも考えています。\r
+        こちらは『Introduction Elastic Stack6』と合わせて商業化されました。",
         "book_id": 2,
         "book_info": [
         {
@@ -183,7 +198,11 @@
         ]
     },
     {
-        "book_description": "Elastic Stackがバージョン6になったので、バージョン6で追加された機能やElasticsearch APIの操作方法の知見を寄せ集めました。導入するだけでKibanaのBI画面作成までを実施してくれるFilebeat Modulesの使用例はバージョン6の目玉機能なのでは、と個人的に考えています。もちろんKibanaのUIがアップデートされたため、それに追従してKibanaを操作しつつデータを可視化する知見も入れ込みました。こちらは『データを加工する技術』と合わせて商業化されています。",
+        "book_description": "Elastic Stackがバージョン6になったので、バージョン6で追加された機能や\r
+        Elasticsearch APIの操作方法の知見を寄せ集めました。導入するだけでKibanaのBI画面作成までを実施してくれる\r
+        Filebeat Modulesの使用例はバージョン6の目玉機能なのでは、と個人的に考えています。\r
+        もちろんKibanaのUIがアップデートされたため、それに追従してKibanaを操作しつつデータを可視化する知見も入れ込みました。\r
+        こちらは『データを加工する技術』と合わせて商業化されています。",
         "book_id": 3,
         "book_info": [
           {
@@ -194,7 +213,7 @@
           {
             "book_info_id": 2,
             "book_info_title": "技術書典4に参加しました。",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました%E3%80%82",
+            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました。",
           },
           {
             "book_info_id": 3,
@@ -220,7 +239,10 @@
         ]
     },
     {
-        "book_description": "新卒4年目時点で感じた「こういう風に学べばよかった」「こういう風に質問すればよかった/されると嬉しい」「こんな人にはなりたくないなあ」「どうやって調べたらいいんだろう」的なエモポエムに対する感想＋もふもふちゃんのエモポエム集です。自分への戒め＋1年目で知ってたらもっと変わったかもな〜〜〜他の人にも教えたろ！みたいないい迷惑の知見を布教するつもりで書いた本その1です。",
+        "book_description": "新卒4年目時点で感じた「こういう風に学べばよかった」「こういう風に質問すればよかった/されると嬉しい」\r
+        「こんな人にはなりたくないなあ」「どうやって調べたらいいんだろう」的なエモポエムに対する感想＋もふもふちゃんのエモポエム集です。\r
+        自分への戒め＋1年目で知ってたらもっと変わったかもな〜〜〜他の人にも教えたろ！\r
+        みたいないい迷惑の知見を布教するつもりで書いた本その1です。",
         "book_id": "4",
         "book_info":[
           {
@@ -231,7 +253,7 @@
           {
             "book_info_id": 2,
             "book_info_title": "技術書典4に参加しました。",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました%E3%80%82",
+            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました。",
           },
           {
             "book_info_id": 3,
@@ -257,7 +279,10 @@
         ]
     },
     {
-        "book_description": "『ひよこエンジニアに送るお仕事サバイバルガイド』では書けなかったようなブラックなネタ（温めておいた）だけを集めて書いたのですが、このときはもう転職していたのですっかりやる気がなくなって…はないです。もふもふちゃんが仕事で出会ってやだったな〜〜〜と思った人のアンチパターン事例を集めました。自分が仲間入りしないように頑張ります。",
+        "book_description": "『ひよこエンジニアに送るお仕事サバイバルガイド』では書けなかったような\r
+        ブラックなネタ（温めておいた）だけを集めて書いたのですが、このときはもう転職していたのですっかりやる気がなくなって\r
+        …はないです。もふもふちゃんが仕事で出会ってやだったな〜〜〜と思った人のアンチパターン事例を集めました。\r
+        自分が仲間入りしないように頑張ります。",
         "book_id": "5",
         "book_info":[
           {
@@ -284,13 +309,19 @@
         ]
     },
     {
-        "book_description": "Webアプリケーション関連の用語、色々あって毎回調べ直すのめんどくさ…そうだ用語集を作ろう！と思って原稿を始めました。進めるうちに「用語集だと結局読まない気がする」と思い始め、問題を考えて回答を作れば理解も深まるのでは…という結論に至りました。理解が深まったか…はちょっと自信がありませんが、学校の定期テストを考えている先生はほんと大変だなという気持ちになりました。通販は大好きなとらのあなさんにお願いしました。個人的にもお世話になっているので、とらのあな専売シールをつけてもらいたかったんです。",
+        "book_description": "Webアプリケーション関連の用語、色々あって毎回調べ直すのめんどくさ…そうだ用語集を作ろう！\r
+        と思って原稿を始めました。進めるうちに「用語集だと結局読まない気がする」と思い始め、\r
+        問題を考えて回答を作れば理解も深まるのでは…という結論に至りました。\r
+        理解が深まったか…はちょっと自信がありませんが、学校の定期テストを考えている先生はほんと大変だなという気持ちになりました。\r
+        通販は大好きなとらのあなさんにお願いしました。個人的にもお世話になっているので、\r
+        とらのあな専売シールをつけてもらいたかったんです。",
         "book_id": "6",
         "book_info":[
           {
             "book_info_id": 1,
             "book_info_title": "技術書典5に参加できるか怪しかったけど参加できた話",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/10/10/技術書典5に参加できるか怪しかったけど参加で",
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/10/10/技術書典5に参加できるか怪しかったけど参加できた話",
           },
           {
             "book_info_id": 2,
@@ -304,7 +335,8 @@
         "overviews":[
           {
             "overviews_id": 1,
-            "overviews_promotion": "このためだけに高校数学の参考書を買った。しかも解説がわからなかったのでわかる人に教えてもらった。高校生かな？"
+            "overviews_promotion": "このためだけに高校数学の参考書を買った。\r
+            しかも解説がわからなかったのでわかる人に教えてもらった。高校生かな？"
           },
           {
           "overviews_id": 2,
@@ -324,8 +356,6 @@
 > に・ど・ど・やりたくない！
 
 と書いてありました。全くもって同感です。間違いや抜け漏れがあるとは思いましたが、不具合を見つけたときに修正する方が効率が良いと感じたため一旦これにてJSONの作成は終了としました。
-
-https://github.com/MofuMofu2/portfolio-vue/pull/26
 
 ## #19 JSONからデータを取得して表示できるようにする
 
@@ -563,8 +593,6 @@ FireFoxを開発しているMozillaのWeb技術解説サイト[MDN web docs](htt
 ### 他のコンポーネントも同じようにJSONデータを取得する
 
 JSONデータの不整合や、画面に表示できていない部分を修正し、画面の表示を全てJSONから取得したデータでまかなうようにできました。GitHubのPull Requestをみると、かなり修正が入っていることがわかります。
-
-https://github.com/MofuMofu2/portfolio-vue/pull/27
 
 ### assets/book-data.json
 
@@ -1098,7 +1126,18 @@ export default {
 
 これをブラウザ上で確認すると、次のように表示されます。
 
-![最終的なWebアプリケーションの画面](../images/chapter5/#19_finish.png)
+![最終的なWebアプリケーションの画面](../images/chapter5/19_finish.png)
+
+### Issues
+
+- https://github.com/MofuMofu2/portfolio-vue/issues/19
+- https://github.com/MofuMofu2/portfolio-vue/issues/23
+
+### Pull Requests
+
+- https://github.com/MofuMofu2/portfolio-vue/pull/26
+- https://github.com/MofuMofu2/portfolio-vue/pull/27
+
 
 ### りまりま団の同人誌リスト
 
