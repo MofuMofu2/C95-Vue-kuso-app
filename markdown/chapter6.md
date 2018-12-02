@@ -676,11 +676,7 @@ export default {
 
 ![最後のデータを表示するとエラーが出ている](../images/chapter6/25_bug.png)
 
-https://github.com/MofuMofu2/portfolio-vue/pull/32
-
 ## #33 同人誌の表紙・裏表紙画像を準備する
-
-https://github.com/MofuMofu2/portfolio-vue/issues/33
 
 文字列の切り替えができるようになったため、同じ要領で画像の切り替えをできるようにします。画像をどうやって表示するかに悩みましたが、次の方針で進めることにしました。
 
@@ -780,11 +776,7 @@ export default {
 
 ![#33実装後](../images/chapter6/33_finish.png)
 
-https://github.com/MofuMofu2/portfolio-vue/pull/35
-
 ## #34 idがJSONの最後だとundefinedになる
-
-https://github.com/MofuMofu2/portfolio-vue/issues/34
 
 日本語がかなり乏しいissueのタイトルですが、表題の通りJSONの最後の値になると``undefined``になってしまい何もできなくなってしまいます。これを修正しなければ公開することはできません。
 
@@ -1213,11 +1205,8 @@ export default {
 
 ## 見た目や誤字を修正する
 
-- https://github.com/MofuMofu2/portfolio-vue/pull/37
-- https://github.com/MofuMofu2/portfolio-vue/pull/38
-
 ボタンの見た目が個人的に気に食わなかったので``＞``・``＜``をemojiに置き換えました。KUSO感が高まったので大満足です。また、画面下の方の背景色が切れてしまう問題があったのでCSSを調整しました。また、``favicon``も自作して``assets``ディレクトリに配置しました。
-また、『魔法つかいプリキュア！』表記が『魔法使いプリキュア！』になっていたため修正しました。[^maho-girls]
+また、『魔法つかいプリキュア！』表記が『魔法使いプリキュア！』になっていたため修正しました。 [^maho-girls]
 
 [^maho-girls]: 事前にサイトを身内の人に見せたんですが「魔法つかいは``つかい``のところひらがなだから」と怒られました。漢字変換されてたのに気づけなかった…。大変申し訳ありませんでした。
 
@@ -1777,6 +1766,20 @@ new Vue({
 最後に、これらのアプリケーションをデプロイしましょう。
 
 ## 参考URL
+
+### Issues
+
+- https://github.com/MofuMofu2/portfolio-vue/issues/33
+- https://github.com/MofuMofu2/portfolio-vue/issues/34
+
+
+### Pull Requests
+
+- https://github.com/MofuMofu2/portfolio-vue/pull/32
+- https://github.com/MofuMofu2/portfolio-vue/pull/35
+- https://github.com/MofuMofu2/portfolio-vue/pull/37
+- https://github.com/MofuMofu2/portfolio-vue/pull/38
+
 
 ### undefinedの〇〇
 

@@ -1,8 +1,51 @@
-# #1 ヘッダーの作成〜#2 フッターの作成
+# Vueプロジェクトの作成〜#2 フッターの作成
 
 先に見た目を作って色々調整しよう！わかりやすいから！という方針で進めました。これは大正解だったと思います。なぜなら、見た目ができていると安心感がありますし、進捗していることが目で見てわかるからです。
 
+## Vueプロジェクトをどうやって作るか検討する
+
+Vue.jsのプロジェクトを作るときに、いくつか方法があります。
+
+- CDNを利用してVue.jsをインポートする
+- Vue CLIを利用する
+- Nuxtを利用する
+
+今回はVue CLIを利用することにしました。理由は次の通りです。
+
+- SSRする必要がない
+- 画面の各要素はコンポーネントにわけておきたい
+
+### SSRする必要がない
+
+SEO対策とか検索がどうこうとかを考えるとSSR対応した方がいいのかなとおもったのですが、KUSOアプリが検索上位に来られても困るので別にSSRする必要ないわと思いました。
+
+### 画面の各要素はコンポーネントにわけておきたい
+
+CDNを利用してもコンポーネントを作ることはできます。しかし、今回は画面のパーツごとにコンポーネントを作りたいと思いました。理由は今後見た目や色などを少しだけ変えたいとき、コンポーネントに別れていた方が修正が楽かなと思ったためです。Vueのファイルは画面の要素と処理部分を1ファイルにまとめて記載するため、ファイルの行数が長くなる傾向があります。複雑になると平気で400行近くになってしまい、変数とHTMLの対応を追いかけるだけでも大変です。
+
+仕事で作るようなアプリケーションなら処理も複雑になるのでまあ分からなくはないのですが、個人開発でそんなファイルはメンテナンスしたくありません。というわけで、画面の要素はなるべく小さくわけることにしました。
+
 個人開発はモチベーションを保つのが難しいので、何かしら「進捗している」感を演出する仕掛けを作っておいた方が良いです。今回は、1コンポーネントごとにissueをたてることにしました。さらに、開発時に出た不具合や改善点もissueを記載することにしました。issueが閉じられると何かしらの進捗を感じられ、かつGitHubのContributionにも反映されるため一石二鳥です。
+
+## プロジェクトの作成
+
+公式ドキュメントに沿って進めます。まず、パッケージ管理システム``npm``を用いてVue.jsをインストールします。``yarn``というパッケージ管理システムもあるのですが、仕事で利用したことがないので今回は利用しませんでした。
+
+```bash
+$ npm install -g @vue/cli
+``` 
+
+Vue CLIをインストールした次は、Vueプロジェクトを作成します。
+
+```bash
+$ vue create プロジェクト名
+```
+
+今回は``portfolio-vue``というプロジェクト名にしました。対話形式で基本設定を行います。ESLintを利用することのみ指定します。1ページのWebアプリケーションなのでルーティングは必要ありませんし、TypeScriptを利用しないで開発してみたいなと思ったからです。 [^typescript]
+
+[^typescript]: 仕事ではVue.jsとTypeScriptで開発しています。メソッドの勝手がかなり違うので、なんだか別物のように感じてしまいます。
+
+これで開発準備はできました。GitHubでのコミットハッシュ値は[747b37](https://github.com/MofuMofu2/portfolio-vue/commit/747b37da5ddb697bcc80d1e20b4053b1b89a2bcc)です。
 
 ## #1 ヘッダーの作成
 
@@ -12,20 +55,120 @@
 
 ### Vue.jsの基本的な書き方でヘッダー要素を作成する
 
-### ヘッダー要素に割り当てる文字をdataに記載する
+まず、実際に画面に表示される``App.vue``ファイルに``Header``コンポーネントを追加します。``Header``と``Footer``は予約語扱いなのか、App.vueへインポートするときの名前は別の名前にする必要があります。``Header.vue``にはヘッダーの表示部分に関するコードのみが記述されます。``<template>``にはHTMLを、``<script>``にはVue.js（JavaScript）の処理を、``<style>``にはCSSを記述します。
+
+```JavaScript
+<template>
+  <title-header></title-header>
+</template>
+<script>
+import titleHeader from './components/Header.vue'
+ export default {
+  name: 'app',
+  components: {
+    'title-header': titleHeader
+  }
+}
+</script>
+
+<style>
+</style>
+
+```
+
+次に、Header.vueの内容を作成します。``h1``タグの``{{ title }}``という部分はMustache記法という名前がついています。``data``という部分の``title``に割り当てられている``同人誌展示会場``というデータが``h1``タグとして表示されますよ、という意味です。``data``の部分を置き換えるだけでHTMLの描画内容を変更することができます。
+
+```JavaScript
+<template>
+  <h1>{{ title }}</h1>
+</template>
+<script>
+export default {
+  name: 'titleHeader',
+  data () {
+    return {
+      title: '同人誌展示会場'
+    }
+  }
+}
+</script>
+ <style scoped>
+  h1 {
+    background-color: #32BDED;
+    color: #E5E400;
+    height: 100px;
+  }
+</style>
+```
+
+最後に、Vueプロジェクトの設定ファイルを記載します。
+
+```JavaScript
+const path = require('path')
+module.exports = {
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [
+        path.resolve(__dirname, './src/styles/abstracts/*.styl'),
+      ]
+    }
+  }
+}
+```
+
+ここまで書けた後、ターミナル上で``npm run serve``コマンドを打ち込みVue.jsの環境を起動します。``localhost:8080``にアクセスすると、次のような画面が見えました。
 
 ![ヘッダー作成後](../images/chapter3/1_header.png)
 
 ### CSSで見た目を整える
 
+よく見ると、ブラウザの端っこに隙間が空いてしまっています。これはブラウザごとにデフォルトのCSSというものが設定されており、h1タグはmargin（要素同士の間隔を決める）はいくつ…などと決まったCSSが割り当たってしまっているためです。デフォルトのCSSはブラウザごとに設定が異なるので、何も設定しないと同じCSSなのに見た目がバラバラになってしまいます。
 
+このままでは困るので、``normalize.css``というものを導入します。これはブラウザに割り当てられているCSSを活かしつつ、ブラウザ間の差異を吸収してくれるCSSです。同じような役割を持つCSSとして``reset.css``というものも存在します。今回は``normalize.css``を利用することにしました。
+理由は``reset.css``はブラウザ独自のスタイルを打ち消しし、デフォルトのCSSを割り当てるからです。CSSの打ち消しは画面の描画に時間がかかる原因となるため、なるべく打ち消しが起こらないCSSが良いCSSと言われます。保守の観点からも、CSSの打ち消しは避けましょうと言われるようです。
+
+``normalize.css``を``npm install``でインストールします。コマンドライン上でプロジェクトのディレクトリに移動し、次のようにして``normalize.css``をインストールしました。
+
+```bash
+$ npm install normalize.css
+```
+
+そして、``Header.vue``に``normalize.css``をインポートします。後で全てのコンポーネントがインポートされている``App.vue``に記述を移し替えました。こうしておくと、他のコンポーネントファイルに``normalize.css``のインポート文を書かずに済むためです。
+
+```JavaScript
+<template>
+  <h1>{{ title }}</h1>
+</template>
+<script>
+import 'normalize.css'
+export default {
+  name: 'titleHeader',
+  data () {
+    return {
+      title: '同人誌が…溢れ出す！'
+    }
+  }
+}
+</script>
+ <style scoped>
+  h1 {
+    align-items: center;
+    background-color: #32BDED;
+    color: #E5E400;
+    display: flex;
+    font-size: 28px;
+    height: 50px;
+    margin: 0;
+  }
+</style>
+```
 
 最終的な見た目はこのようになりました。ヘッダーを作るという目的は達成できたので、ブランチをGitHubにpushし、masterブランチへmergeしました。
 
 ![最終的なヘッダー](../images/chapter3/1_finish.png)
 
 ## #2 フッターの作成
-
 
 今度はフッターを作成します。ワイヤーフレームではフッターに色をつけていたのですが、試しに実装してみると目がチカチカしてしまいました。気分も悪くなりそう（酔ったみたいな感じ）なので、これはボツにしました。
 
@@ -232,6 +375,50 @@ export default {
 
 - https://github.com/MofuMofu2/portfolio-vue/pull/11
 - https://github.com/MofuMofu2/portfolio-vue/pull/12
+
+### Vueのセットアップ
+
+### Vue
+
+#### はじめる
+
+- https://jp.vuejs.org/v2/guide/
+
+#### インストール
+
+- https://jp.vuejs.org/v2/guide/installation.html
+
+#### コンポーネントの基本
+
+- https://jp.vuejs.org/v2/guide/components.html
+
+#### コンポーネントの登録
+
+- https://jp.vuejs.org/v2/guide/components-registration.html
+
+### Vue CLI
+
+#### Get Started
+
+- https://cli.vuejs.org/guide/
+
+#### インストール
+
+- https://cli.vuejs.org/guide/installation.html
+
+#### プロジェクトのセットアップ
+
+- https://cli.vuejs.org/guide/creating-a-project.html
+
+### normalize.css
+
+#### [CSS]CSSリセットとは異なる、Normalize.cssの特徴や使い方などの解説 -About normalize.css | コリス
+
+- https://coliss.com/articles/build-websites/operation/css/about-normalize-css.html
+
+#### Normalize.css: Make browsers render all elements more consistently.
+
+- https://necolas.github.io/normalize.css/
 
 ### Vue.jsでimgタグのsrcを利用する
 

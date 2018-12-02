@@ -66,6 +66,10 @@ KUSO感を醸し出しつつ、それなりに動くアプリケーションが�
 
 ## 参考URL
 
+### Netlify
+
+- https://www.netlify.com/
+
 ### Deployment
 
 - https://cli.vuejs.org/guide/deployment.html
