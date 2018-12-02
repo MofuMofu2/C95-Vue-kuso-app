@@ -47,6 +47,29 @@ CDNを利用してもコンポーネントを作ることはできます。し�
 
 ### GitHubにリポジトリをpush
 
+## 参考URL
 
+### コンポーネントをどのように分割するかわからなかったので参考にしたリスト
 
+#### 最近のフロントエンドのコンポーネント設計に立ち向かう - Qiita
+
+記事の中に出てくる``flux``はFacebook製のJavaScriptフレームワーク``React``の設計思想の一種です。とはいえVue.js（2015年）はReact（2013年）よりも後発のフレームワークですから、設計思想で参考にした部分はあるはずです。
+
+- https://qiita.com/seya/items/8814e905693f00cdade2
+
+####  いつリリースされたか
+
+ウィキペディアは文献の信頼度は低いと評価されていますが、いつから…とかはそこそこ正しい気がします。念のため``first release date ``で調べ直しましたが…。
+
+React
+- https://en.m.wikipedia.org/wiki/React_(JavaScript_library)
+- https://reactjs.org/blog/2013/06/05/why-react.html
+
+Vue.js
+公式ブログに2015年が最初だから！と書いてあったので2015年リリースとしました。ウィキペディアは2014年表記でした。多分β版のリリース年だったのでしょう。
+- https://jp.vuejs.org/2015/10/26/1.0.0-release/
+
+#### メンテナンスしやすいVueComponentを設計するために気をつけていること
+
+- https://aloerina01.github.io/blog/2018-05-01-1
 

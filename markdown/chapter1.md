@@ -154,3 +154,9 @@ BoothやUNIQLOなどの通販サイトは、レイアウあとを検討する際
 #### Adobe Comp CC
 
 - https://www.adobe.com/jp/products/comp.html
+
+#### その他のアプリケーションから Adobe XD にアセットを読み込みます。
+
+PhotoshopからXDにpsdファイルを読み込むときに参考にしました。Adobe製品はUIがコロコロ変わるので、公式サイトを見たほうが早いと思います。最近はチュートリアルも充実しています。
+
+- https://helpx.adobe.com/jp/xd/help/working-with-external-assets.html

@@ -5,8 +5,6 @@
 
 ## #4 KUSOタイトル表示コンポーネントの作成
 
-https://github.com/MofuMofu2/portfolio-vue/issues/4
-
 まず、コンポーネント用のファイルを作成し、App.vueへimportします。アプリケーションのmainコンテンツもKUSO感を出したいと思ったので、``<style>``タグに背景色（すごい色の黄色）を追加しました。また、ヘッダー・フッターとの距離が詰まって見えたので``main``タグには``margin``を設定しました。これで上下左右の間隔を空けることができます。
 
 ### App.vueにKUSOタイトル表示コンポーネントを読み込む
@@ -97,13 +95,9 @@ HTMLタグにデータを割り当てる方法は2種類あります。使い分
 このように使い分けるのが良さそうだ、と思いました。利用比率的には圧倒的に``v-bind``の方が多いな、という印象です。双方向描画は処理が重たくなりそうなのでできる限り使わないようにしているのかな、と思いました。
 実装後はこのようになりました。タイトルからもKUSO感が溢れ出ていて絶好調です。
 
-![KUSOタイトル表示コンポーネント実装後](../images/chapter4/#4_finish.png)
-
-https://github.com/MofuMofu2/portfolio-vue/pull/13
+![KUSOタイトル表示コンポーネント実装後](../images/chapter4/4_finish.png)
 
 ## #3 表紙を表示するコンポーネントを作成する
-
-https://github.com/MofuMofu2/portfolio-vue/issues/3
 
 今度は表紙を表示するコンポーネントを作成します。注意点はフッター作成時と同じく、画像フォルダのパスを``require``を使って割り当てする部分です。同じような処理は一気にまとめて作ってしまった方が忘れなくて良い気がします。これはまとめて作っていないのですが…。
 
@@ -198,11 +192,9 @@ export default {
 </template>
 ```
 
-最終的にこのような表示になりました。画像が一枚入るとWebサイト感があります。
+最終的にこのような表示になりました。画像が一枚入るとWebサイト感が出てきます。
 
-![表紙を表示するコンポーネント作成後](../images/chapter4/#3_finish.png)
-
-https://github.com/MofuMofu2/portfolio-vue/pull/14
+![表紙を表示するコンポーネント作成後](../images/chapter4/3_finish.png)
 
 ## #5 同人誌のコメント（本文）表示コンポーネントを作成する
 
@@ -210,7 +202,7 @@ https://github.com/MofuMofu2/portfolio-vue/pull/14
 
 ### App.vueにコメント表示コンポーネントを読み込む
 
-何回も繰り返していると、何も見ずにコンポーネントのimportができるようになります。地味に成長を感じますね。コンポーネントのimport文はコンポーネントがアルファベット順に並ぶようにしました。VS Codeと並び順が一緒になって確認しやすいためです。
+何回も繰り返していると、何も見ずにコンポーネントのimportができるようになります。地味に成長を感じますね。コンポーネントのimport文はコンポーネントがアルファベット順に並ぶようにしました。VS Codeのワークスペースの並び順と一緒になって確認しやすいためです。
 
 ```JavaScript
    <div id="app">
@@ -247,9 +239,9 @@ import pageFooter from './components/Footer.vue'
 
 ### コメント表示コンポーネントを作成する
 
-こちらも仮のデータを``v-bind``で割り当てました。ここまでの作業を終えるのに7日かかりました。まあ平日は（これでも）働いていて、サボった日もあると考えると結構速いペースで物が作れるなあという感想を持ちました。複雑なことをしなければ、簡単に作れるっていいですよね〜。
+こちらも仮のデータを``v-bind``で割り当てました。ここまでの作業を終えるのに7日かかりました。まあ平日は（これでも）働いていて、サボった日もあると考えると結構速いペースで物が作れるなあという感想を持ちました。複雑なことをしなければ、簡単に作れるっていいですよね。
 
-ここから文字が登場するので、フォントサイズや行の高さをどのように設定するか迷いました。そこで、通販サイトのCSS設定などをいくつか比較し、好みの見た目がどのような設定になっているのかを調べました。今回はpixivさんのBoothを参考にしました。
+文字のフォントサイズや行の高さを、どのように設定するか迷いました。そこで、通販サイトのCSS設定などをいくつか取り上げ、好みの見た目がどのような設定になっているのかを調べました。今回はpixivさんのBoothを参考にしました。
 
 ```JavaScript
 <template>
@@ -282,17 +274,15 @@ export default {
 
 これで左側が埋まりました。今度は右側部分を作ります。
 
-![コメント表示コンポーネント実装後](../images/chapter4/#5_finish.png)
-
-https://github.com/MofuMofu2/portfolio-vue/pull/15
+![コメント表示コンポーネント実装後](../images/chapter4/5_finish.png)
 
 ## #6 同人誌のクソポイント（≒簡単解説）コンポーネントを作成する
 
-クソアプリカレンダー要素の登場です。このコンポーネントはリスト表記を使っていることが今までのコンポーネントと違う点です。
+クソアプリカレンダー要素の登場です。このコンポーネントはリスト表記を使っている点が今までのコンポーネントと違う点です。
 
 ### App.vueに簡単解説コンポーネントを追加する
 
-最初は画面右側に表示しようと思ったのですが、なんとなく収まりが悪かったので説明コンポーネント（BookDescription.vue）と表示位置を入れ替えることにしました。
+最初は画面右側に表示しようと思っていたのですが、なんとなく収まりが悪かったので説明コンポーネント（BookDescription.vue）と表示位置を入れ替えることにしました。
 
 ```JavaScript
 <template>
@@ -344,7 +334,7 @@ export default {
 
 ここで、新しい記法が登場します。``v-for``という記法です。同じHTMLタグを繰り返し利用しつつ、表示する内容だけを変更したい場合に利用します。公式ドキュメントの例でもHTMLタグの``li``表記を実装するときに利用されています。これが一番わかりやすいと思います。
 
-同じデータを繰り返し表示することを防ぐため、``v-for``を利用するときは``v-bind:key``で一意の番号を割り当てることが推奨されています。推奨されています、と言いましたが、ほぼ必須です。Lintツールを利用している場合、警告が出ます。CIを利用している場合はここで弾かれてしまいますね。内部的にデータには一意のIDが割り当てられているようなので、今回は``item``の``id``を割り当てることにしました。
+同じデータを繰り返し表示することを防ぐため、``v-for``を利用するときは``v-bind:key``で一意の番号を割り当てることが推奨されています。推奨されています、と記載しましたが、これはほぼ必須です。Lintツールを利用している場合、警告が出ます。内部的にデータには一意のIDが割り当てられているようなので、今回は``item``の``id``を割り当てることにしました。
 
 ```JavaScript
 <template>
@@ -391,9 +381,7 @@ export default {
 
 これが実装終了後の画面です。
 
-![KUSO POINTコンポーネント作成後](../images/chapter4/#6_finish.png)
-
-https://github.com/MofuMofu2/portfolio-vue/pull/16
+![KUSO POINTコンポーネント作成後](../images/chapter4/6_finish.png)
 
 ## #7 基礎情報コンポーネントを作成する
 
@@ -401,7 +389,7 @@ https://github.com/MofuMofu2/portfolio-vue/pull/16
 
 ### App.vueに基礎情報コンポーネントを追加する
 
-特に変わった処理はありません。他のコンポーネントと同じように追加するだけです。
+特に変わった処理はありません。他のコンポーネントと同じようにApp.vueへコンポーネントを追加するだけです。
 
 ```javaScript
 <template>
@@ -449,6 +437,8 @@ export default {
 </script>
 ```
 
+![#7実装後](../images/chapter4/7_finish.png)
+
 ### 基礎情報コンポーネントの作成
 
 このコンポーネントもリスト表記を利用するため、``v-for``で繰り返しリストを描画します。関連URLの部分ですが、ブログのタイトルをクリックするとURLがクリックされた状態になる、というようにしたかったので、1つの塊に2個データが紐づくようにしました。``v-for``の処理を記載するときはデータ全体を示す``posts``の部分を``v-for``で利用するデータに割り当て、実際にデータを利用する際は``v-forで定義したデータが入っている変数``.``欲しい情報が入ったカラム名``と記載してデータを取り出しました。
@@ -469,7 +459,8 @@ export default {
       <div class="posts-info">
         <h4>関連URL</h4>
         <ul>
-          <li v-for="(list, key) in posts" v-bind:key="list.id"><a href="list.url">{{ list.title }}</a></li>
+          <li v-for="(list, key) in posts" v-bind:key="list.id">\r
+          <a href="list.url">{{ list.title }}</a></li>
         </ul>
       </div>
     </div>
@@ -488,7 +479,7 @@ export default {
       ],
       posts: [
         { title: '技術書典2 もふもふちゃんの戦い履歴',
-          url: 'http://rimarimadan.hatenablog.com/entry/2017/04/12/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B82_%E3%82%82%E3%81%B5%E3%82%82%E3%81%B5%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E6%88%A6%E3%81%84%E5%B1%A5%E6%AD%B4'
+          url: 'http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2 もふもふちゃんの戦い履歴'
           },
         { title: '商業本',
           url: 'http://amzn.asia/d/be7bGtk'
@@ -513,13 +504,11 @@ export default {
 </style>
 ```
 
-![基礎情報コンポーネント作成後](../images/chapter4/#6_finish.png)
+![基礎情報コンポーネント作成後](../images/chapter4/6_finish.png)
 
 後少しで見た目が完成しそうです。
 
 ## #8 購入URLコンポーネントを作成する
-
-https://github.com/MofuMofu2/portfolio-vue/issues/8
 
 これが最後のコンポーネントです。通販サイトのリンクを追加します。issue#5から#8までは一気に実装しました。乗り気なときにまとめて作業するといいのかもしれません。
 
@@ -628,8 +617,9 @@ export default {
   }
 }
 </script>
+```
 
-![実装後](../images/chapter4/#8_first_program.png)
+![#8の実装後](../images/chapter4/8_first_program.png)
 
 一見、リンクになっているように見えます。しかし、``電子版をポチる``の部分をクリックしても正しい遷移にはならず、Vueアプリケーションがリロードされるだけです。考えてもわからなかったため、先に見た目を作ってしまうことにしました。
 
@@ -679,7 +669,7 @@ export default {
 </style>
 ```
 
-![CSS実装後](../images/chapter4/#8_second_program.png)
+![CSS実装後](../images/chapter4/8_second_program.png)
 
 配色はかなりこだわってKUSO感を出してみました。昔のホームページとかにありそうな配色です。
 しかし、この時点ではURLが機能していません。Chrome DevToolsでHTMLを確認すると、``booth.url``という文字列へのリンクが描画されています。``<a href="booth.url"><p>電子版をポチる</p></a>``がそのまま描画されているようです。
@@ -733,18 +723,45 @@ export default {
 
 これでボタンを押すと通販サイトのURLに遷移するようになりました。別タブで開くようにするか迷いましたが、離脱率を下げましょう！といった目標は特に掲げていないため別タブの実装は行いませんでした。後々改善すれば良いことなので、まずは完成することを目標にしました。
 
-![購入URLコンポーネント実装後](../images/chapter4/#8_finish.png)
-
-https://github.com/MofuMofu2/portfolio-vue/pull/18
+![購入URLコンポーネント実装後](../images/chapter4/8_finish.png)
 
 ## 外観ができた
 
 これでコンポーネントの実装が一通り完了しました。ワイヤーフレームを見ながら実装するのはここまでです。本の情報を取得して切り替えるようにする実装を追加するためです。Vue.jsは見た目を作るのは簡単にできるのですが、少し複雑なことをしようとすると実装例がグッと少なくなります。まだ新しい技術ならではという感じです。Webアプリケーションを作ったことがあまりない私は、お手本がないと処理の書き方・考え方がわからないのでかなり大変でした。最後はちゃんと自分で考えて実装する羽目になりました。いいことなんですけどね。
 
+## 参考URL
+
+### Issues
+
+- https://github.com/MofuMofu2/portfolio-vue/issues/4
+- https://github.com/MofuMofu2/portfolio-vue/issues/3
+- https://github.com/MofuMofu2/portfolio-vue/issues/5
+- https://github.com/MofuMofu2/portfolio-vue/issues/6
+- https://github.com/MofuMofu2/portfolio-vue/issues/8
+
+
+### Pull Requests
+
+- https://github.com/MofuMofu2/portfolio-vue/pull/13
+- https://github.com/MofuMofu2/portfolio-vue/pull/14
+- https://github.com/MofuMofu2/portfolio-vue/pull/15
+- https://github.com/MofuMofu2/portfolio-vue/pull/16
+- https://github.com/MofuMofu2/portfolio-vue/pull/18
+
+### フォントサイズ
+
+#### Booth
+
+- https://booth.pm/ja/items/490460
+
 ### liタグの繰り返し
+
+#### GASとVue.jsによるWebアプリでv-forディレクティブを使って繰り返し要素を描画する方法
 
 - https://tonari-it.com/gas-vue-js-for-directive/
 
 ### コンポーネントの名前
+
+#### 基底コンポーネントの名前
 
 - https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8
