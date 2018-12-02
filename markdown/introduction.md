@@ -1,6 +1,6 @@
 # まえがき
 
-こんにちは。りまりま団のもふもふです。この本はノリで[クソアプリ Advent Calendar2018]( https://qiita.com/advent-calendar/2018/kuso-app ) （`` https://qiita.com/advent-calendar/2018/kuso-app ``）に申し込んでしまったもふもふちゃんがVue.jsでKUSO同人誌ポートフォリオをつくった記録をまとめたものです。
+こんにちは。りまりま団のもふもふです。この本はノリで[クソアプリ Advent Calendar2018](https://qiita.com/advent-calendar/2018/kuso-app) （``https://qiita.com/advent-calendar/2018/kuso-app``）に申し込んでしまったもふもふちゃんがVue.jsでKUSO同人誌ポートフォリオをつくった記録をまとめたものです。
 
 ## 使った技術スタック
 
