@@ -281,11 +281,11 @@ epubmaker:
 # tatsumacroは、電子書籍版の制作に利用する
 # texstyle: tatsumacro
 # 変更する
-texstyle: onestop-techbook
+texstyle: techbooster-doujin
 #
 # LaTeX用のdocumentclassを指定する
 # texdocumentclass: ["jsbook", "oneside,14pt,uplatex"]
-texdocumentclass: ["jsbook", "a5j,oneside,openany,uplatex"]
+texdocumentclass: ["jsbook", "b5j,oneside,openany,uplatex"]
 # texdocumentclass: ["jsbook", "a5j,twoside,openany,uplatex,9pt"]
 #
 # LaTeX用のコマンドを指定する

@@ -457,7 +457,7 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
 
 
 
-@<tt>{import}でJSONデータをインポートし、@<tt>{data}部分でデータを割り当てれば良いのでは？と考えたからです。
+@<tt>{import}でJSONデータをインポートし、@<tt>{data}部分でデータを割り当てれば良いのでは？と考えたからです。
 
 
 //emlist[][JavaScript]{
@@ -551,7 +551,7 @@ FireFoxを開発しているMozillaのWeb技術解説サイト@<href>{https://de
 //quote{
  * 配列や変数の値が代入されていない
  * まだ値が代入されていない
- * 値を@<tt>{return}しない関数
+ * 値を@<tt>{return}しない関数
 
 //}
 

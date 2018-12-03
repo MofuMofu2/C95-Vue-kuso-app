@@ -32,7 +32,7 @@ Netlifyは基本的にホスティングされたGitリポジトリをビルド�
 
 
 
-//image[select_repo][ログイン後]{
+//image[after_login][ログイン後]{
 //}
 
 
