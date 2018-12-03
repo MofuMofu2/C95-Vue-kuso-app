@@ -161,11 +161,11 @@ import bookInfo from './components/BookInfo.vue'
   },
   data() {
     return {
-+       bookData: bookData,
-+       bookId: 0,
-+       left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
--       right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg"),
-+       right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
++     bookData: bookData,
++     bookId: 0,
++     left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
+-     right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg"),
++     right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
     }
 +   },
 +   methods: {
@@ -186,6 +186,7 @@ import bookInfo from './components/BookInfo.vue'
 +    }
  }
 </script>
+//}
 
 よく見ると、``prop``の使い方が間違っています。``prop:[変数名]``は子コンポーネントに記載するべきですが、ここでは親コンポーネントに記載されてしまっています。親コンポーネントでするべきことは、``v-bind``で子コンポーネントにデータを紐付けることです。
 
@@ -197,6 +198,7 @@ import bookInfo from './components/BookInfo.vue'
 
 #### App.vue（propしたい値を定義）
 
+//emlist[][JavaScript]{
 ```JavaScript
   <div id="app">
     <div class="header">
@@ -253,8 +255,10 @@ import bookInfo from './components/BookInfo.vue'
      return {
        bookData: bookData,
        bookId: 0,
-       left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
-       right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
+       left_arrow: \r
+       require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),\r
+       right_arrow: \r
+       require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
     }
   },
 +   computed: {
@@ -280,6 +284,7 @@ import bookInfo from './components/BookInfo.vue'
    }
  }
 </script>
+//}
 
 ### BookTitle.vue（propした値を取得してJSONを表示）
 
@@ -288,7 +293,8 @@ import bookInfo from './components/BookInfo.vue'
   <div class="book-title">
     <div class="fanbook-title">
       <div class="fan-book" v-bind:title="bookTitle">{{ bookTitle }}</div>
-      <div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">{{ bookTitle }}</div>
+      <div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">\r
+      {{ bookTitle }}</div>
     </div>
   </div>
 </template>
@@ -312,7 +318,7 @@ export default {
   }
 }
  </script>
-//}
+
 
 
 やっほー！できたー！と思ったのですが、@<tt>{BookTitle.vue}の@<tt>{<div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">{{ bookTitle \}\}</div>}の部分に不具合があります。というのも、@<tt>{v-bind:id="currentBookId"}の部分の@<tt>{currentBookId}はundefinedになってしまうためです。
@@ -331,7 +337,8 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
 <template>
   <div class="book-title">
     <div class="fanbook-title">
--       <div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">{{ bookTitle }}</div>
+-       <div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">\r
+{{ bookTitle }}</div>
 +       <div class="fan-book" v-bind:title="bookTitle">{{ bookTitle }}</div>
     </div>
   </div>
@@ -402,8 +409,10 @@ export default {
     return {
       bookData: bookData,
       bookId: 0,
-      left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
-      right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
+      left_arrow: \r
+      require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
+      right_arrow: \r
+      require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
     }
   },
   computed: {
@@ -514,7 +523,8 @@ export default {
       <div class="posts-info">
         <h4>関連URL</h4>
         <ul>
-          <li v-for="list in posts" v-bind:key="list.id"><a v-bind:href="list">{{ list }}</a></li>
+          <li v-for="list in posts" v-bind:key="list.id"><a v-bind:href="list">\r
+          {{ list }}</a></li>
         </ul>
       </div>
     </div>
@@ -869,7 +879,11 @@ vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_title' of und
     at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
     at VueComponent.computedGetter [as bookTitle] (vue.runtime.esm.js?2b0e:3503)
     at Object.get (vue.runtime.esm.js?2b0e:1916)
-    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookTitle.vue?vue&type=template&id=1a6b496f&scoped=true& (app.js:973), <anonymous>:10:64)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?
+    {"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!
+    ./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!.
+    /node_modules/vue-loader/lib/index.js?!./src/components/BookTitle.vue?vue&type=
+    template&id=1a6b496f&scoped=true& (app.js:973), <anonymous>:10:64)
     at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
     at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
     at Watcher.get (vue.runtime.esm.js?2b0e:3138)
@@ -903,14 +917,21 @@ flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
 (anonymous) @ vue.runtime.esm.js?2b0e:1833
 flushCallbacks @ vue.runtime.esm.js?2b0e:1754
 vue.runtime.esm.js?2b0e:1737 Error: Cannot find module './6/front.png'
-    at webpackContextResolve (eval at ./src/assets/bookImage sync recursive ^\.\/.*\/front\.png$ (app.js:2410), <anonymous>:18:11)
-    at webpackContext (eval at ./src/assets/bookImage sync recursive ^\.\/.*\/front\.png$ (app.js:2410), <anonymous>:12:11)
+    at webpackContextResolve (eval at ./src/assets/bookImage sync recursive
+     ^\.\/.*\/front\.png$ (app.js:2410), <anonymous>:18:11)
+    at webpackContext (eval at ./src/assets/bookImage sync recursive
+     ^\.\/.*\/front\.png$ (app.js:2410), <anonymous>:12:11)
     at VueComponent.frontImage (BookImage.vue?4ee6:14)
     at Watcher.get (vue.runtime.esm.js?2b0e:3138)
     at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
     at VueComponent.computedGetter [as frontImage] (vue.runtime.esm.js?2b0e:3503)
     at Object.get (vue.runtime.esm.js?2b0e:1916)
-    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookImage.vue?vue&type=template&id=656096f2&scoped=true& (app.js:949), <anonymous>:9:35)
+    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?
+    {"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":
+    "dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!
+    ./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!.
+    /src/components/BookImage.vue?vue&type=template&id=656096f2&scoped=true& (app.js:949),
+     <anonymous>:9:35)
     at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
     at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
 logError @ vue.runtime.esm.js?2b0e:1737
@@ -923,162 +944,8 @@ run @ vue.runtime.esm.js?2b0e:3215
 flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
 (anonymous) @ vue.runtime.esm.js?2b0e:1833
 flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: "TypeError: Cannot read property 'overviews' of undefined"
-
-found in
-
----> <DescriptionList> at src/components/DescriptionList.vue
-       <App> at src/App.vue
-         <Root>
-warn @ vue.runtime.esm.js?2b0e:587
-logError @ vue.runtime.esm.js?2b0e:1733
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'overviews' of undefined
-    at VueComponent.promotionData (DescriptionList.vue?068c:27)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
-    at VueComponent.computedGetter [as promotionData] (vue.runtime.esm.js?2b0e:3503)
-    at Object.get (vue.runtime.esm.js?2b0e:1916)
-    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/DescriptionList.vue?vue&type=template&id=51aab08c&scoped=true& (app.js:997), <anonymous>:13:20)
-    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
-    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
-logError @ vue.runtime.esm.js?2b0e:1737
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: "TypeError: Cannot read property 'book_description' of undefined"
-
-found in
-
----> <BookDescription> at src/components/BookDescription.vue
-       <App> at src/App.vue
-         <Root>
-warn @ vue.runtime.esm.js?2b0e:587
-logError @ vue.runtime.esm.js?2b0e:1733
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_description' of undefined
-    at VueComponent.descText (BookDescription.vue?a8d0:19)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
-    at VueComponent.computedGetter [as descText] (vue.runtime.esm.js?2b0e:3503)
-    at Object.get (vue.runtime.esm.js?2b0e:1916)
-    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookDescription.vue?vue&type=template&id=2e2a9dd3&scoped=true& (app.js:937), <anonymous>:11:63)
-    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
-    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
-logError @ vue.runtime.esm.js?2b0e:1737
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: "TypeError: Cannot read property 'book_info' of undefined"
-
-found in
-
----> <BookInfo> at src/components/BookInfo.vue
-       <App> at src/App.vue
-         <Root>
-warn @ vue.runtime.esm.js?2b0e:587
-logError @ vue.runtime.esm.js?2b0e:1733
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_info' of undefined
-    at VueComponent.infoTexts (BookInfo.vue?4ab4:36)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
-    at VueComponent.computedGetter [as infoTexts] (vue.runtime.esm.js?2b0e:3503)
-    at Object.get (vue.runtime.esm.js?2b0e:1916)
-    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BookInfo.vue?vue&type=template&id=c839b832&scoped=true& (app.js:961), <anonymous>:14:22)
-    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
-    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
-logError @ vue.runtime.esm.js?2b0e:1737
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: "TypeError: Cannot read property 'booth_url' of undefined"
-
-found in
-
----> <BoothButton> at src/components/BoothButton.vue
-       <App> at src/App.vue
-         <Root>
-warn @ vue.runtime.esm.js?2b0e:587
-logError @ vue.runtime.esm.js?2b0e:1733
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'booth_url' of undefined
-    at VueComponent.boothUrl (BoothButton.vue?400f:22)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
-    at VueComponent.computedGetter [as boothUrl] (vue.runtime.esm.js?2b0e:3503)
-    at Object.get (vue.runtime.esm.js?2b0e:1916)
-    at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/BoothButton.vue?vue&type=template&id=37d0d088&scoped=true& (app.js:985), <anonymous>:10:36)
-    at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
-    at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
-    at Watcher.get (vue.runtime.esm.js?2b0e:3138)
-    at Watcher.run (vue.runtime.esm.js?2b0e:3215)
-logError @ vue.runtime.esm.js?2b0e:1737
-globalHandleError @ vue.runtime.esm.js?2b0e:1728
-handleError @ vue.runtime.esm.js?2b0e:1717
-Vue._render @ vue.runtime.esm.js?2b0e:4542
-updateComponent @ vue.runtime.esm.js?2b0e:2784
-get @ vue.runtime.esm.js?2b0e:3138
-run @ vue.runtime.esm.js?2b0e:3215
-flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
-(anonymous) @ vue.runtime.esm.js?2b0e:1833
-flushCallbacks @ vue.runtime.esm.js?2b0e:1754
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: 
+"TypeError: Cannot read property 'overviews' of undefined"
 //}
 
 
@@ -1112,8 +979,10 @@ flushCallbacks @ vue.runtime.esm.js?2b0e:1754
      return {
        bookData: bookData,
        bookId: 0,
-       left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
-       right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
+       left_arrow: \r
+       require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
+       right_arrow: \r
+       require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
      }
    },
    computed: {
@@ -1219,8 +1088,10 @@ export default {
     return {
       bookData: bookData,
       bookId: 0,
-      left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
-      right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
+      left_arrow: \r
+      require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
+      right_arrow: \r
+      require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
     }
   },
   computed: {
@@ -1364,8 +1235,10 @@ export default {
     return {
       bookData: bookData,
       bookId: 0,
-      left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
-      right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
+      left_arrow: \r
+      require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
+      right_arrow: \r
+      require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
     }
   },
   computed: {
@@ -1539,7 +1412,8 @@ export default {
       <div class="posts-info">
         <h4>関連URL</h4>
         <ul>
-          <li v-for="list in posts" v-bind:key="list.id"><a v-bind:href="list">{{ list }}</a></li>
+          <li v-for="list in posts" v-bind:key="list.id"><a v-bind:href="list">\r
+          {{ list }}</a></li>
         </ul>
       </div>
     </div>
@@ -1761,8 +1635,10 @@ export default {
 <template>
   <div class="page-footer">
     <div class="icons">
-      <a href="https://twitter.com/froakie0021" target="blank"><img :src="twitter_src" alt="twitter"></a>
-      <a href="https://github.com/MofuMofu2/portfolio-vue" target="blank"><img :src="github_src" alt="github"></a>
+      <a href="https://twitter.com/froakie0021" target="blank">\r
+      <img :src="twitter_src" alt="twitter"></a>
+      <a href="https://github.com/MofuMofu2/portfolio-vue" target="blank">\r
+      <img :src="github_src" alt="github"></a>
     </div>
     <div class="copyright">
       <p>©︎ 2018 りまりま団</p>
@@ -1776,8 +1652,10 @@ export default {
   name: 'pageFooter',
   data() {
     return {
-      twitter_src: require("../assets/footer/Twitter_Social_Icon_Rounded_Square_Color.svg"),
-      github_src: require("../assets/footer/GitHub-Mark.svg")
+      twitter_src: \r
+      require("../assets/footer/Twitter_Social_Icon_Rounded_Square_Color.svg"),
+      github_src: \r
+      require("../assets/footer/GitHub-Mark.svg")
     }
   }
 }

@@ -316,7 +316,7 @@ Vue.jsアプリケーションでアイコンを利用したいので、@<tt>{sr
 
 
 
-Twitterのアイコンは@<href>{https://about.twitter.com/ja/company/brand-resources.html,Twitterのブランドリソース}（@<tt>{https://about.twitter.com/ja/company/brand-resources.html}）からダウンロードします。TwitterはSVGファイルが直接配布されているため、これを直接利用します。Twitterの場合、アイコンをダウンロードするとガイドラインを記載したPDFもダウンロードできます。もちろんTwitterのサイト内に記載があります。こちらはわざわざ絵で解説が書いてあります。利用前によく確認します。と言っても、ルールはほとんどGitHubと一緒です。唯一異なる点は、Twitterの古いアイコンを利用してはいけないという点です。利用する気にはなりませんが…。
+Twitterのアイコンは@<href>{https://about.twitter.com/ja/company/brand-resources.html,Twitterのブランドリソース}からダウンロードします。TwitterはSVGファイルが直接配布されているため、これを直接利用します。Twitterの場合、アイコンをダウンロードするとガイドラインを記載したPDFもダウンロードできます。もちろんTwitterのサイト内に記載があります。こちらはわざわざ絵で解説が書いてあります。利用前によく確認します。と言っても、ルールはほとんどGitHubと一緒です。唯一異なる点は、Twitterの古いアイコンを利用してはいけないという点です。利用する気にはなりませんが…。
 こちらもサイズの変更などはせず、ダウンロードしたものをそのまま@<tt>{src/assets}ディレクトリに配置します。
 
 
@@ -431,7 +431,8 @@ export default {
   name: 'pageFooter',
   data () {
     return {
-      twitter_src: require("../assets/Twitter_Social_Icon_Rounded_Square_Color.svg"),
+      twitter_src: require\r
+      ("../assets/Twitter_Social_Icon_Rounded_Square_Color.svg"),
       github_src: require("../assets/GitHub-Mark.svg")
     }
   }

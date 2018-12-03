@@ -49,7 +49,7 @@
 
 
 
-そこで、まずはCSVを作ることにしました。@<href>{https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing,Google SpreadSheet}（@<tt>{https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing}）に必要な項目を記載します。JSONへどのように加工されるかがわからなかったため、1項目に複数の子項目が紐づいている場合はIDを降ることにしました。
+そこで、まずはCSVを作ることにしました。@<href>{https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing,Google SpreadSheet}に必要な項目を記載します。JSONへどのように加工されるかがわからなかったため、1項目に複数の子項目が紐づいている場合はIDを降ることにしました。
 
 
 
@@ -81,33 +81,10 @@
 
 
 
-変換後のJSONですが、次のようなテキストがブラウザに表示されます。横に長すぎて紙面には入りきりません。データの途中が切れてしまっているのは仕様です。紙の幅には限界があるので勘弁していただきたいです。
+変換後のJSONですが、次のようなテキストがブラウザに表示されます。横に長すぎて紙面には入りきりません。なので今回は紙面に載せないようにしました。紙の幅には限界があるので勘弁していただきたいです。
 
 
-//emlist[][json]{
-[
-{"overviews_promotion":"ふざけたタイトル","overviews_id":1,"booth_url":"https://booth.pm/ja/items/490460","book_title":"ログと情報をレッツ・ラ・まぜまぜ！～ELK Stack で作るBI環境～","book_info_url":"http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2_もふもふちゃんの戦い履歴","book_info_title":"技術書典2 もふもふちゃんの戦い履歴","book_info_id":"1","book_id":"1","book_description":"Elasticsearch社のプロダクトであるElasticsearch・Logstash・Kibanaを用いてログを分析してみようという本です。各ミドルウェアのインストールからKibanaでグラフを描画するまでの道のりを一通り網羅しつつまとめました。インプレスR＆Dさんから商業化もされています。"},
-{"overviews_promotion":"なにも伝わってこない表紙","overviews_id":2,"booth_url":"","book_title":"","book_info_url":"http://amzn.asia/d/be7bGtk","book_info_title":"商業本","book_info_id":"2","book_id":"","book_description":""},
-{"overviews_promotion":"布教本のはずなのにまさかの省略記法を使っている","overviews_id":3,"booth_url":"","book_title":"","book_info_url":"","book_info_title":"","book_info_id":"","book_id":"","book_description":""},
-{"overviews_promotion":"本編と全く関係ないペンギンの表紙","overviews_id":1,"booth_url":"https://mofu-mofu.booth.pm/items/666604","book_title":"データを加工する技術","book_info_url":"http://rimarimadan.hatenablog.com/entry/2017/10/17/技術書典3_告知","book_info_title":"技術書典3 告知","book_info_id":"1","book_id":"2","book_description":"『ログと情報をレッツ・ラ・まぜまぜ！～ELK Stack で作るBI環境～』の続編に当たる本です。今回はデータを収集・加工する工程に重点をおいて解説しています。Logstashを使ってALBのログを取得、filterプラグインを用いてデータを扱いやすい形に加工する方法について紹介しています。加えて、LogstashとFluentdの設定を見比べつつ、結局どちらを選択すればいいんだろう？ということも考えています。こちらは『Introduction Elastic Stack6』と合わせて商業化されました。"},
-{"overviews_promotion":"章が変わったときにページを詰める方法がわからず、むりやりペンギンの写真を詰め込んだ根性","overviews_id":2,"booth_url":"","book_title":"","book_info_url":"http://rimarimadan.hatenablog.com/entry/2017/10/23/技術書典3に参加しました","book_info_title":"技術書典3に参加しました","book_info_id":"2","book_id":"","book_description":""},
-{"overviews_promotion":"魔法使いプリキュア！に似ているというだけで採用された表紙のフォント","overviews_id":3,"booth_url":"","book_title":"","book_info_url":"http://amzn.asia/d/e3iTGAa","book_info_title":"商業本","book_info_id":"3","book_id":"","book_description":""},
-{"overviews_promotion":"考えるのが面倒臭くて適当に作った表紙","overviews_id":1,"booth_url":"https://mofu-mofu.booth.pm/items/965753","book_title":"Introduction Elastic Stack6","book_info_url":"http://rimarimadan.hatenablog.com/entry/2018/04/17/技術書典4にサークル参加します！","book_info_title":"技術書典4にサークル参加します！","book_info_id":"1","book_id":"3","book_description":"Elastic Stackがバージョン6になったので、バージョン6で追加された機能やElasticsearch APIの操作方法の知見を寄せ集めました。導入するだけでKibanaのBI画面作成までを実施してくれるFilebeat Modulesの使用例はバージョン6の目玉機能なのでは、と個人的に考えています。もちろんKibanaのUIがアップデートされたため、それに追従してKibanaを操作しつつデータを可視化する知見も入れ込みました。こちらは『データを加工する技術』と合わせて商業化されています。"},
-{"overviews_promotion":"この本のリポジトリのgit logを取得しているので駆け込み原稿であることがもろバレである","overviews_id":2,"booth_url":"","book_title":"","book_info_url":"http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました%E3%80%82","book_info_title":"技術書典4に参加しました。","book_info_id":"2","book_id":"","book_description":""},
-{"overviews_promotion":"ちなみに（ユーザー名はマスキングして）そのまま商業化されている","overviews_id":3,"booth_url":"","book_title":"","book_info_url":"http://amzn.asia/d/e3iTGAa","book_info_title":"商業本","book_info_id":"3","book_id":"","book_description":""},
-{"overviews_promotion":"遊び紙の白い部分をこすると（無駄に）レモンのにおいがする。いいにおい。","overviews_id":1,"booth_url":"https://mofu-mofu.booth.pm/items/965770","book_title":"ひよこエンジニアに送るお仕事サバイバルガイド","book_info_url":"http://rimarimadan.hatenablog.com/entry/2018/04/17/技術書典4にサークル参加します！","book_info_title":"技術書典4にサークル参加します！","book_info_id":"1","book_id":"4","book_description":"新卒4年目時点で感じた「こういう風に学べばよかった」「こういう風に質問すればよかった/されると嬉しい」「こんな人にはなりたくないなあ」「どうやって調べたらいいんだろう」的なエモポエムに対する感想＋もふもふちゃんのエモポエム集です。自分への戒め＋1年目で知ってたらもっと変わったかもな〜〜〜他の人にも教えたろ！みたいないい迷惑の知見を布教するつもりで書いた本その1です。"},
-{"overviews_promotion":"KUSOみたいな人がいて「きぃ〜〜〜〜〜っ！」となったので書いた","overviews_id":2,"booth_url":"","book_title":"","book_info_url":"http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました%E3%80%82","book_info_title":"技術書典4に参加しました。","book_info_id":"2","book_id":"","book_description":""},
-{"overviews_promotion":"なぜか「あなたひよこちゃうやろ！」って人の元に多くの本が旅立っていった","overviews_id":3,"booth_url":"","book_title":"","book_info_url":"https://ec.toranoana.jp/tora_r/ec/item/040030674964","book_info_title":"とらのあな通販","book_info_id":"3","book_id":"","book_description":""},
-{"overviews_promotion":"仕事で全然技術的なことができず、本のネタが作れないのにコミケにでることになった","overviews_id":1,"booth_url":"https://mofu-mofu.booth.pm/items/965778","book_title":"ひよこエンジニアに送るサバイバルガイド 〜深淵の闇を見た大人編〜","book_info_url":"http://rimarimadan.hatenablog.com/entry/2018/07/17/コミックマーケット94に出場します","book_info_title":"コミックマーケット94に出場します","book_info_id":"1","book_id":"5","book_description":"『ひよこエンジニアに送るお仕事サバイバルガイド』では書けなかったようなブラックなネタ（温めておいた）だけを集めて書いたのですが、このときはもう転職していたのですっかりやる気がなくなって…はないです。もふもふちゃんが仕事で出会ってやだったな〜〜〜と思った人のアンチパターン事例を集めました。自分が仲間入りしないように頑張ります。"},
-{"overviews_promotion":"新刊がないのは寂しいので「このKUSSSSSSSO〜〜〜〜〜」という気持ちを起こしてみた","overviews_id":2,"booth_url":"","book_title":"","book_info_url":"","book_info_title":"","book_info_id":"","book_id":"","book_description":""},
-{"overviews_promotion":"本が薄くてぺにゃってなる。ペニャペニャの本です","overviews_id":3,"booth_url":"","book_title":"","book_info_url":"","book_info_title":"","book_info_id":"","book_id":"","book_description":""},
-{"overviews_promotion":"このためだけに高校数学の参考書を買った。しかも解説がわからなかったのでわかる人に教えてもらった。高校生かな？","overviews_id":1,"booth_url":"https://ec.toranoana.jp/tora_r/ec/item/040030674965","book_title":"第1回 Webエンジニア基礎学力試験 問題と解説","book_info_url":"http://rimarimadan.hatenablog.com/entry/2018/10/10/技術書典5に参加できるか怪しかったけど参加で","book_info_title":"技術書典5に参加できるか怪しかったけど参加できた話","book_info_id":"","book_id":"6","book_description":"Webアプリケーション関連の用語、色々あって毎回調べ直すのめんどくさ…そうだ用語集を作ろう！と思って原稿を始めました。進めるうちに「用語集だと結局読まない気がする」と思い始め、問題を考えて回答を作れば理解も深まるのでは…という結論に至りました。理解が深まったか…はちょっと自信がありませんが、学校の定期テストを考えている先生はほんと大変だなという気持ちになりました。通販は大好きなとらのあなさんにお願いしました。個人的にもお世話になっているので、とらのあな専売シールをつけてもらいたかったんです。"},
-{"overviews_promotion":"過去問題集を参考に表紙を作った。見開きで作ったら閉じ方向を間違えて作り直しになった。","overviews_id":2,"booth_url":"","book_title":"","book_info_url":"https://techbookfest.org/event/tbf05/circle/41000006","book_info_title":"技術書典のサークルページ","book_info_id":"","book_id":"","book_description":""}
-]
-//}
-
-
-このままではみづらいので、1冊目の本に絞ってデータを表示します。先ほどidを降った部分のせいで、無駄なJSONの塊ができていることがわかります。
+初回にダウンロードできるデータのままではみづらいので、1冊目の本に絞ってデータを表示します。先ほどidを降った部分のせいで、無駄なJSONの塊ができていることがわかります。
 
 
 //emlist[][json]{
@@ -243,12 +220,14 @@
           {
             "book_info_id": 1,
             "book_info_title": "技術書典4にサークル参加します！",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/17/技術書典4にサークル参加します！",
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/04/17/技術書典4にサークル参加します！",
           },
           {
             "book_info_id": 2,
             "book_info_title": "技術書典4に参加しました。",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました。",
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました。",
           },
           {
             "book_info_id": 3,
@@ -283,12 +262,14 @@
           {
             "book_info_id": 1,
             "book_info_title": "技術書典4にサークル参加します！",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/17/技術書典4にサークル参加します！",
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/04/17/技術書典4にサークル参加します！",
           },
           {
             "book_info_id": 2,
             "book_info_title": "技術書典4に参加しました。",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました。",
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/04/23/技術書典4に参加しました。",
           },
           {
             "book_info_id": 3,
@@ -323,7 +304,8 @@
           {
             "book_info_id": 1,
             "book_info_title": "コミックマーケット94に出場します",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2018/07/17/コミックマーケット94に出場します",
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/07/17/コミックマーケット94に出場します",
           }
         ],
         "book_title": "ひよこエンジニアに送るサバイバルガイド 〜深淵の闇を見た大人編〜",
@@ -361,7 +343,8 @@
           {
             "book_info_id": 2,
             "book_info_title": "技術書典のサークルページ",
-            "book_info_url": "https://techbookfest.org/event/tbf05/circle/41000006",
+            "book_info_url": \r
+            "https://techbookfest.org/event/tbf05/circle/41000006",
 
           }
         ],
@@ -453,7 +436,7 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
 
 
 
-べこさんのポートフォリオでは、自分の情報を@<href>{https://github.com/becolomochi/shirokuma/blob/master/static/data.json,JSONで保持}（@<tt>{https://github.com/becolomochi/shirokuma/blob/master/static/data.json}）していました。同人誌の内容を参考にしつつ、このような実装を書いてみました。
+べこさんのポートフォリオでは、自分の情報を@<href>{https://github.com/becolomochi/shirokuma/blob/master/static/data.json,JSONで保持}していました。同人誌の内容を参考にしつつ、このような実装を書いてみました。
 
 
 
@@ -545,8 +528,7 @@ export default {
 
 デバッグ画面で確認してみると、予想通り@<tt>{bookData}＝JSONの情報は配列として取得されています。配列の中に1つの本に対して１つのオブジェクトが入っているようです。結果が出力されているということは、ここまでは意図した動作になっているのだ、と推測できます。問題は次です。
 2つ目の出力が@<tt>{undefined}となっています。直訳すると@<tt>{未定義}という意味ですが、何も定義がない状態ではありません。@<tt>{undefined}という値は@<tt>{undefined}という初期の値がセットされており、上書きもできない固定の値です。
-FireFoxを開発しているMozillaのWeb技術解説サイト@<href>{https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined,MDN web docs}（@<tt>{https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined}）では
-
+FireFoxを開発しているMozillaのWeb技術解説サイト@<href>{https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined,MDN web docs}では
 
 //quote{
  * 配列や変数の値が代入されていない
@@ -560,7 +542,8 @@ FireFoxを開発しているMozillaのWeb技術解説サイト@<href>{https://de
 
 
 
-この情報から、@<tt>{bookData[0].overviews.overviews_promotion}というデータの取得方法は正しくないという推理をすることができます。配列に@<tt>{bookData[0].overviews.overviews_promotion}が示すデータは存在しないから@<tt>{undefined}になっていると考えられるためです。2つの@<tt>{console.log}で@<tt>{undefined}が返却されているのであれば、JSONのデータが取得できていないと考えられるのですが、今回はそうではありません。
+この情報から、@<code>{bookData[0].overviews.overviews_promotion}というデータの取得方法は正しくないという推理をすることができます。
+配列に@<code>{bookData[0].overviews.overviews_promotion}が示すデータは存在しないから@<tt>{undefined}になっていると考えられるためです。2つの@<tt>{console.log}で@<tt>{undefined}が返却されているのであれば、JSONのデータが取得できていないと考えられるのですが、今回はそうではありません。
 よって、配列からデータを取得する部分がおかしいのだと推理しました。そこで、いくつか思いついた方法を試して結果を比較してみることにしました。
 
 
@@ -640,7 +623,8 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
 -       console.log(bookData[0].overviews[0].overviews_promotion);
 -       return bookData[0].overviews.overviews_promotion;
 +       // 繰り返し処理でoverviews_promotionの値だけ抜いてreturnする
-+       const dataList = bookData[0].overviews.forEach((array_element, index, array) => {
++       const dataList = \r
+        bookData[0].overviews.forEach((array_element, index, array) => {
 +         console.log(array_element);
 +       });
     }
@@ -656,7 +640,8 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
   computed: {
     promotionData: function() {
 -       // 繰り返し処理でoverviews_promotionの値だけ抜いてreturnする
--       const dataList = bookData[0].overviews.forEach((array_element, index, array) => {
+-       const dataList = \r
+-         bookData[0].overviews.forEach((array_element, index, array) => {
 -         console.log(array_element);
 -       });
       // ここから下を追記
@@ -697,7 +682,7 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
 //}
 
 
-//image[get_overviews_data][画面でもoverviewsないのデータを描画できるようにしたところ]{
+//image[json_data_computed][画面でもoverviews内のデータを描画できるようにしたところ]{
 //}
 
 
@@ -1027,7 +1012,8 @@ export default {
       <div class="posts-info">
         <h4>関連URL</h4>
         <ul>
-          <li v-for="list in posts" v-bind:key="list.id"><a href="list.url">{{ list }}</a></li>
+          <li v-for="list in posts" v-bind:key="list.id">\r
+          <a href="list.url">{{ list }}</a></li>
         </ul>
       </div>
     </div>
@@ -1268,11 +1254,6 @@ export default {
 === Pull Requests
  * https://github.com/MofuMofu2/portfolio-vue/pull/26
  * https://github.com/MofuMofu2/portfolio-vue/pull/27
-
-
-=== りまりま団の同人誌リスト
- * https://docs.google.com/spreadsheets/d/16NGDz_8Xl4hAzjCPNHjx5pVN8cxNFOsoPngeLrF633A/edit?usp=sharing
-
 
 === SQLIFY（CSVをJSONに変換する）
  * https://sqlify.io/convert
