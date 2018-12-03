@@ -453,7 +453,7 @@ export default {
 === App.vueに基礎情報コンポーネントを追加する
 
 
-特に変わった処理はありません。他のコンポーネントと同じようにApp.vueへコンポーネントを追加するだけです。
+特に変わった処理はありません。他のコンポーネントと同じようにApp.vueへコンポーネントを追加するだけです。
 
 
 //emlist[][javaScript]{
@@ -501,12 +501,6 @@ export default {
 }
 </script>
 //}
-
-
-//image[7_finish][#7実装後]{
-//}
-
-
 
 === 基礎情報コンポーネントの作成
 
@@ -576,7 +570,7 @@ export default {
 //}
 
 
-//image[6_finish][基礎情報コンポーネント作成後]{
+//image[7_finish][基礎情報コンポーネント作成後]{
 //}
 
 
@@ -706,7 +700,7 @@ export default {
 //}
 
 
-//image[8_first_program][#8の実装後]{
+//image[8_first_program][#8の実装後]{
 //}
 
 
@@ -773,7 +767,7 @@ export default {
 
 
 
-//image[8_second_program][Chrome DevToolsでURLがどうなっているか確認しているところ]{
+//image[8_debugger_tool][Chrome DevToolsでURLがどうなっているか確認しているところ]{
 //}
 
 

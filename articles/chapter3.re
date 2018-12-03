@@ -45,7 +45,7 @@ CDNを利用してもコンポーネントを作ることはできます。し�
 == プロジェクトの作成
 
 
-公式ドキュメントに沿って進めます。まず、パッケージ管理システム@<tt>{npm}を用いてVue.jsをインストールします。@<tt>{yarn}というパッケージ管理システムもあるのですが、仕事で利用したことがないので今回は利用しませんでした。
+公式ドキュメントに沿って進めます。まず、パッケージ管理システム@<tt>{npm}を用いてVue.jsをインストールします。@<tt>{yarn}というパッケージ管理システムもあるのですが、仕事で利用したことがないので今回は利用しませんでした。
 
 
 //emlist[][bash]{
@@ -53,7 +53,7 @@ $ npm install -g @vue/cli
 //}
 
 
-Vue CLIをインストールした次は、Vueプロジェクトを作成します。
+Vue CLIをインストールした次は、Vueプロジェクトを作成します。
 
 
 //emlist[][bash]{
@@ -61,11 +61,11 @@ $ vue create プロジェクト名
 //}
 
 
-今回は@<tt>{portfolio-vue}というプロジェクト名にしました。対話形式で基本設定を行います。ESLintを利用することのみ指定します。1ページのWebアプリケーションなのでルーティングは必要ありませんし、TypeScriptを利用しないで開発してみたいなと思ったからです。 @<fn>{1}
+今回は@<tt>{portfolio-vue}というプロジェクト名にしました。対話形式で基本設定を行います。ESLintを利用することのみ指定します。1ページのWebアプリケーションなのでルーティングは必要ありませんし、TypeScriptを利用しないで開発してみたいなと思ったからです。 @<fn>{1}
 
 
 
-これで開発準備はできました。GitHubでのコミットハッシュ値は@<href>{https://github.com/MofuMofu2/portfolio-vue/commit/747b37da5ddb697bcc80d1e20b4053b1b89a2bcc,747b37}です。
+これで開発準備はできました。GitHubでのコミットハッシュ値は@<href>{https://github.com/MofuMofu2/portfolio-vue/commit/747b37da5ddb697bcc80d1e20b4053b1b89a2bcc,747b37}です。
 
 
 == #1 ヘッダーの作成
@@ -83,7 +83,7 @@ $ vue create プロジェクト名
 === Vue.jsの基本的な書き方でヘッダー要素を作成する
 
 
-まず、実際に画面に表示される@<tt>{App.vue}ファイルに@<tt>{Header}コンポーネントを追加します。@<tt>{Header}と@<tt>{Footer}は予約語扱いなのか、App.vueへインポートするときの名前は別の名前にする必要があります。@<tt>{Header.vue}にはヘッダーの表示部分に関するコードのみが記述されます。@<tt>{<template>}にはHTMLを、@<tt>{<script>}にはVue.js（JavaScript）の処理を、@<tt>{<style>}にはCSSを記述します。
+まず、実際に画面に表示される@<tt>{App.vue}ファイルに@<tt>{Header}コンポーネントを追加します。@<tt>{Header}と@<tt>{Footer}は予約語扱いなのか、App.vueへインポートするときの名前は別の名前にする必要があります。@<tt>{Header.vue}にはヘッダーの表示部分に関するコードのみが記述されます。@<tt>{<template>}にはHTMLを、@<tt>{<script>}にはVue.js（JavaScript）の処理を、@<tt>{<style>}にはCSSを記述します。
 
 
 //emlist[][JavaScript]{
@@ -106,7 +106,7 @@ import titleHeader from './components/Header.vue'
 //}
 
 
-次に、Header.vueの内容を作成します。@<tt>{h1}タグの@<tt>{{{ title \}\}}という部分はMustache記法という名前がついています。@<tt>{data}という部分の@<tt>{title}に割り当てられている@<tt>{同人誌展示会場}というデータが@<tt>{h1}タグとして表示されますよ、という意味です。@<tt>{data}の部分を置き換えるだけでHTMLの描画内容を変更することができます。
+次に、Header.vueの内容を作成します。@<tt>{h1}タグの@<tt>{{{ title \}\}}という部分はMustache記法という名前がついています。@<tt>{data}という部分の@<tt>{title}に割り当てられている@<tt>{同人誌展示会場}というデータが@<tt>{h1}タグとして表示されますよ、という意味です。@<tt>{data}の部分を置き換えるだけでHTMLの描画内容を変更することができます。
 
 
 //emlist[][JavaScript]{
@@ -133,7 +133,7 @@ export default {
 //}
 
 
-最後に、Vueプロジェクトの設定ファイルを記載します。
+最後に、Vueプロジェクトの設定ファイルを記載します。
 
 
 //emlist[][JavaScript]{
@@ -163,16 +163,16 @@ module.exports = {
 === CSSで見た目を整える
 
 
-よく見ると、ブラウザの端っこに隙間が空いてしまっています。これはブラウザごとにデフォルトのCSSというものが設定されており、h1タグはmargin（要素同士の間隔を決める）はいくつ…などと決まったCSSが割り当たってしまっているためです。デフォルトのCSSはブラウザごとに設定が異なるので、何も設定しないと同じCSSなのに見た目がバラバラになってしまいます。
+よく見ると、ブラウザの端っこに隙間が空いてしまっています。これはブラウザごとにデフォルトのCSSというものが設定されており、h1タグはmargin（要素同士の間隔を決める）はいくつ…などと決まったCSSが割り当たってしまっているためです。デフォルトのCSSはブラウザごとに設定が異なるので、何も設定しないと同じCSSなのに見た目がバラバラになってしまいます。
 
 
 
-このままでは困るので、@<tt>{normalize.css}というものを導入します。これはブラウザに割り当てられているCSSを活かしつつ、ブラウザ間の差異を吸収してくれるCSSです。同じような役割を持つCSSとして@<tt>{reset.css}というものも存在します。今回は@<tt>{normalize.css}を利用することにしました。
-理由は@<tt>{reset.css}はブラウザ独自のスタイルを打ち消しし、デフォルトのCSSを割り当てるからです。CSSの打ち消しは画面の描画に時間がかかる原因となるため、なるべく打ち消しが起こらないCSSが良いCSSと言われます。保守の観点からも、CSSの打ち消しは避けましょうと言われるようです。
+このままでは困るので、@<tt>{normalize.css}というものを導入します。これはブラウザに割り当てられているCSSを活かしつつ、ブラウザ間の差異を吸収してくれるCSSです。同じような役割を持つCSSとして@<tt>{reset.css}というものも存在します。今回は@<tt>{normalize.css}を利用することにしました。
+理由は@<tt>{reset.css}はブラウザ独自のスタイルを打ち消しし、デフォルトのCSSを割り当てるからです。CSSの打ち消しは画面の描画に時間がかかる原因となるため、なるべく打ち消しが起こらないCSSが良いCSSと言われます。保守の観点からも、CSSの打ち消しは避けましょうと言われるようです。
 
 
 
-@<tt>{normalize.css}を@<tt>{npm install}でインストールします。コマンドライン上でプロジェクトのディレクトリに移動し、次のようにして@<tt>{normalize.css}をインストールしました。
+@<tt>{normalize.css}を@<tt>{npm install}でインストールします。コマンドライン上でプロジェクトのディレクトリに移動し、次のようにして@<tt>{normalize.css}をインストールしました。
 
 
 //emlist[][bash]{
@@ -180,7 +180,7 @@ $ npm install normalize.css
 //}
 
 
-そして、@<tt>{Header.vue}に@<tt>{normalize.css}をインポートします。後で全てのコンポーネントがインポートされている@<tt>{App.vue}に記述を移し替えました。こうしておくと、他のコンポーネントファイルに@<tt>{normalize.css}のインポート文を書かずに済むためです。
+そして、@<tt>{Header.vue}に@<tt>{normalize.css}をインポートします。後で全てのコンポーネントがインポートされている@<tt>{App.vue}に記述を移し替えました。こうしておくと、他のコンポーネントファイルに@<tt>{normalize.css}のインポート文を書かずに済むためです。
 
 
 //emlist[][JavaScript]{
@@ -331,7 +331,7 @@ Vue.jsでローカルの画像を表示する場合、@<tt>{a}タグ内に@<tt>{
 <template>
   <div class="page-footer">
     <div class="icons">
-      <a href="https://twitter.com/froakie0021" target="blank">\r
+      <a href="https://twitter.com/froakie0021" target="blank">\r
       <img :src="twitter_src" alt="twitter"></a>
       <a href="https://github.com/MofuMofu2/portfolio-vue" target="blank">\r
       <img :src="github_src" alt="github"></a>
@@ -538,4 +538,4 @@ export default {
  ** https://github.com/vuejs/Discussion/issues/202#issuecomment-330567354
 
 
-//footnote[1][仕事ではVue.jsとTypeScriptで開発しています。メソッドの勝手がかなり違うので、なんだか別物のように感じてしまいます。]
+//footnote[1][仕事ではVue.jsとTypeScriptで開発しています。メソッドの勝手がかなり違うので、なんだか別物のように感じてしまいます。]
