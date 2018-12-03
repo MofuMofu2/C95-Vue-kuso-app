@@ -1,0 +1,1 @@
+クソアプリ Advent Calendarの記録です
