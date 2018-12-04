@@ -868,5 +868,4 @@ export default {
 === コンポーネントの名前
 
 ==== 基底コンポーネントの名前
- * https://jp.vuejs.org/v2/style-guide/index.html#%E5%9F%BA%E5%BA%95%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E5%90%8D%E5%89%8D-%E5%BC%B7%E3%81%8F%E6%8E%A8%E5%A5%A8
-
+ * https://jp.vuejs.org/v2/style-guide/index.html#コンポーネントのファイル-強く推奨

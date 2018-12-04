@@ -44,7 +44,7 @@
 === 載せたい情報をスプレッドシートにまとめる
 
 
-はじめは自分でJSONを書こうとしましたが、結論として5分であきらめました。Googleの@<href>{https://google.github.io/styleguide/jsoncstyleguide.xml,JSON Style Guide}（@<tt>{https://google.github.io/styleguide/jsoncstyleguide.xml}）などを読んではみたのですが、今までの業務の中で1からJSONを設計することがなかったので、「ちょっと何言ってるかわからない」状態になってしまいました。
+はじめは自分でJSONを書こうとしましたが、結論として5分であきらめました。Googleの@<href>{https://google.github.io/styleguide/jsoncstyleguide.xml,JSON Style Guide}などを読んではみたのですが、今までの業務の中で1からJSONを設計することがなかったので、「ちょっと何言ってるかわからない」状態になってしまいました。
 個人開発ですし、迷惑がかかるのは将来の自分だけ、という言い訳と共に、はじめはCSVからJSONを作ってくれるWebサービスを利用したほうがいいだろうという判断をしました。綺麗なJSONのデータ構造よりも、クソアプリカレンダーとこのコミックマーケット95の新刊を入稿に間に合うことのほうがはるかに大事だったのです。
 
 
@@ -143,7 +143,8 @@
           {
             "book_info_id": 1,
             "book_info_title": "技術書典2 もふもふちゃんの戦い履歴",
-            "book_info_url": "http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2_もふもふちゃんの戦い履歴"
+            "book_info_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2017/04/12/技術書典2_もふもふちゃんの戦い履歴"
           },
           {
             "book_info_id": 2,
@@ -274,7 +275,8 @@
           {
             "book_info_id": 3,
             "book_info_title": "とらのあな通販",
-            "book_info_url": "https://ec.toranoana.jp/tora_r/ec/item/040030674964",
+            "book_info_url": \r
+            "https://ec.toranoana.jp/tora_r/ec/item/040030674964",
           }
         ],
         "book_title": "ひよこエンジニアに送るお仕事サバイバルガイド",
@@ -541,9 +543,8 @@ FireFoxを開発しているMozillaのWeb技術解説サイト@<href>{https://de
 このような場合は@<tt>{undefined}が返却される、と解説されています。
 
 
-
 この情報から、@<code>{bookData[0].overviews.overviews_promotion}というデータの取得方法は正しくないという推理をすることができます。
-配列に@<code>{bookData[0].overviews.overviews_promotion}が示すデータは存在しないから@<tt>{undefined}になっていると考えられるためです。2つの@<tt>{console.log}で@<tt>{undefined}が返却されているのであれば、JSONのデータが取得できていないと考えられるのですが、今回はそうではありません。
+配列にコードが示すデータは存在しないから@<tt>{undefined}になっていると考えられるためです。2つの@<tt>{console.log}で@<tt>{undefined}が返却されているのであれば、JSONのデータが取得できていないと考えられるのですが、今回はそうではありません。
 よって、配列からデータを取得する部分がおかしいのだと推理しました。そこで、いくつか思いついた方法を試して結果を比較してみることにしました。
 
 
@@ -920,7 +921,8 @@ JSONデータの不整合や、画面に表示できていない部分を修正�
           {
             "book_url_id": 1,
             "book_url_title": "技術書典5に参加できるか怪しかったけど参加できた話",
-            "book_url_url": "http://rimarimadan.hatenablog.com/entry/2018/10/10/技術書典5に参加できるか怪しかったけど参加できた話"
+            "book_url_url": \r
+            "http://rimarimadan.hatenablog.com/entry/2018/10/10/技術書典5に参加できるか怪しかったけど参加できた話"
           },
           {
             "book_url_id": 2,
@@ -1293,10 +1295,6 @@ MDNと一緒にいつも参考にさせていただいてます。
 
 ==== js-primer 配列
  * https://jsprimer.net/basic/array/
-
-
-==== undefined
- * https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/undefined
 
 
 //footnote[1][インプレスR＆Dさんから商業化されて、シリーズのまとめ本にも入れてもらって、なんか連載とかいう新しい企画に載せてもらって2018年に改版もされてBooth販売もされて…。この本くんに何回励まされたことか…またこういうものを作りたいです。]

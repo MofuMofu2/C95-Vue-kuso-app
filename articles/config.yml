@@ -23,7 +23,7 @@ language: ja
 
 # 書名
 # 読みを入れる例 booktitle: {name: "Re:VIEW EPUBサンプル", file-as: "リビューイーパブサンプル"}
-booktitle: Vue.jsでクソアプリ作ってみた
+booktitle: Vue.jsでKUSOアプリ作ってみた
 
 # 著者名。「, 」で区切って複数指定できる
 # 読みを入れる例 aut: [{name: "青木峰郎", file-as: "アオキミネロウ"}, {name: "武藤健志", file-as: "ムトウケンシ"}, {name: "高橋征義", file-as: "タカハシマサヨシ"}, {name: "角征典", file-as: "カドマサノリ"}]
@@ -60,7 +60,7 @@ aut: ["もふもふ"]
 # a-pbl, pbl: 出版社（発行所）
 pbl: りまりま団
 # a-prt, prt: 印刷所
-prt: 有限会社　ねこのしっぽ
+prt: 有限会社　ねこのしっぽ様
 # prt: TechBooster
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者

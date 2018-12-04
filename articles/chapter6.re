@@ -64,8 +64,10 @@
 +   },
 +   data() {
 +     return {
-+       left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
-+       right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg"),
++       left_arrow:\r
+         require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
++       right_arrow: \r
+          require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg"),
 +     }
 +   }
 }
@@ -163,9 +165,12 @@ import bookInfo from './components/BookInfo.vue'
     return {
 +     bookData: bookData,
 +     bookId: 0,
-+     left_arrow: require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
--     right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg"),
-+     right_arrow: require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
++     left_arrow: \r
+        require("./assets/arrow/baseline-keyboard_arrow_left-24px.svg"),
+-     right_arrow: \r
+        require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg"),
++     right_arrow: \r
+        require("./assets/arrow/baseline-keyboard_arrow_right-24px.svg")
     }
 +   },
 +   methods: {
@@ -286,15 +291,15 @@ import bookInfo from './components/BookInfo.vue'
 </script>
 //}
 
-### BookTitle.vue（propした値を取得してJSONを表示）
+=== BookTitle.vue（propした値を取得してJSONを表示）
 
-```JavaScript
+//emlist[][JavaScript]{
 <template>
   <div class="book-title">
     <div class="fanbook-title">
       <div class="fan-book" v-bind:title="bookTitle">{{ bookTitle }}</div>
-      <div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">\r
-      {{ bookTitle }}</div>
+      <div class="fan-book" v-bind:title="bookTitle" \r
+      v-bind:id="currentBookId">{{ bookTitle }}</div>
     </div>
   </div>
 </template>
@@ -318,7 +323,7 @@ export default {
   }
 }
  </script>
-
+//}
 
 
 やっほー！できたー！と思ったのですが、@<tt>{BookTitle.vue}の@<tt>{<div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">{{ bookTitle \}\}</div>}の部分に不具合があります。というのも、@<tt>{v-bind:id="currentBookId"}の部分の@<tt>{currentBookId}はundefinedになってしまうためです。
@@ -337,22 +342,23 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
 <template>
   <div class="book-title">
     <div class="fanbook-title">
--       <div class="fan-book" v-bind:title="bookTitle" v-bind:id="currentBookId">\r
-{{ bookTitle }}</div>
+-       <div class="fan-book" v-bind:title="bookTitle"\r
+         v-bind:id="currentBookId">{{ bookTitle }}</div>
 +       <div class="fan-book" v-bind:title="bookTitle">{{ bookTitle }}</div>
     </div>
   </div>
 </template>
+//}
 
 これで、ボタンを押すとタイトルだけ切り替わるようになりました。
 
-### 画像以外の部分はボタン操作で切り替えできるようにする
+=== 画像以外の部分はボタン操作で切り替えできるようにする
 
 この要領で、他の子コンポーネントにも配列のインデックスの値を親コンポーネントで決めてpropする処理を記載しました。これはissue #25の最終的な実装です。
 
-### App.vue（#25終了時）
+=== App.vue（#25終了時）
 
-```JavaScript
+//emlist[][JavaScript]{
 
 <template>
   <div id="app">
@@ -361,12 +367,14 @@ XXX: BLOCK_HTML: YOU SHOULD REWRITE IT
       <book-title v-bind:id="currentBookId"></book-title>
     </div>
     <div class="main">
-      <button class="back_button" type="button" v-on:click="removeCount">
+      <button class="back_button" type="button" \r
+      v-on:click="removeCount">
         <img v-bind:src="left_arrow" alt="back">
       </button>
       <div class="left-contents">
         <book-image></book-image>
-        <description-list v-bind:id="currentBookId"></description-list>
+        <description-list v-bind:id="currentBookId">\r
+        </description-list>
       </div>
       <div class="right-contents">
         <book-description v-bind:id="currentBookId"></book-description>
@@ -523,8 +531,8 @@ export default {
       <div class="posts-info">
         <h4>関連URL</h4>
         <ul>
-          <li v-for="list in posts" v-bind:key="list.id"><a v-bind:href="list">\r
-          {{ list }}</a></li>
+          <li v-for="list in posts" v-bind:key="list.id">\r
+          <a v-bind:href="list">{{ list }}</a></li>
         </ul>
       </div>
     </div>
@@ -855,7 +863,8 @@ export default {
 
 
 //emlist[][JavaScript]{
-vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: "TypeError: Cannot read property 'book_title' of undefined"
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: \r
+"TypeError: Cannot read property 'book_title' of undefined"
 
 found in
 
@@ -873,16 +882,20 @@ run @ vue.runtime.esm.js?2b0e:3215
 flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
 (anonymous) @ vue.runtime.esm.js?2b0e:1833
 flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:1737 TypeError: Cannot read property 'book_title' of undefined
+vue.runtime.esm.js?2b0e:1737 TypeError:\r
+ Cannot read property 'book_title' of undefined
     at VueComponent.bookTitle (BookTitle.vue?5d46:22)
     at Watcher.get (vue.runtime.esm.js?2b0e:3138)
     at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
     at VueComponent.computedGetter [as bookTitle] (vue.runtime.esm.js?2b0e:3503)
     at Object.get (vue.runtime.esm.js?2b0e:1916)
     at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?
-    {"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"dc1d07a8-vue-loader-template"}!
-    ./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!.
-    /node_modules/vue-loader/lib/index.js?!./src/components/BookTitle.vue?vue&type=
+    {"cacheDirectory":"node_modules/.cache/vue-loader",\r
+    "cacheIdentifier":"dc1d07a8-vue-loader-template"}!
+    ./node_modules/vue-loader/lib/loaders/templateLoader.js?\r
+    !./node_modules/cache-loader/dist/cjs.js?!.
+    /node_modules/vue-loader/lib/index.js?!.\r
+    /src/components/BookTitle.vue?vue&type=
     template&id=1a6b496f&scoped=true& (app.js:973), <anonymous>:10:64)
     at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
     at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
@@ -898,7 +911,8 @@ run @ vue.runtime.esm.js?2b0e:3215
 flushSchedulerQueue @ vue.runtime.esm.js?2b0e:2977
 (anonymous) @ vue.runtime.esm.js?2b0e:1833
 flushCallbacks @ vue.runtime.esm.js?2b0e:1754
-vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render: "Error: Cannot find module './6/front.png'"
+vue.runtime.esm.js?2b0e:587 [Vue warn]: Error in render:\r
+ "Error: Cannot find module './6/front.png'"
 
 found in
 
@@ -924,13 +938,18 @@ vue.runtime.esm.js?2b0e:1737 Error: Cannot find module './6/front.png'
     at VueComponent.frontImage (BookImage.vue?4ee6:14)
     at Watcher.get (vue.runtime.esm.js?2b0e:3138)
     at Watcher.evaluate (vue.runtime.esm.js?2b0e:3245)
-    at VueComponent.computedGetter [as frontImage] (vue.runtime.esm.js?2b0e:3503)
+    at VueComponent.computedGetter [as frontImage] \r
+    (vue.runtime.esm.js?2b0e:3503)
     at Object.get (vue.runtime.esm.js?2b0e:1916)
     at Proxy.render (eval at ./node_modules/cache-loader/dist/cjs.js?
-    {"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":
-    "dc1d07a8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!
-    ./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!.
-    /src/components/BookImage.vue?vue&type=template&id=656096f2&scoped=true& (app.js:949),
+    {"cacheDirectory":"node_modules/.cache/vue-loader",\r
+    "cacheIdentifier":
+    "dc1d07a8-vue-loader-template"}!.\r
+    /node_modules/vue-loader/lib/loaders/templateLoader.js?!
+    ./node_modules/cache-loader/dist/cjs.js?!\r
+    ./node_modules/vue-loader/lib/index.js?!.
+    /src/components/BookImage.vue?vue&type=template&id\r
+    =656096f2&scoped=true& (app.js:949),
      <anonymous>:9:35)
     at VueComponent.Vue._render (vue.runtime.esm.js?2b0e:4540)
     at VueComponent.updateComponent (vue.runtime.esm.js?2b0e:2784)
@@ -1154,11 +1173,11 @@ export default {
 
 
 ボタンの見た目が個人的に気に食わなかったので@<tt>{＞}・@<tt>{＜}をemojiに置き換えました。KUSO感が高まったので大満足です。また、画面下の方の背景色が切れてしまう問題があったのでCSSを調整しました。また、@<tt>{favicon}も自作して@<tt>{assets}ディレクトリに配置しました。
-また、『魔法つかいプリキュア！』表記が『魔法使いプリキュア！』になっていたため修正しました。 [^maho-girls]
+また、『魔法つかいプリキュア！』表記が『魔法使いプリキュア！』になっていたため修正しました。 @<fn>{maho-girls}
 
 
 
-[^maho-girls]: 事前にサイトを身内の人に見せたんですが「魔法つかいは@<tt>{つかい}のところひらがなだから」と怒られました。漢字変換されてたのに気づけなかった…。大変申し訳ありませんでした。
+//footnote[maho-girls][事前にサイトを身内の人に見せたんですが「魔法"つかい"のところひらがなだから」と怒られました。漢字変換されてたのに気づけなかった…。大変申し訳ありませんでした。]
 
 
 == 最終的なコード
@@ -1412,8 +1431,8 @@ export default {
       <div class="posts-info">
         <h4>関連URL</h4>
         <ul>
-          <li v-for="list in posts" v-bind:key="list.id"><a v-bind:href="list">\r
-          {{ list }}</a></li>
+          <li v-for="list in posts" v-bind:key="list.id">\r
+          <a v-bind:href="list">{{ list }}</a></li>
         </ul>
       </div>
     </div>
